@@ -56,7 +56,9 @@ export type HabitatId =
   | 'pressurized_rover'
   | 'mars_habitat'
   | 'spacesuit'
-  | 'earth';
+  | 'earth'
+  | 'exploration_10_2' // NASA-considered exploration atmosphere 10.2 psia / 26.5% O2 (ACME BRE, PSI-20)
+  | 'exploration_8_2'; // NASA-considered exploration atmosphere 8.2 psia / 34% O2 (ACME BRE, PSI-20)
 
 export interface Investigation {
   psi_id: string; // "PSI-26": primary key everywhere
@@ -116,7 +118,7 @@ export interface Investigation {
 
 // ---------- 3. Flammability points (predictor input) ----------
 
-export type MaterialClass = 'thin_fabric' | 'thick_solid' | 'liquid_droplet' | 'gas_jet';
+export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet'; // thin_solid = thin films and sheets that are not fabric (e.g. PMMA film)
 export type Outcome = 'sustained' | 'marginal' | 'extinguished' | 'no_ignition';
 
 export interface FlammabilityPoint {

@@ -117,6 +117,8 @@ Visual direction: clean, technical, dark theme suitable for a demo video; high-c
 | pressurized_rover | 0.30 | 70.3 kPa | 0.166 | challenge text (same intermediate atmosphere) | false |
 | mars_habitat | 0.30 | 70.3 kPa | 0.38 | no spec; scenario reusing the lunar atmosphere | true |
 | spacesuit | 1.00 | 29.6 kPa (4.3 psi) | varies (use 0.166) | challenge text | false |
+| exploration_10_2 | 0.265 | 70.3 kPa (10.2 psia) | 0.166 | ACME BRE (PSI-20) objective: NASA-considered atmosphere | false |
+| exploration_8_2 | 0.34 | 56.5 kPa (8.2 psia) | 0.166 | ACME BRE (PSI-20) objective: NASA-considered atmosphere | false |
 
 Every preset is shown with its source; assumptions are labelled "scenario" in the UI. Optional extra preset if a source is found: NASA Exploration Atmospheres Working Group recommendation (reported as 34% O2 at 8.2 psi; **verify and cite before use**).
 

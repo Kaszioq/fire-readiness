@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </nav>
           <span className="muted">
             {meta.n_investigations} investigations, {meta.n_fields_verified} of {meta.n_fields_total} extracted fields
-            human-verified
+            verified against NASA source
           </span>
         </header>
         {DATA_IS_MOCK && (

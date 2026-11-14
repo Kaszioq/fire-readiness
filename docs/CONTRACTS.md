@@ -60,7 +60,8 @@ export type FuelPhase = 'solid' | 'liquid' | 'gas';
 export type SafetyDomain = 'prevention' | 'detection' | 'suppression' | 'fundamental';
 export type Tier = 1 | 2 | 3;   // 1 = directly about spacecraft fire safety, 3 = context / modelling
 export type GravityLevel = 'micro' | 'normal' | 'partial_emulated' | 'mixed';
-export type HabitatId = 'iss' | 'orion' | 'moon_base' | 'pressurized_rover' | 'mars_habitat' | 'spacesuit' | 'earth';
+export type HabitatId = 'iss' | 'orion' | 'moon_base' | 'pressurized_rover' | 'mars_habitat' | 'spacesuit' | 'earth'
+  | 'exploration_10_2' | 'exploration_8_2';   // NASA exploration atmospheres quoted in ACME BRE (PSI-20); added 2026-11-14 with team OK
 
 export interface Investigation {
   psi_id: string;                 // "PSI-26": primary key everywhere
@@ -124,7 +125,8 @@ export interface Investigation {
 One row = one test run from an experimental table or a value reported in a document.
 
 ```ts
-export type MaterialClass = 'thin_fabric' | 'thick_solid' | 'liquid_droplet' | 'gas_jet';
+export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet';
+// thin_solid = thin films and sheets that are not fabric (PMMA film, thin silicone); added 2026-11-14 with team OK
 export type Outcome = 'sustained' | 'marginal' | 'extinguished' | 'no_ignition';
 
 export interface FlammabilityPoint {
