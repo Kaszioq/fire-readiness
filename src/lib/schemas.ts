@@ -72,6 +72,8 @@ export const HabitatIdSchema = z.enum([
   'mars_habitat',
   'spacesuit',
   'earth',
+  'exploration_10_2',
+  'exploration_8_2',
 ]);
 
 const PsiIdSchema = z.string().regex(/^PSI-\d+$/, 'expected a PSI ID like "PSI-26"');
@@ -141,7 +143,7 @@ export const InvestigationSchema = z.object({
 
 // ---------- Flammability points ----------
 
-export const MaterialClassSchema = z.enum(['thin_fabric', 'thick_solid', 'liquid_droplet', 'gas_jet']);
+export const MaterialClassSchema = z.enum(['thin_fabric', 'thin_solid', 'thick_solid', 'liquid_droplet', 'gas_jet']);
 export const OutcomeSchema = z.enum(['sustained', 'marginal', 'extinguished', 'no_ignition']);
 
 export const FlammabilityPointSchema = z
