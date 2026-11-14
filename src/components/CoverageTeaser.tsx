@@ -145,14 +145,15 @@ export function CoverageTeaser({
         </div>
         <div>
           {solids.length === 0 ? (
-            'No solid-material test runs in the dataset.'
+            'No solid-material test runs in the PSI microgravity data.'
           ) : (
             <>
               <strong style={{ color: 'var(--text)' }}>
                 {solidsAtFocus} of {solids.length}
               </strong>{' '}
-              solid-material test runs are at or above {formatPercent(focus.o2_mole_fraction)} O2. The highest oxygen
-              level tested on a solid is {formatPercent(maxSolidO2)}.
+              solid-material test runs in the PSI microgravity data are at or above{' '}
+              {formatPercent(focus.o2_mole_fraction)} O2. The highest oxygen level on a solid in this dataset is{' '}
+              {formatPercent(maxSolidO2)}.
             </>
           )}
           {shown.length < points.length && ` ${plural(points.length - shown.length, 'test run')} outside this chart.`}
