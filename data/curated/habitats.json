@@ -1,0 +1,168 @@
+[
+  {
+    "id": "earth",
+    "name": "Earth sea level",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "gravity_g": 1.0,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "challenge_text",
+      "source_ref": {
+        "url": "https://www.spaceappschallenge.org/ (challenge statement, saved in docs/challenge.md)"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "the Earth’s pressure at sea level is 14.7 psi"
+    }
+  },
+  {
+    "id": "iss",
+    "name": "International Space Station",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "gravity_g": 0.0,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "publication",
+      "source_ref": {
+        "url": "https://ntrs.nasa.gov/api/citations/20240005117/downloads/ICES-2024-128-Final%20Manuscript-No%20Tracked%20Changes.pdf"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "mimicked Earth sea-level conditions (21% oxygen/78% nitrogen/1% trace gases)",
+      "note": "NASA ICES-2024-128 (NTRS 20240005117): ECLSS in vehicles kept at 14.7 psia (101.35 kPa) sea-level conditions. Also listed as a NASA-considered atmosphere in the ACME BRE (PSI-20) objective."
+    }
+  },
+  {
+    "id": "orion",
+    "name": "Orion / Artemis crew vehicle",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "gravity_g": 0.0,
+    "is_assumption": true,
+    "prov": {
+      "source_type": "publication",
+      "source_ref": {
+        "url": "https://en.wikipedia.org/wiki/Orion_(spacecraft)"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "mixed atmosphere at either sea level (101.3 kPa or 14.69 psi) or reduced (55.2 to 70.3 kPa or 8.01 to 10.20 psi) pressure.",
+      "note": "SECONDARY SOURCE ONLY (Wikipedia, citation not checked). Sea-level option used; no primary NASA source found yet. Keep marked as scenario in the UI."
+    }
+  },
+  {
+    "id": "moon_base",
+    "name": "Moon base (planned)",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": null,
+    "gravity_g": 0.166,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "challenge_text",
+      "source_ref": {
+        "url": "https://www.spaceappschallenge.org/ (challenge statement, saved in docs/challenge.md)"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "The intermediate oxygen concentration used on the Moon will likely be 30% or greater, with a corresponding pressure of 10.2 psi or less."
+    }
+  },
+  {
+    "id": "pressurized_rover",
+    "name": "Pressurized lunar rover",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": null,
+    "gravity_g": 0.166,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "challenge_text",
+      "source_ref": {
+        "url": "https://www.spaceappschallenge.org/ (challenge statement, saved in docs/challenge.md)"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "it is expected that the Moon Base and pressurized rover(s) will be at a pressure and oxygen concentration between those in a spacesuit and the Earth’s atmosphere."
+    }
+  },
+  {
+    "id": "mars_habitat",
+    "name": "Mars habitat (scenario)",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": null,
+    "gravity_g": 0.38,
+    "is_assumption": true,
+    "prov": {
+      "source_type": "challenge_text",
+      "source_ref": {
+        "url": "https://www.spaceappschallenge.org/ (challenge statement, saved in docs/challenge.md)"
+      },
+      "method": "manual",
+      "verified": false,
+      "note": "Scenario: no Mars habitat spec; reuses the lunar intermediate atmosphere. (no verbatim quote)"
+    }
+  },
+  {
+    "id": "spacesuit",
+    "name": "Spacesuit",
+    "o2_mole_fraction": 1.0,
+    "pressure_kpa": 29.6,
+    "flow_cm_s": null,
+    "gravity_g": 0.166,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "challenge_text",
+      "source_ref": {
+        "url": "https://www.spaceappschallenge.org/ (challenge statement, saved in docs/challenge.md)"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "spacesuits are filled with 100% oxygen to only 4.3 psi"
+    }
+  },
+  {
+    "id": "exploration_10_2",
+    "name": "NASA exploration atmosphere 10.2 psia / 26.5% O2",
+    "o2_mole_fraction": 0.265,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": null,
+    "gravity_g": 0.166,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "psi_api",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen.",
+      "note": "From the ACME BRE (PSI-20) objective. The Space Shuttle used 10.2 psia / 26.5% O2 before EVAs (Wessel et al. 2018, Aerosp. Med. Hum. Perform. 89(9))."
+    }
+  },
+  {
+    "id": "exploration_8_2",
+    "name": "NASA exploration atmosphere 8.2 psia / 34% O2",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 56.5,
+    "flow_cm_s": null,
+    "gravity_g": 0.166,
+    "is_assumption": false,
+    "prov": {
+      "source_type": "psi_api",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
+      },
+      "method": "manual",
+      "verified": false,
+      "quote": "NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen.",
+      "note": "From the ACME BRE (PSI-20) objective. Also the proposed exploration atmosphere in NASA-STD-3001 technical brief OCHMO-TB-037 (DCS risk mitigation)."
+    }
+  }
+]
