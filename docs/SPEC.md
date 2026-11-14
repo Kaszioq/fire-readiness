@@ -59,6 +59,13 @@ Priority: **P0** = must ship, **P1** = should ship, **P2** = stretch.
 - Unit tests (`src/lib/predict/predict.test.ts`): far-from-data → `no_evidence`; exact duplicate of a sustained point → `sustained` with high confidence; partial gravity → warning present.
 - **Done when:** tests pass, UI shows evidence for every prediction, and no prediction appears without confidence.
 
+### Module 4b: Physics layer, hybrid predictor (P0, role C; added 2026-11-14 19:00)
+- **Supersedes the feature space of module 4.** Full design, calibration and limits in `docs/PHYSICS.md`.
+- Adiabatic flame temperature (T_ad) from Cantera + NASA thermo, precomputed in `data/curated/flame_temperature.json` by `scripts/compute_flame_temperature.py`.
+- Limiting T_ad calibrated on the FLEX LOI: N2 and CO2 limits agree within 17 K (methanol) and 2 K (heptane).
+- Predictor modes: `data` (kNN on T_ad, log P, flow), `physics_only` (outside the data envelope: margin above the limit), `none` (helium or nothing). Proposed additive contract fields: `Prediction.mode`, `Prediction.physics`.
+- UI (role B): show the mode badge, the T_ad margin and "vs ISS" ratio for habitats, and a chart of FLEX tests on the T_ad axis (N2, CO2, He coloured) with the calibrated limits.
+
 ### Module 5: AI fire-readiness report with citations (P0, role C)
 - `POST /api/report` per CONTRACTS.md.
 - Context passed to the LLM: only curated JSON for the top 10 ranked investigations + the predictor output + the habitat definition. No web access, no free knowledge.
@@ -73,7 +80,7 @@ Priority: **P0** = must ship, **P1** = should ship, **P2** = stretch.
 - UI (B): rendered markdown, citations as chips linking to investigation cards, a "Regenerate" button, and a small "AI-generated from cited NASA data" label.
 - **Done when:** report for every preset renders, all citations are valid, and the fallback works with the API key removed.
 
-### Module 6: Smoke detection simulator (P2, role C)
+### Module 6: Smoke detection simulator (CUT on 2026-11-14 19:00, replaced by module 4b; keep only if everything else is done)
 - `<SmokeSim />`: 2D top-down or side view of a generic module (dimensions user-adjustable, not a real vehicle layout), grid ~80 x 40.
 - Ventilation: user places one inlet and one outlet; velocity field from a simple potential-flow / precomputed channel solution.
 - Smoke: advection-diffusion of concentration from a user-placed source. Toggle "microgravity" (no buoyancy) vs "1g" (adds upward drift) to show why detector placement differs.

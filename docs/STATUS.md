@@ -1,4 +1,4 @@
-# STATUS.md: where the project stands (updated Sat 2026-11-14, 16:15 CET)
+# STATUS.md: where the project stands (updated Sat 2026-11-14, 19:00 CET)
 
 Read this after `CLAUDE.md` and before starting work. It records what changed since the app skeleton commit (`cb172c7`) so no session works from stale assumptions.
 
@@ -58,6 +58,14 @@ Code that maps over `MaterialClass` or `HabitatId` (ranking fuel weights, UI lab
 10. **Partial gravity is NOT bounded by 0g and 1g.** The challenge text suggests it might be, but NASA's FM2 team (the planned lunar flammability experiment) reports that the oxygen concentration needed for flammability may reach a minimum near lunar gravity, so a lunar-habitat fire can be worse than in 0g and possibly worse than in 1g. Sources: Ferkul et al., LPSC 2026 (https://ntrs.nasa.gov/citations/20260000646); NASA "Fire on the Moon" overview (https://ntrs.nasa.gov/api/citations/20210020516/downloads/Fire%20on%20the%20Moon-Overview%20charts-v1.pdf); NASA FM2 page (https://www.nasa.gov/flammability-of-materials-on-the-moon-fm2/). The predictor warning text (`PARTIAL_GRAVITY_WARNING` in `src/lib/predict/index.ts`, SPEC module 4) was updated accordingly. Use this as a key demo message, never the opposite.
 11. **Scope the main gap precisely:** "no solid-material test in the PSI microgravity data at the Moon base atmosphere". Ground (1 g) tests at elevated O2 exist outside PSI, so never say "nobody has tested this".
 
+## 5b. Plan change at 19:00: physics layer (role C)
+
+- New: `docs/PHYSICS.md`, `scripts/compute_flame_temperature.py`, `data/curated/flame_temperature.json` (adiabatic flame temperature for every test, habitat and a slider grid).
+- Key result: FLEX LOI in N2 and with CO2 give the same flame temperature per fuel (1674/1657 K methanol, 1910/1908 K heptane), so a calibrated limiting flame temperature is used as the physics axis. It fails for helium (documented).
+- The predictor becomes hybrid (modes `data`, `physics_only`, `none`). The smoke simulator (module 6) is cut.
+- `flame_temperature.json` is not validated by zod yet; role C adds the types (PHYSICS.md section 7), role A then loads it in `src/lib/data/index.ts`.
+- Requires `pip install cantera` only to regenerate the file, not to run the app.
+
 ## 6. Open work, by role
 
 - **A (Kacper):** verification, using the `priority` column in `data/verification.csv`:
@@ -66,5 +74,5 @@ Code that maps over `MaterialClass` or `HabitatId` (ranking fuel weights, UI lab
   - **P3 (146 rows):** tier 2 and 3 summaries (quotes already machine-checked, so only check that the summary matches the quote) and the 101 FLEX points (rule-derived from the published LOI: check the rule once).
   - **P4 (144 rows):** `null` = "not reported". Skip unless time allows.
   - Write `scripts/apply_verification.py` to copy statuses back into the JSON (DATA_SOURCES section 5). Optionally `scripts/fetch_psi.py`.
-- **B (Johny):** build pages on real data; handle `null` values ("not reported"), unverified markers, the new habitat and material values, and the `publication` / `psi_document` source types in source tooltips. Show the Moon base solid-material gap clearly on the gap map.
-- **C (Kuba):** implement `predict()` and `rankInvestigations()` on real points (respect fact 1 and 3), the report route, and generate `data/cached_reports/` for every habitat preset.
+- **B (Johny):** (also: SPEC module 4b UI, the T_ad chart and the prediction mode badge)  build pages on real data; handle `null` values ("not reported"), unverified markers, the new habitat and material values, and the `publication` / `psi_document` source types in source tooltips. Show the Moon base solid-material gap clearly on the gap map.
+- **C (Kuba):** hybrid `predict()` per `docs/PHYSICS.md` section 7 (respect facts 1, 3, 10), `rankInvestigations()`, evaluation (`docs/EVALUATION.md`), the report route, and `data/cached_reports/` for every habitat preset.
