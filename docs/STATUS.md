@@ -2,26 +2,6 @@
 
 Read this after `CLAUDE.md` and before starting work. It records what changed since the app skeleton commit (`cb172c7`) so no session works from stale assumptions.
 
-## 0. Pending git work (do this first, once; then delete this section in a follow-up commit)
-
-The changes below exist in the working tree but are not committed. Make these commits in this order on branch `a/data` (each one builds on its own), push, and open a PR to `main`:
-
-```bash
-git checkout -b a/data
-git add src/lib/types.ts src/lib/schemas.ts docs/CONTRACTS.md docs/SPEC.md
-git commit -m "[A][C] Contract: add thin_solid material class and exploration_10_2 / exploration_8_2 habitats"
-git add data/curated data/extracts data/raw/psi_combustion_snapshot.json data/verification.csv scripts/build_seed_data.py scripts/check_quotes.py
-git commit -m "[A] Curated PSI snapshot 2026-11-14: 24 investigations, 413 test points, habitats, findings from publications"
-git add src/lib/data/index.ts
-git commit -m "[A] Switch data loader from mocks to curated data (report stays mock)"
-git add docs/DATA_SOURCES.md docs/challenge.md docs/STATUS.md
-git commit -m "[A] Docs: PSI download endpoint, challenge statement, project status"
-git add src/app/layout.tsx
-git commit -m "[B] Header counter: 'verified against NASA source'"
-git push -u origin a/data
-```
-Before pushing run `npm run lint && npm run typecheck && npm test && npm run validate:data && npm run build`. Do not commit `CLAUDE.md` (gitignored on purpose) or anything in `data/raw/docs/` (gitignored, large PDFs). If git leaves `.lock` files in `.git/` because file deletion is restricted in this folder, stop and tell the user.
-
 ## 1. The app now runs on real NASA data
 
 - `src/lib/data/index.ts` imports `data/curated/*.json` (no longer `data/mock/`). `DATA_IS_MOCK = false`.
