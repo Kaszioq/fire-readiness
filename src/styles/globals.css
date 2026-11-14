@@ -1036,6 +1036,634 @@ a.card:active {
   }
 }
 
+/* ---------- Home: intro hero and scroll story ---------- */
+
+:root {
+  --header-h: 57px;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+.hero-intro {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  min-height: calc(100svh - var(--header-h) - 80px);
+  isolation: isolate;
+}
+
+.hero-intro .hero-copy {
+  max-width: 760px;
+}
+
+.hero-intro h1 {
+  font-size: clamp(38px, 7vw, 76px);
+  letter-spacing: -0.04em;
+}
+
+/* Original texture, no image files: an engineering grid, a warm glow, and fine grain. */
+.hero-backdrop {
+  position: absolute;
+  inset: -40px calc(-1 * var(--gutter)) 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 55% at 78% 38%, rgba(255, 180, 84, 0.16), transparent 70%),
+    radial-gradient(40% 40% at 70% 45%, rgba(194, 65, 12, 0.18), transparent 70%),
+    linear-gradient(var(--border) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0 / 56px 56px;
+  mask-image: radial-gradient(90% 80% at 60% 40%, #000 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(90% 80% at 60% 40%, #000 20%, transparent 78%);
+  opacity: 0.9;
+}
+
+.hero-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-faint);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.scroll-cue i {
+  position: relative;
+  width: 1px;
+  height: 36px;
+  overflow: hidden;
+  background: var(--border-strong);
+}
+
+.scroll-cue i::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  animation: cue 1.8s linear infinite;
+}
+
+@keyframes cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.story {
+  position: relative;
+}
+
+.story-step {
+  display: grid;
+  align-items: center;
+  min-height: 86svh;
+  padding: 56px 0;
+}
+
+.story-pin {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.story-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.story-copy h2 {
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: -0.03em;
+}
+
+.story-count {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.story-count i {
+  color: var(--text-faint);
+  font-style: normal;
+}
+
+.story-quote {
+  margin: 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.story-quote footer {
+  margin-top: 6px;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+/* Instrument-panel frame with corner brackets. */
+.hud {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 90% at 70% 0%, rgba(255, 180, 84, 0.06), transparent 60%),
+    var(--surface);
+}
+
+.hud::before,
+.hud::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--accent);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hud::before {
+  top: -1px;
+  left: -1px;
+  border-right: 0;
+  border-bottom: 0;
+  border-top-left-radius: 14px;
+}
+
+.hud::after {
+  right: -1px;
+  bottom: -1px;
+  border-top: 0;
+  border-left: 0;
+  border-bottom-right-radius: 14px;
+}
+
+.hud svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hud figcaption {
+  margin-top: 10px;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+.flame-flicker,
+.flame-breathe {
+  transform-box: fill-box;
+}
+
+.flame-flicker {
+  transform-origin: 50% 100%;
+  animation: flicker 1.6s ease-in-out infinite alternate;
+}
+
+.flame-breathe {
+  transform-origin: center;
+  animation: breathe 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    transform: scale(1, 1) skewX(0deg);
+  }
+  to {
+    transform: scale(0.96, 1.05) skewX(-2deg);
+  }
+}
+
+@keyframes breathe {
+  from {
+    transform: scale(0.97);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+.atmo {
+  display: grid;
+  gap: 22px;
+}
+
+.atmo-row {
+  display: grid;
+  gap: 8px;
+}
+
+.atmo-bar {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) minmax(96px, auto);
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.atmo-bar strong {
+  color: var(--text);
+  font-weight: 600;
+  text-align: right;
+}
+
+.atmo-bar small {
+  display: block;
+  color: var(--text-faint);
+  font-weight: 400;
+}
+
+.atmo-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.atmo-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--info);
+  transform-origin: left center;
+}
+
+.atmo-o2 {
+  background: linear-gradient(90deg, #c2410c, var(--accent));
+}
+
+.gap-scene {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  min-height: 260px;
+  text-align: center;
+}
+
+.gap-scene p {
+  max-width: 34ch;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+.gap-number {
+  color: var(--accent);
+  font-size: clamp(72px, 12vw, 132px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-shadow: 0 0 60px rgba(255, 180, 84, 0.35);
+}
+
+.gap-number small {
+  color: var(--text-muted);
+  font-size: 0.26em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.story-progress {
+  display: none;
+}
+
+/* Scroll-driven motion: only where the browser supports it, the pointer is fine enough for a pinned
+   layout to make sense, the screen is wide, and the user has not asked for less motion.
+   Everywhere else the chapters are a normal static page. */
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .story-pin {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .story-step {
+    min-height: 0;
+    padding: 32px 0;
+  }
+
+  .hero-intro {
+    min-height: calc(100svh - 190px);
+  }
+
+  .atmo-bar {
+    grid-template-columns: 62px minmax(0, 1fr) minmax(84px, auto);
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flame-flicker,
+  .flame-breathe,
+  .scroll-cue i::after {
+    animation: none;
+  }
+}
+
+/* ---------- Home: NASA media and the method pipeline ---------- */
+
+.hero-photo {
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--gutter));
+  z-index: -1;
+  width: min(72%, 860px);
+  height: auto;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  /* Fade the photo's dark frame into the page so only the flame reads. */
+  mask-image: radial-gradient(60% 62% at 68% 52%, #000 35%, transparent 78%);
+  -webkit-mask-image: radial-gradient(60% 62% at 68% 52%, #000 35%, transparent 78%);
+  pointer-events: none;
+  animation: fade 900ms ease 150ms backwards;
+}
+
+.hero-credit {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  max-width: 46ch;
+  color: var(--text-faint);
+  font-size: 11.5px;
+  text-align: right;
+}
+
+.hero-credit a {
+  color: var(--text-muted);
+}
+
+.clips {
+  display: grid;
+  gap: 14px;
+}
+
+.clip {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #000;
+}
+
+.clip video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  background: #000;
+}
+
+.clip figcaption {
+  padding: 8px 12px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.story-wide {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  gap: 28px;
+}
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flow-node {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  justify-items: start;
+  padding: 16px;
+}
+
+.flow-node .tag {
+  white-space: normal;
+}
+
+.flow-index {
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.flow-link {
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+/* Connector to the next stage: a line with an arrow head, drawn in the gap between cards. */
+.flow-node:not(:last-child) > .flow-index::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform-origin: left center;
+}
+
+@media (max-width: 1000px) {
+  .flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flow-node:nth-child(2) > .flow-index::after {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-photo {
+    top: 0;
+    right: calc(-1 * var(--gutter));
+    width: 130%;
+    max-width: none;
+    transform: none;
+    opacity: 0.4;
+  }
+
+  .hero-credit {
+    position: static;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .flow-node > .flow-index::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo {
+    animation: none;
+  }
+}
+
+/* ---------- Home: chapter reveals ----------
+   Purpose: explanation, on a first-visit surface. Triggered once when a chapter scrolls in (StoryReveal),
+   then time-based: text rises in with a short stagger, the scene wipes open, data bars and the pipeline
+   build. Only opacity, transform and clip-path move. The hidden starting state exists only once the script
+   has run (data-reveal) and only for users who have not asked for less motion. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .story[data-reveal] .story-copy > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 520ms var(--ease-out),
+      transform 520ms var(--ease-out);
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(2) {
+    transition-delay: 40ms;
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(3) {
+    transition-delay: 90ms;
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(4) {
+    transition-delay: 150ms;
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(n + 5) {
+    transition-delay: 200ms;
+  }
+
+  .story[data-reveal] .story-pin:not(.story-wide) > .story-scene {
+    clip-path: inset(0 0 100% 0 round 14px);
+    transition: clip-path 640ms var(--ease-in-out) 120ms;
+  }
+
+  .story[data-reveal] .atmo-fill {
+    transform: scaleX(0);
+    transition: transform 800ms var(--ease-out) 520ms;
+  }
+
+  .story[data-reveal] .atmo-row:nth-child(2) .atmo-fill {
+    transition-delay: 640ms;
+  }
+
+  .story[data-reveal] .gap-number {
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+      opacity 500ms var(--ease-out) 420ms,
+      transform 500ms var(--ease-out) 420ms;
+  }
+
+  .story[data-reveal] .flow-node {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+    transition:
+      opacity 460ms var(--ease-out),
+      transform 460ms var(--ease-out);
+    transition-delay: 220ms;
+  }
+
+  .story[data-reveal] .flow-node:nth-child(2) {
+    transition-delay: 300ms;
+  }
+
+  .story[data-reveal] .flow-node:nth-child(3) {
+    transition-delay: 370ms;
+  }
+
+  .story[data-reveal] .flow-node:nth-child(4) {
+    transition-delay: 430ms;
+  }
+
+  .story[data-reveal] .flow-node > .flow-index::after {
+    transform: scaleX(0);
+    transition: transform 360ms var(--ease-out) 620ms;
+  }
+
+  /* Revealed state. */
+  .story[data-reveal] [data-visible] .story-copy > *,
+  .story[data-reveal] [data-visible] .gap-number,
+  .story[data-reveal] [data-visible] .flow-node {
+    opacity: 1;
+    transform: none;
+  }
+
+  .story[data-reveal] [data-visible] .story-pin:not(.story-wide) > .story-scene {
+    clip-path: inset(0 0 0 0 round 14px);
+  }
+
+  .story[data-reveal] [data-visible] .atmo-fill,
+  .story[data-reveal] [data-visible] .flow-node > .flow-index::after {
+    transform: scaleX(1);
+  }
+
+  /* Chapters that were already on screen when the page loaded appear without any animation. */
+  .story[data-reveal] [data-visible='instant'] *,
+  .story[data-reveal] [data-visible='instant'] .flow-index::after {
+    transition: none;
+  }
+}
+
+/* The page progress line is the one thing tied to scroll position: it is a readout of it. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story-progress {
+      display: block;
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      z-index: 19;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #c2410c, var(--accent));
+      transform-origin: left center;
+      animation: grow linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
 /* ---------- Filters (investigation list) ---------- */
 
 .filters {

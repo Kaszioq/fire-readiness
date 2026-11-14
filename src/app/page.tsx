@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { CoverageTeaser } from '@/components/CoverageTeaser';
 import { HabitatCard } from '@/components/HabitatCard';
+import { IntroStory } from '@/components/IntroStory';
 import { plural } from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
+import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
 const FEATURES = [
   {
@@ -28,7 +29,11 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-intro">
+        <div className="hero-backdrop" aria-hidden="true" />
+        {/* Real flame from BASS-II (PSI-25), one of the investigations in the dataset. Decorative here; credited below. */}
+        {/* eslint-disable-next-line @next/next/no-img-element -- static decorative photo, no layout shift (absolutely positioned) */}
+        <img className="hero-photo" src="/media/bass-ii-iss040e088023.jpg" alt="" aria-hidden="true" />
         <div className="hero-copy">
           <span className="eyebrow rise">NASA PSI microgravity combustion data</span>
           <h1 className="rise rise-1">
@@ -42,17 +47,36 @@ export default function HomePage() {
             <Link href={`/lens?habitat=${focus.id}`} className="btn btn-primary">
               Check the {focus.name.replace(/\s*\(.*\)$/, '')}
             </Link>
-            <Link href="/map" className="btn">
-              See the data gaps
-            </Link>
+            <a href="#check" className="btn">
+              Skip the intro
+            </a>
           </div>
         </div>
-        <div className="rise rise-2">
-          <CoverageTeaser points={flammabilityPoints} habitats={habitats} focus={focus} />
+        <div className="scroll-cue rise rise-3" aria-hidden="true">
+          <span>Scroll</span>
+          <i />
         </div>
+        <p className="hero-credit">
+          Flame over a solid fuel sample in microgravity,{' '}
+          <Link href="/investigations/PSI-25">BASS-II</Link> on the ISS.{' '}
+          <a href="https://images.nasa.gov/details/iss040e088023" target="_blank" rel="noreferrer">
+            Photo: NASA
+          </a>
+        </p>
       </section>
 
-      <section className="section" aria-label="Dataset summary">
+      <IntroStory
+        points={flammabilityPoints}
+        habitats={habitats}
+        focus={focus}
+        earth={getHabitat('earth')}
+        nInvestigations={investigations.length}
+        nFieldsVerified={meta.n_fields_verified}
+        nFieldsTotal={meta.n_fields_total}
+        partialGravityNote={PARTIAL_GRAVITY_WARNING}
+      />
+
+      <section className="section" aria-label="Dataset summary" id="check">
         <div className="stats">
           <div className="stat">
             <span className="stat-value">{investigations.length}</span>
