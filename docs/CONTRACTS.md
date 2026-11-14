@@ -196,11 +196,17 @@ export interface PhysicsEstimate {
   t_ad_k: number;                 // adiabatic flame temperature of the target atmosphere (fuel model below)
   fuel_model: FuelModel;
   surrogate: boolean;             // true for solids
-  limit_k: number | null;         // fuel limit (droplets) or coldest burning solid test (solids)
+  limit_k: number | null;         // fuel limit (droplets) or coldest tested condition of the class that still burned (solids)
   margin_k: number | null;        // t_ad_k - limit_k
-  margin_ratio_vs_iss: number | null;
+  margin_ratio_vs_iss: number | null; // margin_k / margin in ISS air (21% O2, 101.3 kPa), same limit_k; null at or below the limit
   valid: boolean;                 // false for helium-diluted atmospheres
-  note: string;
+  note: string;                   // always starts with "Physics estimate, not test data:"
+}
+
+// Added 2026-11-14: Conditions has no diluent, so it is an option of predict().
+export type Diluent = 'N2' | 'CO2' | 'He';
+export interface PredictOptions {
+  diluent?: Diluent;             // default 'N2'. 'He' and 'CO2' give mode 'none' (no estimate).
 }
 
 export interface Prediction {
@@ -215,7 +221,7 @@ export interface Prediction {
   physics?: PhysicsEstimate;     // added 2026-11-14; a physics estimate, never test data; absent when mode = none
 }
 
-export function predict(c: Conditions, points: FlammabilityPoint[]): Prediction;
+export function predict(c: Conditions, points: FlammabilityPoint[], options?: PredictOptions): Prediction;
 ```
 
 `mode` semantics (the UI shows it as a badge):
@@ -223,7 +229,7 @@ export function predict(c: Conditions, points: FlammabilityPoint[]): Prediction;
 - `physics_only`: the target is outside the tested envelope of the material class. `zone` is `no_evidence`, `p_sustained` is `null`, and `physics` carries the flame-temperature margin. Label it "physics estimate, no test data at these conditions".
 - `none`: neither data nor physics applies (helium-diluted atmosphere, or a class with no test runs and no fuel model). `physics` is absent.
 
-`predict()` accepts an optional third argument that is not part of the frozen signature: `{ diluent?: 'N2' | 'CO2' | 'He'; fuel?: FuelModel }`. `Conditions` has no diluent, so the atmosphere is O2/N2 unless `diluent` says otherwise. For `liquid_droplet`, `predict()` evaluates methanol and n-heptane separately and returns the more flammable one, naming both in `explanation`; `fuel` forces one, and `predictDropletByFuel()` returns both.
+`Conditions` has no diluent, so the target atmosphere is O2/N2 unless `options.diluent` says otherwise. For `liquid_droplet`, `predict()` evaluates methanol and n-heptane separately and returns the more flammable one, naming both in `explanation`; `predictDropletByFuel(c, points, options)` returns both. `confidence` is evidence coverage: `(1/8) * sum(exp(-d^2 / 2))` over the 8 nearest test runs, where `d` is the normalized distance. Text fields (`explanation`, `physics.note`) round temperatures to the nearest 10 K ("about 220 K"); numeric fields keep the exact values.
 
 ## 6. Ranking (role C), used by UI (role B)
 

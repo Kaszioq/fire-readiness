@@ -49,7 +49,9 @@ Burn time shorter than 2 s is used only as a rough sign of a near-limit flame (s
 | exploration 8.2 psia / 34% | 2610 K | 701 K | 1.93 | 849 K | 1.53 |
 | spacesuit 4.3 psi / 100% | | 1040 K | 2.86 | 1126 K | 2.03 |
 
-Demo line: "In the Moon base atmosphere, a liquid fuel flame has 43 to 75% more thermal margin above extinction than in ISS air (physics, calibrated on NASA FLEX). For solids, the Moon base condition is 220 K hotter than any solid test in PSI."
+Demo line: "In the Moon base atmosphere, a liquid fuel flame has 43 to 75% more thermal margin above extinction than in ISS air (physics, calibrated on NASA FLEX). For solids, the Moon base condition is about 220 K hotter than any solid test in PSI."
+
+The ratios in this table are for liquid fuel only (droplet limits calibrated on FLEX). Solids have their own table in section 6.
 
 ## 6. Solids: what the data say on the T_ad axis (n-heptane surrogate)
 
@@ -61,7 +63,19 @@ Demo line: "In the Moon base atmosphere, a liquid fuel flame has 43 to 75% more 
 
 - PMMA in microgravity has a limit between 1799 and 1848 K on this axis.
 - Silicone and Nomex do not burn even in air: **material chemistry matters beyond T_ad**. The physics layer never overrides a material-specific test result.
-- Moon base (2547 K) lies 220 K above every solid test: outside the data envelope, so the answer for solids is "no test data; physics margin only".
+- Moon base (about 2550 K) lies about 220 K above every solid test (exact value 220.5 K): outside the data envelope, so the answer for solids is "no test data; physics margin only".
+
+### Solids: margin relative to the coldest tested condition that still burned
+
+For solids, `limit_k` is the coldest tested condition of the class that still burned, and `margin_ratio_vs_iss` uses that same limit.
+
+| Class | Coldest tested condition that still burned (`limit_k`) | Margin in ISS air | Margin at Moon base | Moon base vs ISS |
+|---|---|---|---|---|
+| thick_solid | 1847.8 K | 425.7 K | 698.7 K | 1.64 |
+| thin_solid | 1910.5 K | 363.0 K | 636.0 K | 1.75 |
+| thin_fabric | 2012.1 K | 261.4 K | 534.4 K | 2.04 |
+
+These ratios are relative to the coldest tested condition that still burned, not to a measured flammability limit: the true limit of a material lies at or below that condition. The 1.75 in section 5 is the liquid-fuel value (n-heptane droplet limit); it equals the thin_solid value only because the coldest burning thin_solid test and the n-heptane limiting oxygen index are both at 15% O2.
 
 ## 7. Hybrid predictor (to implement, role C)
 
@@ -82,21 +96,29 @@ export interface PhysicsEstimate {
   t_ad_k: number;                 // target T_ad (fuel model below)
   fuel_model: 'n-heptane' | 'methanol';
   surrogate: boolean;             // true for solids
-  limit_k: number | null;         // fuel limit (droplets) or coldest burning solid test (solids)
+  limit_k: number | null;         // fuel limit (droplets) or coldest tested condition of the class that still burned (solids)
   margin_k: number | null;        // t_ad_k - limit_k
-  margin_ratio_vs_iss: number | null;
+  margin_ratio_vs_iss: number | null; // margin_k / margin in ISS air, same limit_k; null at or below the limit
   valid: boolean;                 // false for helium-diluted atmospheres
   note: string;
 }
 // Prediction gains:
 //   mode: PredictionMode;
 //   physics?: PhysicsEstimate;
+// predict(c, points, options?) with options = { diluent?: 'N2' | 'CO2' | 'He' }, default 'N2'
 ```
 `flame_temperature.json` stays outside the zod data validation until these types exist; then add a `FlameTemperatureSchema` and load it in `src/lib/data/index.ts` (role A).
 
 ### Client-side T_ad for slider values
 
-Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 320 kPa step 20, N2 diluent). Do not run Cantera in the app.
+Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 320 kPa step 20, N2 diluent), linear in O2 and in log(pressure): linear-in-pressure is 7 K off at 29.6 kPa, log-pressure is within 1 K of the precomputed habitat values. Do not run Cantera in the app.
+
+### As implemented (2026-11-14, `src/lib/predict`)
+
+- **Numbers in text.** Code, JSON and the tables in this file keep exact values; tests compare with a tolerance of 5 K. Text shown to users (`explanation`, `physics.note`) rounds temperatures to the nearest 10 K, for example "about 220 K".
+- **Evidence coverage** (`Prediction.confidence`): `(1/k) * sum(exp(-d_i^2 / 2))` over the `k = 8` nearest test runs, `d_i` in the normalized feature space. It measures how well the target is covered by tests; it is not a probability of fire.
+- **Diluent.** `Conditions` has no diluent, so it is an option: `predict(c, points, { diluent })`. Helium gives mode `none`. CO2 also gives `none`, because `Conditions` carries no CO2 fraction and the grid is O2/N2 only.
+- Parameters and their reasons: `src/lib/predict/README.md`.
 
 ## 8. Limits to state openly
 

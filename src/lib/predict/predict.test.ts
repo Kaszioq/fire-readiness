@@ -4,6 +4,7 @@ import { flammabilityPoints, flameTemperature, habitats, investigations } from '
 import type { Conditions, FuelModel, HabitatId, MaterialClass } from '@/lib/types';
 import {
   CONFIDENCE_SENTENCE,
+  evidenceCoverage,
   HELIUM_WARNING,
   interpolateTad,
   MAX_EVIDENCE,
@@ -36,6 +37,9 @@ const droplet = (o2: number): Conditions => ({
   gravity_g: 0,
 });
 
+/** Code keeps exact values; tests compare temperatures with a tolerance (5 K unless stated). */
+const within = (actual: number, expected: number, tolerance: number) => Math.abs(actual - expected) <= tolerance;
+
 const SOLIDS: MaterialClass[] = ['thin_fabric', 'thin_solid', 'thick_solid'];
 const ALL_CLASSES: MaterialClass[] = [...SOLIDS, 'liquid_droplet', 'gas_jet'];
 
@@ -52,24 +56,38 @@ describe('(a) Moon base, solid materials: no test data, physics margin only', ()
     expect(p.physics?.surrogate).toBe(true);
     expect(p.physics?.fuel_model).toBe('n-heptane');
     expect(p.physics?.valid).toBe(true);
-    // Margin above the coldest condition of the class that still burned.
+    // Margin above the coldest tested condition of the class that still burned.
     expect(p.physics?.limit_k).not.toBeNull();
     expect(p.physics?.margin_k).toBeGreaterThan(500);
-    // No ratio for solids: the coldest burning test is not a measured limit.
-    expect(p.physics?.margin_ratio_vs_iss).toBeNull();
     expect(p.physics?.note.startsWith(PHYSICS_NOTE_PREFIX)).toBe(true);
 
-    // PHYSICS.md section 6: the Moon base condition is 220 K above every solid test (2326 K).
-    expect(p.explanation).toMatch(/22[01] K above the hottest tested condition \(2326 K\)/);
+    // PHYSICS.md section 6: the Moon base condition is about 220 K above every solid test (2326 K). Exact: 220.5 K.
+    expect(within((p.physics?.t_ad_k ?? NaN) - 2326, 220, 5)).toBe(true);
+    // Text rounds temperatures to the nearest 10 K.
+    expect(p.explanation).toContain('about 220 K above the hottest tested condition (about 2330 K)');
     expect(p.explanation).toContain('Physics estimate, no test data at these conditions');
     expect(p.explanation).toContain('PSI microgravity data');
+    expect(p.explanation).not.toMatch(/\d\d\d[1-9] K/); // no temperature printed to the kelvin
   });
 
-  it('reports the coldest burning condition per class (PHYSICS.md section 6)', () => {
-    const limit = (cls: MaterialClass) => predict(habitatConditions('moon_base', cls), P).physics?.limit_k;
-    expect(Math.round(limit('thick_solid') ?? NaN)).toBe(1848);
-    expect(Math.round(limit('thin_solid') ?? NaN)).toBe(1911);
-    expect(Math.round(limit('thin_fabric') ?? NaN)).toBe(2012);
+  // [class, coldest tested condition that still burned (K), margin at Moon base (K), Moon base margin / ISS margin]
+  const solids: [MaterialClass, number, number, number][] = [
+    ['thick_solid', 1847.8, 698.7, 1.64],
+    ['thin_solid', 1910.5, 636.0, 1.75],
+    ['thin_fabric', 2012.1, 534.4, 2.04],
+  ];
+
+  it.each(solids)('%s: limit, margin and ratio vs ISS use the same limit', (cls, limit, margin, ratio) => {
+    const moon = predict(habitatConditions('moon_base', cls), P).physics;
+    const iss = predict(habitatConditions('iss', cls, 10), P).physics;
+    expect(within(moon?.limit_k ?? NaN, limit, 5)).toBe(true);
+    expect(within(moon?.margin_k ?? NaN, margin, 5)).toBe(true);
+    expect(within(moon?.margin_ratio_vs_iss ?? NaN, ratio, 0.02)).toBe(true);
+    // Same limit in both atmospheres, and the ratio is exactly the ratio of the two margins.
+    expect(iss?.limit_k).toBe(moon?.limit_k);
+    expect(iss?.margin_ratio_vs_iss).toBe(1);
+    expect(within((moon?.margin_k ?? NaN) / (iss?.margin_k ?? NaN), moon?.margin_ratio_vs_iss ?? NaN, 0.01)).toBe(true);
+    expect(moon?.note).toContain('relative to the coldest tested condition that still burned');
   });
 });
 
@@ -90,26 +108,27 @@ describe('(b) ISS air with 20 cm/s flow, thin fabric: inside the tested envelope
 
   it('carries the physics estimate as context, labelled as such', () => {
     expect(p.physics?.note.startsWith(PHYSICS_NOTE_PREFIX)).toBe(true);
-    expect(Math.abs((p.physics?.t_ad_k ?? NaN) - 2274)).toBeLessThanOrEqual(1);
+    expect(within(p.physics?.t_ad_k ?? NaN, 2274, 5)).toBe(true);
   });
 });
 
 describe('(c) droplets at 101 kPa, around the FLEX limiting oxygen index', () => {
   it('n-heptane at 13% O2 is on the extinguished side', () => {
-    const p = predict(droplet(0.13), P, { fuel: 'n-heptane' });
+    const p = predictDropletByFuel(droplet(0.13), P)['n-heptane'];
     expect(p.mode).toBe('data');
     expect(p.zone).toBe('extinguishes');
     expect(p.physics?.margin_k).toBeLessThan(0);
+    expect(p.physics?.margin_ratio_vs_iss).toBeNull(); // no ratio below the limit
   });
 
   it('n-heptane at 21% O2 is sustained', () => {
-    const p = predict(droplet(0.21), P, { fuel: 'n-heptane' });
+    const p = predictDropletByFuel(droplet(0.21), P)['n-heptane'];
     expect(p.mode).toBe('data');
     expect(p.zone).toBe('sustained');
   });
 
   it('methanol at 12% O2 is marginal', () => {
-    const p = predict(droplet(0.12), P, { fuel: 'methanol' });
+    const p = predictDropletByFuel(droplet(0.12), P).methanol;
     expect(p.mode).toBe('data');
     expect(p.zone).toBe('marginal');
   });
@@ -126,8 +145,53 @@ describe('(c) droplets at 101 kPa, around the FLEX limiting oxygen index', () =>
   });
 
   it('explains that droplet outcomes are positions relative to the LOI, not burn-to-completion', () => {
-    const p = predict(droplet(0.21), P, { fuel: 'n-heptane' });
+    const p = predictDropletByFuel(droplet(0.21), P)['n-heptane'];
     expect(p.warnings.some((w) => w.includes('limiting oxygen index') && w.includes('normal droplet physics'))).toBe(true);
+  });
+});
+
+describe('evidence coverage (Prediction.confidence)', () => {
+  it('is (1/8) * sum(exp(-d^2 / 2)) over the 8 nearest runs', () => {
+    expect(evidenceCoverage([0, 0, 0, 0, 0, 0, 0, 0])).toBe(1);
+    expect(evidenceCoverage([1, 1, 1, 1, 1, 1, 1, 1])).toBeCloseTo(Math.exp(-0.5), 10);
+    expect(evidenceCoverage([0])).toBeCloseTo(1 / 8, 10); // missing neighbours count as 0
+    expect(evidenceCoverage([])).toBe(0);
+    const p = predict(habitatConditions('iss', 'thin_fabric', 20), P);
+    expect(p.confidence).toBeCloseTo(evidenceCoverage(p.evidence.map((e) => e.distance)), 2);
+  });
+
+  it('ISS air, thin fabric, 20 cm/s: at least 0.5', () => {
+    expect(predict(habitatConditions('iss', 'thin_fabric', 20), P).confidence).toBeGreaterThanOrEqual(0.5);
+  });
+
+  it('air, thin fabric, 10 cm/s: between 0.25 and 0.7', () => {
+    const c = predict(habitatConditions('iss', 'thin_fabric', 10), P).confidence;
+    expect(c).toBeGreaterThanOrEqual(0.25);
+    expect(c).toBeLessThanOrEqual(0.7);
+  });
+
+  it('a target exactly on a test condition: at least 0.6', () => {
+    for (const id of ['PSI-69:205', 'PSI-98:S1']) {
+      const source = P.find((x) => x.id === id);
+      expect(source).toBeDefined();
+      if (!source) continue;
+      const p = predict(
+        {
+          o2_mole_fraction: source.o2_mole_fraction,
+          pressure_kpa: source.pressure_kpa,
+          flow_cm_s: source.flow_cm_s,
+          material_class: source.material_class,
+          gravity_g: 0,
+        },
+        P,
+      );
+      expect(p.mode).toBe('data');
+      expect(p.confidence).toBeGreaterThanOrEqual(0.6);
+    }
+  });
+
+  it('is 0 when there is no data result', () => {
+    expect(predict(habitatConditions('moon_base', 'thin_fabric'), P).confidence).toBe(0);
   });
 });
 
@@ -246,12 +310,12 @@ describe('modes outside the data', () => {
 
   it('far from all data -> no_evidence (SPEC module 4)', () => {
     // Inside the T_ad and pressure envelope, but no droplet was tested in forced flow.
-    const p = predict({ ...droplet(0.21), flow_cm_s: 40 }, P, { fuel: 'n-heptane' });
+    const p = predictDropletByFuel({ ...droplet(0.21), flow_cm_s: 40 }, P)['n-heptane'];
     expect(p.zone).toBe('no_evidence');
     expect(p.p_sustained).toBeNull();
     expect(p.mode).toBe('physics_only');
     // Outside the flame-temperature grid there is no physics either.
-    const off = predict({ ...droplet(0.05), pressure_kpa: 500 }, P, { fuel: 'n-heptane' });
+    const off = predict({ ...droplet(0.05), pressure_kpa: 500 }, P);
     expect(off.zone).toBe('no_evidence');
     expect(off.mode).toBe('none');
   });
@@ -260,7 +324,7 @@ describe('modes outside the data', () => {
     const source = P.find((x) => x.id === 'PSI-69:205');
     expect(source?.outcome).toBe('sustained');
     if (!source) return;
-    const p = predict(
+    const p = predictDropletByFuel(
       {
         o2_mole_fraction: source.o2_mole_fraction,
         pressure_kpa: source.pressure_kpa,
@@ -269,8 +333,7 @@ describe('modes outside the data', () => {
         gravity_g: 0,
       },
       P,
-      { fuel: 'n-heptane' },
-    );
+    )['n-heptane'];
     expect(p.zone).toBe('sustained');
     expect(p.confidence).toBeGreaterThan(0.9);
     expect(p.evidence[0].point_id).toBe(source.id);

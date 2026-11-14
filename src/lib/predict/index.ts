@@ -4,6 +4,7 @@
 import { investigations } from '@/lib/data';
 import type {
   Conditions,
+  Diluent,
   EvidenceRef,
   FlammabilityPoint,
   FuelModel,
@@ -11,11 +12,11 @@ import type {
   Outcome,
   PhysicsEstimate,
   Prediction,
+  PredictOptions,
   SuppressionNote,
   Zone,
 } from '@/lib/types';
 import {
-  type Diluent,
   fuelLimitK,
   fuelModelsForClass,
   interpolateTad,
@@ -26,7 +27,7 @@ import {
   publishedLoi,
 } from './physics';
 
-export type { Diluent } from './physics';
+export type { Diluent, PredictOptions } from '@/lib/types';
 export { interpolateTad, ISS_REFERENCE } from './physics';
 
 // ---------- Tuned parameters (reasons in README.md) ----------
@@ -43,8 +44,6 @@ export const MIN_POINTS_PER_CLASS = 5;
 export const WEIGHT_EPS = 0.1;
 /** If the nearest test run is farther than this, there is no data result. */
 export const MAX_NEAREST_DISTANCE = 2;
-/** A neighbour within this distance counts as "close" for the confidence. */
-export const CLOSE_DISTANCE = 1;
 /** Zones on the weighted share of runs that kept burning. */
 export const ZONE_EXTINGUISHES_BELOW = 0.25;
 export const ZONE_SUSTAINED_ABOVE = 0.6;
@@ -74,11 +73,12 @@ export const PHYSICS_NOTE_PREFIX = 'Physics estimate, not test data: ';
 export const CONFIDENCE_SENTENCE =
   'Confidence is evidence coverage (how many test runs lie close to these conditions), not the probability of a fire.';
 
-export interface PredictOptions {
-  /** Diluent of the target atmosphere. Default N2. */
-  diluent?: Diluent;
-  /** For liquid_droplet: evaluate one fuel instead of both. Ignored for other classes. */
-  fuel?: FuelModel;
+/**
+ * Evidence coverage of a set of neighbour distances: (1 / k) * sum(exp(-d^2 / 2)) over the k nearest runs.
+ * A run at distance 0 counts 1, at 1 counts 0.61, at 2 counts 0.14. Missing neighbours count 0.
+ */
+export function evidenceCoverage(distances: number[]): number {
+  return distances.slice(0, K_NEIGHBOURS).reduce((s, d) => s + Math.exp(-(d * d) / 2), 0) / K_NEIGHBOURS;
 }
 
 // ---------- Small helpers ----------
@@ -92,7 +92,9 @@ const CLASS_LABEL: Record<MaterialClass, string> = {
 };
 
 const round = (x: number, digits: number) => Number(x.toFixed(digits));
-const kelvin = (x: number) => `${Math.round(x)} K`;
+// Text shows temperatures to the nearest 10 K ("about 220 K"); the numeric fields keep the exact values.
+const round10 = (x: number) => Math.round(x / 10) * 10;
+const kelvin = (x: number) => `about ${round10(x)} K`;
 const pct = (x: number) => `${round(x * 100, 1)}%`;
 const unique = <T>(xs: T[]) => [...new Set(xs)];
 
@@ -106,8 +108,15 @@ function range(values: number[], digits: number, unit: string): string {
   return lo === hi ? `${lo}${unit}` : `${lo} to ${hi}${unit}`;
 }
 
+function temperatureRange(values: number[]): string {
+  const lo = round10(Math.min(...values));
+  const hi = round10(Math.max(...values));
+  return lo === hi ? `about ${lo} K` : `about ${lo} to ${hi} K`;
+}
+
 function aboveBelow(delta: number): string {
-  return `${Math.abs(Math.round(delta))} K ${delta >= 0 ? 'above' : 'below'}`;
+  const size = round10(Math.abs(delta));
+  return size === 0 ? 'at' : `about ${size} K ${delta >= 0 ? 'above' : 'below'}`;
 }
 
 /** Short material family: the first word of the material name ("SIBAL", "Nomex", "PMMA", "silicone"). */
@@ -213,22 +222,31 @@ export function physicsEstimate(
   const burning = cls.filter((x) => x.point.outcome === 'sustained');
   const hottest = cls.length ? Math.max(...cls.map((x) => x.tAd)) : null;
   const coldestBurning = burning.length ? Math.min(...burning.map((x) => x.tAd)) : null;
+  // Same limit for the margin and for the ratio: the coldest tested condition of the class that still burned.
+  const margin = coldestBurning === null ? null : tAd - coldestBurning;
+  const tIss = interpolateTad(fuel, ISS_REFERENCE.o2_mole_fraction, ISS_REFERENCE.pressure_kpa);
+  const marginIss = tIss === null || coldestBurning === null ? null : tIss - coldestBurning;
+  const ratio =
+    margin !== null && marginIss !== null && marginIss > 0 && margin > 0 ? round(margin / marginIss, 2) : null;
   return {
     t_ad_k: round(tAd, 1),
     fuel_model: fuel,
     surrogate: true,
     limit_k: coldestBurning === null ? null : round(coldestBurning, 1),
-    margin_k: coldestBurning === null ? null : round(tAd - coldestBurning, 1),
-    // The coldest burning test is an upper bound on the true limit, not a measured limit: a ratio would overstate.
-    margin_ratio_vs_iss: null,
+    margin_k: margin === null ? null : round(margin, 1),
+    margin_ratio_vs_iss: ratio,
     valid: true,
     note:
       `${PHYSICS_NOTE_PREFIX}with n-heptane as a surrogate fuel the adiabatic flame temperature (${kelvin(tAd)})` +
       (hottest === null || coldestBurning === null
         ? ` has no ${label} test run to compare with.`
         : ` is ${aboveBelow(tAd - hottest)} the hottest ${label} condition tested in the PSI microgravity data ` +
-          `(${kelvin(hottest)}) and ${aboveBelow(tAd - coldestBurning)} the coldest condition that still burned ` +
-          `(${kelvin(coldestBurning)}). The coldest burning test is not a measured limit, so no ratio to ISS air is given.`) +
+          `(${kelvin(hottest)}) and ${aboveBelow(tAd - coldestBurning)} the coldest tested condition that still burned ` +
+          `(${kelvin(coldestBurning)})` +
+          (ratio === null || ratio < 0.01
+            ? '.'
+            : `, ${ratio} times the margin in ISS air relative to the coldest tested condition that still burned.`) +
+          ' That condition is the coldest one tested, not a measured flammability limit.') +
       ' Material chemistry, gravity, flow and heat losses are not in this estimate.',
   };
 }
@@ -384,9 +402,7 @@ function predictForFuel(
   const burnValue: Record<Outcome, number> = { sustained: 1, marginal: 0.5, extinguished: 0, no_ignition: 0 };
   const totalWeight = neighbours.reduce((s, n) => s + weightOf(n.d), 0);
   const pSustained = neighbours.reduce((s, n) => s + weightOf(n.d) * burnValue[n.point.outcome], 0) / totalWeight;
-  const meanDistance = neighbours.reduce((s, n) => s + n.d, 0) / neighbours.length;
-  const close = neighbours.filter((n) => n.d < CLOSE_DISTANCE).length;
-  const confidence = close / K_NEIGHBOURS / (1 + meanDistance);
+  const confidence = evidenceCoverage(neighbours.map((n) => n.d));
 
   const noFlow = neighbours.filter((n) => useFlow && !n.flowUsed).length;
   if (noFlow > 0) {
@@ -427,7 +443,7 @@ function predictForFuel(
     `${neighbours.length} nearest ${label} test runs (${unique(neighbours.map((n) => n.point.psi_id)).join(', ')}; ` +
     `${families.join(', ')}) at ${range(neighbours.map((n) => n.point.o2_mole_fraction * 100), 1, '% O2')} and ` +
     `${range(neighbours.map((n) => n.point.pressure_kpa), 1, ' kPa')}, flame temperature ` +
-    `${range(neighbours.map((n) => n.tAd), 0, ' K')} against a target of ${kelvin(tTarget)}` +
+    `${temperatureRange(neighbours.map((n) => n.tAd))} against a target of ${kelvin(tTarget)}` +
     `${physics.surrogate ? ' (n-heptane surrogate)' : ''}: ${countOutcomes(neighbours.map((n) => n.point.outcome))}. ` +
     `Distance-weighted share that kept burning: ${pct(pSustained)}. ${CONFIDENCE_SENTENCE}`;
 
@@ -465,16 +481,20 @@ const ZONE_RANK: Record<Zone, number> = { sustained: 3, marginal: 2, extinguishe
 function fuelSummary(fuel: FuelModel, p: Prediction): string {
   const parts = [`zone ${p.zone}`, `mode ${p.mode}`];
   if (p.p_sustained !== null) parts.push(`${pct(p.p_sustained)} of nearby runs kept burning`);
-  if (p.physics?.margin_k != null) parts.push(`physics margin ${Math.round(p.physics.margin_k)} K`);
+  if (p.physics?.margin_k != null) parts.push(`physics margin about ${round10(p.physics.margin_k)} K`);
   return `${fuel}: ${parts.join(', ')}`;
 }
 
+/**
+ * Contract entry point (docs/CONTRACTS.md section 5). `options.diluent` is the diluent of the target atmosphere,
+ * default N2. For droplets both FLEX fuels are evaluated; use predictDropletByFuel() to get each one.
+ */
 export function predict(c: Conditions, points: FlammabilityPoint[], options: PredictOptions = {}): Prediction {
   const diluent = options.diluent ?? 'N2';
   if (c.material_class !== 'liquid_droplet') {
     return predictForFuel(c, points, fuelModelsForClass(c.material_class)[0] ?? null, diluent);
   }
-  if (options.fuel) return predictForFuel(c, points, options.fuel, diluent);
+  // Helium and CO2 give the same "no estimate" for either fuel.
   if (diluent !== 'N2') return predictForFuel(c, points, 'methanol', diluent);
 
   const byFuel = predictDropletByFuel(c, points, options);

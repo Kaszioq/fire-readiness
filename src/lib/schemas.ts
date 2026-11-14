@@ -196,6 +196,8 @@ export const ConditionsSchema = z.object({
 
 export const FuelModelSchema = z.enum(['n-heptane', 'methanol']);
 export const PredictionModeSchema = z.enum(['data', 'physics_only', 'none']);
+export const DiluentSchema = z.enum(['N2', 'CO2', 'He']);
+export const PredictOptionsSchema = z.object({ diluent: DiluentSchema.optional() });
 
 export const PhysicsEstimateSchema = z.object({
   t_ad_k: z.number(),
@@ -314,5 +316,6 @@ export type SchemaTypeChecks = [
   Same<z.infer<typeof MetaSchema>, T.Meta>,
   Same<z.infer<typeof PredictionModeSchema>, T.PredictionMode>,
   Same<z.infer<typeof PhysicsEstimateSchema>, T.PhysicsEstimate>,
+  Same<z.infer<typeof PredictOptionsSchema>, T.PredictOptions>,
   Same<z.infer<typeof FlameTemperatureSchema>, T.FlameTemperature>,
 ];

@@ -189,9 +189,9 @@ export interface PhysicsEstimate {
   t_ad_k: number; // adiabatic flame temperature of the target atmosphere (fuel model below)
   fuel_model: FuelModel;
   surrogate: boolean; // true for solids
-  limit_k: number | null; // fuel limit (droplets) or coldest burning solid test (solids)
+  limit_k: number | null; // fuel limit (droplets) or coldest tested condition of the class that still burned (solids)
   margin_k: number | null; // t_ad_k - limit_k
-  margin_ratio_vs_iss: number | null;
+  margin_ratio_vs_iss: number | null; // margin_k / margin in ISS air (21% O2, 101.3 kPa), same limit_k; null at or below the limit
   valid: boolean; // false for helium-diluted atmospheres
   note: string;
 }
@@ -208,8 +208,15 @@ export interface Prediction {
   physics?: PhysicsEstimate; // physics estimate, never test data; absent when mode = none
 }
 
+/** Diluent of the target atmosphere. `Conditions` has no diluent, so it is passed as an option. */
+export type Diluent = 'N2' | 'CO2' | 'He';
+
+export interface PredictOptions {
+  diluent?: Diluent; // default 'N2'. 'He' and 'CO2' give mode 'none' (no estimate).
+}
+
 /** Signature of `predict` exported from src/lib/predict. */
-export type PredictFn = (c: Conditions, points: FlammabilityPoint[]) => Prediction;
+export type PredictFn = (c: Conditions, points: FlammabilityPoint[], options?: PredictOptions) => Prediction;
 
 // ---------- 6. Ranking (role C), used by UI (role B) ----------
 

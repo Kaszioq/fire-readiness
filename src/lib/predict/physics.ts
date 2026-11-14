@@ -4,9 +4,6 @@
 import { flameTemperature } from '@/lib/data';
 import type { FlammabilityPoint, FuelModel, MaterialClass } from '@/lib/types';
 
-/** Diluent of the target atmosphere. `Conditions` has no diluent, so the default is N2. */
-export type Diluent = 'N2' | 'CO2' | 'He';
-
 /** Reference atmosphere for "vs ISS" ratios: ISS cabin air as in habitats.json and docs/PHYSICS.md section 5. */
 export const ISS_REFERENCE = { o2_mole_fraction: 0.21, pressure_kpa: 101.3 } as const;
 
