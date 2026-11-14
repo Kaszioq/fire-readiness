@@ -200,8 +200,9 @@ export function physicsEstimate(
     const margin = tAd - limit;
     const tIss = interpolateTad(fuel, ISS_REFERENCE.o2_mole_fraction, ISS_REFERENCE.pressure_kpa);
     const marginIss = tIss === null ? null : tIss - limit;
-    // A ratio of margins only means something while the target is above the limit.
-    const ratio = marginIss !== null && marginIss > 0 && margin > 0 ? round(margin / marginIss, 2) : null;
+    // A ratio of margins only means something while the target is clearly above the limit (text says "at" below 5 K).
+    const ratio =
+      marginIss !== null && marginIss > 0 && round10(margin) > 0 ? round(margin / marginIss, 2) : null;
     return {
       t_ad_k: round(tAd, 1),
       fuel_model: fuel,
@@ -213,7 +214,7 @@ export function physicsEstimate(
       note:
         `${PHYSICS_NOTE_PREFIX}for ${fuel} droplets the adiabatic flame temperature (${kelvin(tAd)}) is ${aboveBelow(margin)} ` +
         `the limiting flame temperature (${kelvin(limit)}) calibrated on the FLEX limiting oxygen index` +
-        (ratio === null || ratio < 0.01 ? '.' : `, ${ratio} times the margin in ISS air.`) +
+        (ratio === null || ratio === 1 ? '.' : `, ${ratio} times the margin in ISS air.`) +
         ' Adiabatic flame temperature is an upper bound on flame temperature and has no gravity, flow or heat-loss term.',
     };
   }
@@ -227,7 +228,9 @@ export function physicsEstimate(
   const tIss = interpolateTad(fuel, ISS_REFERENCE.o2_mole_fraction, ISS_REFERENCE.pressure_kpa);
   const marginIss = tIss === null || coldestBurning === null ? null : tIss - coldestBurning;
   const ratio =
-    margin !== null && marginIss !== null && marginIss > 0 && margin > 0 ? round(margin / marginIss, 2) : null;
+    margin !== null && marginIss !== null && marginIss > 0 && round10(margin) > 0
+      ? round(margin / marginIss, 2)
+      : null;
   return {
     t_ad_k: round(tAd, 1),
     fuel_model: fuel,
@@ -243,7 +246,7 @@ export function physicsEstimate(
         : ` is ${aboveBelow(tAd - hottest)} the hottest ${label} condition tested in the PSI microgravity data ` +
           `(${kelvin(hottest)}) and ${aboveBelow(tAd - coldestBurning)} the coldest tested condition that still burned ` +
           `(${kelvin(coldestBurning)})` +
-          (ratio === null || ratio < 0.01
+          (ratio === null || ratio === 1
             ? '.'
             : `, ${ratio} times the margin in ISS air relative to the coldest tested condition that still burned.`) +
           ' That condition is the coldest one tested, not a measured flammability limit.') +
@@ -354,6 +357,18 @@ function predictForFuel(
   if (logP > Math.log10(pMax) + logPMargin || logP < Math.log10(pMin) - logPMargin) {
     outside.push(`pressure ${round(c.pressure_kpa, 1)} kPa is outside the tested ${range([pMin, pMax], 1, ' kPa')}`);
   }
+  // Flow has no margin: both ends of the tested range are extinction mechanisms (quenching at low flow,
+  // blowoff at high flow), so a result must not be carried past the lowest or highest tested flow.
+  const testedFlows = cls.flatMap((x) => (x.point.flow_cm_s === null ? [] : [x.point.flow_cm_s]));
+  if (c.flow_cm_s !== null && testedFlows.length > 0) {
+    const fMin = Math.min(...testedFlows);
+    const fMax = Math.max(...testedFlows);
+    if (c.flow_cm_s < fMin - 1e-9) {
+      outside.push(`flow ${round(c.flow_cm_s, 1)} cm/s is below the lowest tested flow (${round(fMin, 1)} cm/s)`);
+    } else if (c.flow_cm_s > fMax + 1e-9) {
+      outside.push(`flow ${round(c.flow_cm_s, 1)} cm/s is above the highest tested flow (${round(fMax, 1)} cm/s)`);
+    }
+  }
   if (outside.length > 0) {
     return noResult(
       c,
@@ -366,11 +381,6 @@ function predictForFuel(
 
   // Distance-weighted kNN in (T_ad / 100 K, log10 P / 0.15, flow / 5 cm/s).
   const useFlow = c.flow_cm_s !== null;
-  if (!useFlow) {
-    warnings.push(
-      'Ventilation flow was not given, so the flow dimension was dropped: the result does not depend on flow, although flow changes whether a flame survives.',
-    );
-  }
   const scored = cls
     .map(({ point, tAd }) => {
       const dT = (tAd - tTarget) / T_AD_SCALE_K;
@@ -380,21 +390,33 @@ function predictForFuel(
       return { point, tAd, flowUsed, d: Math.sqrt(dT * dT + dP * dP + dU * dU) };
     })
     .sort((a, b) => a.d - b.d || a.point.id.localeCompare(b.point.id));
-  const neighbours = scored.slice(0, K_NEIGHBOURS);
+  // Only runs within the distance limit are evidence: a run farther away neither votes nor is listed.
+  const neighbours = scored.filter((n) => n.d <= MAX_NEAREST_DISTANCE).slice(0, K_NEIGHBOURS);
 
-  if (neighbours[0].d > MAX_NEAREST_DISTANCE) {
-    const flows = cls.flatMap((x) => (x.point.flow_cm_s === null ? [] : [x.point.flow_cm_s]));
+  if (neighbours.length === 0) {
     const flowNote =
-      useFlow && flows.length
-        ? ` (tests ran at ${range(flows, 1, ' cm/s')} flow; target ${round(c.flow_cm_s as number, 1)} cm/s)`
+      useFlow && testedFlows.length
+        ? ` (tests ran at ${range(testedFlows, 1, ' cm/s')} flow; target ${round(c.flow_cm_s as number, 1)} cm/s)`
         : '';
     return noResult(
       c,
       'physics_only',
       `No ${label} test run close to these conditions: the nearest is at normalized distance ` +
-        `${round(neighbours[0].d, 2)}, beyond the limit of ${MAX_NEAREST_DISTANCE}${flowNote}. ${physicsSentence}`,
+        `${round(scored[0].d, 2)}, beyond the limit of ${MAX_NEAREST_DISTANCE}${flowNote}. ${physicsSentence}`,
       warnings,
       physics,
+    );
+  }
+
+  const evidenceFlows = neighbours.flatMap((n) => (n.point.flow_cm_s === null ? [] : [n.point.flow_cm_s]));
+  const flowText = evidenceFlows.length ? `${range(evidenceFlows, 1, ' cm/s')} flow` : 'flow not reported';
+  if (!useFlow) {
+    warnings.push(
+      'Ventilation flow was not given, so the flow dimension was dropped. ' +
+        (evidenceFlows.length
+          ? `The evidence runs had ${flowText}, so the result applies to that range only`
+          : 'The evidence runs have no reported flow') +
+        (isSolid(c.material_class) ? '; for low flow see the quenching findings in the suppression notes.' : '.'),
     );
   }
 
@@ -417,6 +439,12 @@ function predictForFuel(
     if (notBurning.length) {
       warnings.push(
         `Material matters beyond flame temperature: ${notBurning.join(', ')} did not sustain burning in nearby test runs.`,
+      );
+    }
+    const evidenceFamilies = unique(neighbours.map((n) => materialFamily(n.point.material)));
+    if (evidenceFamilies.length === 1) {
+      warnings.push(
+        `All evidence runs are ${evidenceFamilies[0]}: no other ${label} material was tested near these conditions, so the result may not hold for other materials of this class.`,
       );
     }
   } else {
@@ -442,7 +470,7 @@ function predictForFuel(
   const explanation =
     `${neighbours.length} nearest ${label} test runs (${unique(neighbours.map((n) => n.point.psi_id)).join(', ')}; ` +
     `${families.join(', ')}) at ${range(neighbours.map((n) => n.point.o2_mole_fraction * 100), 1, '% O2')} and ` +
-    `${range(neighbours.map((n) => n.point.pressure_kpa), 1, ' kPa')}, flame temperature ` +
+    `${range(neighbours.map((n) => n.point.pressure_kpa), 1, ' kPa')}, ${flowText}, flame temperature ` +
     `${temperatureRange(neighbours.map((n) => n.tAd))} against a target of ${kelvin(tTarget)}` +
     `${physics.surrogate ? ' (n-heptane surrogate)' : ''}: ${countOutcomes(neighbours.map((n) => n.point.outcome))}. ` +
     `Distance-weighted share that kept burning: ${pct(pSustained)}. ${CONFIDENCE_SENTENCE}`;

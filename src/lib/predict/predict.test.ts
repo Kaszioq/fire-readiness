@@ -8,6 +8,7 @@ import {
   HELIUM_WARNING,
   interpolateTad,
   MAX_EVIDENCE,
+  MAX_NEAREST_DISTANCE,
   PARTIAL_GRAVITY_WARNING,
   PHYSICS_NOTE_PREFIX,
   physicsEstimate,
@@ -378,5 +379,98 @@ describe('flame temperature interpolation', () => {
     expect(interpolateTad('n-heptane', 0.05, 101.3)).toBeNull();
     expect(interpolateTad('n-heptane', 0.21, 10)).toBeNull();
     expect(interpolateTad('n-heptane', 0.21, 400)).toBeNull();
+  });
+});
+
+describe('flow outside the tested range is never a data result', () => {
+  // Thin fabric was tested at 5 to 20 cm/s. Below that lies the quenching region (BASS-II: SIBAL quenching
+  // boundary between 1 and 5 cm/s), so "sustained" must not be carried down to still air.
+  it.each([0, 1, 3, 4.9])('thin fabric in ISS air at %s cm/s -> no data result', (flow) => {
+    const p = predict(habitatConditions('iss', 'thin_fabric', flow), P);
+    expect(p.zone).toBe('no_evidence');
+    expect(p.mode).toBe('physics_only');
+    expect(p.explanation).toContain('below the lowest tested flow (5 cm/s)');
+  });
+
+  it('thin fabric in ISS air at the lowest tested flow is a data result', () => {
+    expect(predict(habitatConditions('iss', 'thin_fabric', 5), P).mode).toBe('data');
+  });
+
+  it.each(SOLIDS)('%s in ISS air above the highest tested flow -> no data result', (cls) => {
+    const p = predict(habitatConditions('iss', cls, 80), P);
+    expect(p.zone).toBe('no_evidence');
+    expect(p.explanation).toContain('above the highest tested flow');
+  });
+
+  it('still air is outside the tested range for every solid class', () => {
+    for (const cls of SOLIDS) expect(predict(habitatConditions('iss', cls, 0), P).zone).toBe('no_evidence');
+  });
+});
+
+describe('evidence is always within the distance limit', () => {
+  it('no run beyond distance 2 votes or is listed, over a grid of targets', () => {
+    let dataResults = 0;
+    for (const cls of ALL_CLASSES) {
+      for (let o2 = 0.12; o2 <= 0.36; o2 += 0.01) {
+        for (const flow of [null, 0, 1, 2, 5, 10, 20, 30, 45]) {
+          for (const pressure of [70.3, 101.3]) {
+            const p = predict(
+              { o2_mole_fraction: Number(o2.toFixed(2)), pressure_kpa: pressure, flow_cm_s: flow, material_class: cls, gravity_g: 0 },
+              P,
+            );
+            if (p.mode !== 'data') continue;
+            dataResults += 1;
+            expect(p.evidence.length).toBeGreaterThan(0);
+            expect(Math.max(...p.evidence.map((e) => e.distance))).toBeLessThanOrEqual(MAX_NEAREST_DISTANCE);
+            expect(p.confidence).toBeCloseTo(evidenceCoverage(p.evidence.map((e) => e.distance)), 2);
+          }
+        }
+      }
+    }
+    expect(dataResults).toBeGreaterThan(100);
+  });
+
+  it('a target placed on any test run is a data result that includes nearby runs', () => {
+    const coverages = P.map((source) => {
+      const c: Conditions = {
+        o2_mole_fraction: source.o2_mole_fraction,
+        pressure_kpa: source.pressure_kpa,
+        flow_cm_s: source.flow_cm_s,
+        material_class: source.material_class,
+        gravity_g: 0,
+      };
+      const p =
+        source.material_class === 'liquid_droplet'
+          ? predictDropletByFuel(c, P)[/methanol/i.test(source.material) ? 'methanol' : 'n-heptane']
+          : predict(c, P);
+      expect(p.mode).toBe('data');
+      // The run itself counts 1 of the 8 kernel terms.
+      expect(p.confidence).toBeGreaterThanOrEqual(0.12);
+      return p.confidence;
+    });
+    // Most test conditions sit in a cluster of runs; a few isolated ones (mainly thin solids) do not.
+    const wellCovered = coverages.filter((x) => x >= 0.6).length;
+    expect(wellCovered / coverages.length).toBeGreaterThanOrEqual(0.9);
+  });
+});
+
+describe('explanation and notes', () => {
+  it('a solid data result states the flow range of its evidence', () => {
+    const p = predict(habitatConditions('iss', 'thin_fabric', 20), P);
+    expect(p.explanation).toMatch(/cm\/s flow/);
+  });
+
+  it('without a target flow, the warning gives the flow range the result applies to', () => {
+    const p = predict(habitatConditions('iss', 'thin_fabric'), P);
+    expect(p.mode).toBe('data');
+    expect(p.warnings.some((w) => w.includes('flow dimension was dropped') && w.includes('applies to that range only'))).toBe(true);
+  });
+
+  it('gives no margin ratio at the limit and does not print a ratio of 1', () => {
+    const atLimit = predictDropletByFuel(droplet(0.15), P)['n-heptane'].physics;
+    expect(Math.abs(atLimit?.margin_k ?? NaN)).toBeLessThan(5);
+    expect(atLimit?.margin_ratio_vs_iss).toBeNull();
+    const iss = predictDropletByFuel(droplet(0.21), P)['n-heptane'].physics;
+    expect(iss?.note).not.toContain('times the margin');
   });
 });
