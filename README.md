@@ -57,3 +57,5 @@ To be filled in before submission: NASA PSI investigations (PSI IDs and DOIs), p
 ## License
 
 Apache 2.0, see [LICENSE](LICENSE).
+
+<!-- Kuba, if you are reading this: yes, this really was just a minor fix. -->
