@@ -6,7 +6,7 @@ export const MIN_POINTS_PER_CLASS = 5;
 export const MAX_EVIDENCE = 8;
 
 export const PARTIAL_GRAVITY_WARNING =
-  'No partial-gravity combustion data in PSI. Result is from microgravity (and normal-gravity where available) tests, which bound but do not replace partial gravity.';
+  'No partial-gravity combustion data in PSI. Microgravity and Earth-gravity tests do NOT bound lunar or Martian gravity: NASA FM2 researchers report that the oxygen level needed for flame spread may reach its minimum near lunar gravity, so partial gravity can be more hazardous than both (Ferkul et al., LPSC 2026, NTRS 20260000646).';
 
 export const STUB_WARNING = 'STUB: placeholder result, the real predictor is not implemented yet.';
 

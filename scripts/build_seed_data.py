@@ -772,26 +772,24 @@ def pt(pid, test, material, mclass, o2, p, flow, dil, outcome, spread, pv):
 
 
 FLEX_FILE = "PSI-69_Experimental table_FLEX.csv"
+FLEX_LOI = {"M": 0.12, "H": 0.15}  # O2/N2, Dietrich et al. 2014 (doi 10.1007/s12217-014-9372-2)
+FLEX_LOI_QUOTE = "For oxygen/nitrogen mixtures, the LOI is 0.12 and 0.15 for methanol and heptane, respectively."
 for row in open(os.path.join(EX, "flex_tests.txt")).read().strip().split(";"):
     n, ident, fu, pmm, o2, co2, he, d0, bt, end = row.split(",")
     if float(pmm) <= 0:
         continue  # data entry error (test 114)
-    btv = float(bt.replace("~", "")) if bt else None
+    if float(co2) > 0 or float(he) > 0:
+        continue  # suppressant tests: the predictor has no diluent dimension; their effect is in key_findings (LOI with CO2)
+    loi = FLEX_LOI[fu]
+    x = float(o2)
+    oc = "sustained" if x > loi + 0.005 else ("marginal" if x >= loi - 0.005 else "extinguished")
     endname = {"C": "Completion", "D": "Disruption", "E": "Extinction"}[end]
-    if end in ("C", "D"):
-        oc = "sustained"
-    elif btv is not None and btv < 2.0:
-        oc = "extinguished"
-    else:
-        oc = "marginal"
-    dil = "CO2" if float(co2) > 0 else ("He" if float(he) > 0 else "N2")
-    if float(co2) > 0:
-        dil = f"CO2 {float(co2):.2f} + N2"
-    elif float(he) > 0:
-        dil = f"He {float(he):.2f} + N2"
-    pt("PSI-69", n, "methanol droplet" if fu == "M" else "n-heptane droplet", "liquid_droplet", float(o2), round(float(pmm) * MMHG, 2), 0.0, dil, oc, None,
-       prov("experimental_table", "PSI-69", f"row FLEX Test # {n} ({ident})", None, "api_direct", file=FLEX_FILE,
-            note=f"test end: {endname}; burn time {bt or 'n/a'} s; initial diameter {d0 or 'n/a'} mm. Outcome mapping in data/curated/mappings.md (C/D = sustained, E with burn time < 2 s = extinguished, other E = marginal). Flow 0 = quiescent chamber (assumed)."))
+    pt("PSI-69", n, "methanol droplet" if fu == "M" else "n-heptane droplet", "liquid_droplet", x, round(float(pmm) * MMHG, 2), 0.0, "N2", oc, None,
+       prov("publication", "PSI-69", f"conditions: {FLEX_FILE} row FLEX Test # {n} ({ident}); outcome: published LOI", FLEX_LOI_QUOTE, "manual",
+            url="https://doi.org/10.1007/s12217-014-9372-2", verified=False,
+            note=f"Conditions from the PSI-69 experimental table. Outcome = position relative to the published LOI ({loi}): above = sustained (quasi-steady burning possible), within 0.005 = marginal, below = extinguished. "
+                 f"Observed in this test: burn time {bt or 'n/a'} s, test end {endname}, initial diameter {d0 or 'n/a'} mm. Droplet flames self-extinguishing before burnout is normal droplet physics. "
+                 "LOI was reported for O2/N2 without a pressure dependence; tests at about 0.7 atm use the same value (verify). Flow 0 = quiescent chamber (assumed)."))
 
 BASS_FILE = "PSI-25_Experimental table_BASS-II.csv"
 for row in open(os.path.join(EX, "bass2_tests.txt")).read().strip().split(";"):
@@ -807,11 +805,11 @@ for row in open(os.path.join(EX, "bass2_tests.txt")).read().strip().split(";"):
         mc, name = "thin_solid", "PMMA film"
     else:
         mc, name = "thick_solid", "PMMA (slab, rod or spherical section)"
-    oc = "no_ignition" if ign == "N" else ("marginal" if ext == "X" else "sustained")
+    oc = "no_ignition" if ign == "N" else "sustained"  # burned at the initial O2 and flow; extinction (if any) happened later at a changed flow
     flow = float(air) if air and float(air) > 0 else None
     pt("PSI-25", tid, f"{name} ({mat.strip()})", mc, round(float(o2i) / 100, 4), 101.3, flow, "N2", oc, None,
        prov("experimental_table", "PSI-25", f"row Test # {tid}", f"Test # {tid}; Fuel Sample Material: {mat.strip()}; Calibrated initial O2 % by vol: {o2i}", "manual", file=BASS_FILE, verified=False,
-            note="O2 = 'Calibrated initial O2 % by vol'. Outcome from free-text fan/air columns: 'no ign' = no_ignition; 'ext', 'blowoff', 'out' = marginal (extinguished during a flow sweep); else sustained. "
+            note="O2 = 'Calibrated initial O2 % by vol'. Outcome at the INITIAL flow: 'no ign' = no_ignition, otherwise sustained. " + ("The flame was later extinguished during a flow sweep (quenching or blowoff at a changed flow, see fan/air columns). " if ext == "X" else "") +
                  "flow = first number in 'Air display' = air velocity transducer reading in cm/s (BASS-II Summary Report NASA/TM-20210011385, pdf p. 12). "
                  "pressure about 1 atm per the same report ('Ambient pressure was 1 atm.', pdf p. 102; 99.2 to 99.5 kPa, pdf p. 46). Outcome parsing still needs a human check."))
 
@@ -937,6 +935,8 @@ def main():
         pid, path, value = r[0], r[1], r[2]
         if value == "null":
             return "P4"  # "not reported": only confirm nothing was missed
+        if path.startswith("flammability_points[PSI-69"):
+            return "P3"  # rule-derived from the published LOI: check the rule once, not every row
         if "key_findings" in path or pid == "habitat" or path.startswith("flammability_points"):
             return "P1"  # shown in the demo or used by the predictor
         if path in ("tier", "safety_domains"):

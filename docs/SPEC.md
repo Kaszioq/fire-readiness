@@ -51,7 +51,7 @@ Priority: **P0** = must ship, **P1** = should ship, **P2** = stretch.
   3. Distance-weighted kNN (k = 8, weights 1/(d + eps)). `p_sustained` = weighted share of `sustained` (marginal counts 0.5).
   4. `confidence` = f(mean distance of the k neighbours, number of neighbours within d < 1). If the nearest point has d > 2 → `zone = no_evidence`, `p_sustained = null`.
   5. Zones: p < 0.25 `extinguishes`, 0.25 to 0.6 `marginal`, > 0.6 `sustained`.
-  6. `gravity_g` between 0 and 1 (not 0, not 1) always adds the warning: "No partial-gravity combustion data in PSI. Result is from microgravity (and normal-gravity where available) tests, which bound but do not replace partial gravity."
+  6. `gravity_g` between 0 and 1 (not 0, not 1) always adds the warning: "No partial-gravity combustion data in PSI. Microgravity and Earth-gravity tests do NOT bound lunar or Martian gravity: NASA FM2 researchers report that the oxygen level needed for flame spread may reach its minimum near lunar gravity, so partial gravity can be more hazardous than both (Ferkul et al., LPSC 2026, NTRS 20260000646)."
   7. `suppression_notes`: curated findings from FLEX/FLEX-2 (and BASS where relevant) about CO2 / He dilution, taken from `key_findings` with provenance. Shown only for the relevant material classes. Never generated.
   8. `explanation`: template text from evidence ("8 nearest BASS-II tests at 17 to 21% O2 ... 6 burned, 2 extinguished").
 - Optional derived display: O2 partial pressure (O2 fraction x pressure). Useful for showing that a habitat can have Earth-like O2 partial pressure but a higher O2 fraction. Any physical claim about what that means must be backed by a cited source in curated data.
