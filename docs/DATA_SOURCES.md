@@ -57,7 +57,7 @@ The `uses_data_from` values above come from the "Highlights" lines of the PSI se
 
 1. Call the search endpoint, collect PSI IDs. Fallback: the explicit list of 26 IDs in section 2. (Search hits are Elasticsearch documents: inspect `hits.hits[]._source` to find the PSI ID field; do not assume its name.)
 2. For each ID, fetch the record and save it unmodified to `data/raw/records/<PSI-ID>.json`.
-3. For each `experimentalTable[]` entry that is not `restricted`, download the CSV to `data/raw/tables/<PSI-ID>/<file_name>`.
+3. For each `experimentalTable[]` entry that is not `restricted`, download the CSV to `data/raw/tables/<PSI-ID>/<file_name>`. **Note:** `remote_url` returns 404. Use `GET https://psi.nasa.gov/geode-py/ws/studies/<PSI-ID>/download?file=<url-encoded file_name>&version=1&redirect=false`, which returns a short-lived signed S3 URL as plain text, then GET that URL.
 4. Do **not** bulk-download documents (some investigations have hundreds of files and GBs of video). Download individual PDFs only when needed for a specific field, into `data/raw/docs/<PSI-ID>/`.
 5. Write `data/raw/MANIFEST.json`: `fetched_at`, URL and sha256 of every saved file.
 6. Be polite: one request at a time, 0.5 s delay, a descriptive User-Agent.
