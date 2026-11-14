@@ -941,7 +941,7 @@ a.card:active {
 /* ---------- Narrow screens ---------- */
 
 /* The counter only fits on one line next to the nav on wide screens; the home page repeats it. */
-@media (max-width: 1240px) {
+@media (max-width: 1440px) {
   .header-stat {
     display: none;
   }
