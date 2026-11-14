@@ -4,6 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 import {
+  FlameTemperatureSchema,
   FlammabilityPointSchema,
   HabitatSchema,
   InvestigationSchema,
@@ -48,6 +49,10 @@ const investigations = load('investigations', InvestigationSchema.array());
 const points = load('flammability_points', FlammabilityPointSchema.array());
 const habitats = load('habitats', HabitatSchema.array());
 const meta = load('meta', MetaSchema);
+// Physics layer. Curated only: there is no mock for it.
+const flame = existsSync(join(root, 'data', 'curated', 'flame_temperature.json'))
+  ? load('flame_temperature', FlameTemperatureSchema)
+  : null;
 
 function duplicates(values: string[]): string[] {
   return [...new Set(values.filter((v, i) => values.indexOf(v) !== i))];
@@ -71,6 +76,18 @@ if (investigations) {
   if (meta && meta.n_investigations !== investigations.length) {
     fail('meta', `n_investigations is ${meta.n_investigations} but investigations has ${investigations.length} entries`);
   }
+}
+
+if (flame && points) {
+  const missing = points.filter((p) => !(p.id in flame.points)).map((p) => p.id);
+  if (missing.length) {
+    fail('flame_temperature', `no T_ad for ${missing.length} flammability points, e.g. ${missing.slice(0, 5).join(', ')}`);
+  }
+}
+if (flame && habitats) {
+  const known = new Set(flame.habitats.map((h) => h.habitat_id));
+  const missing = habitats.filter((h) => !known.has(h.id)).map((h) => h.id);
+  if (missing.length) fail('flame_temperature', `no T_ad for habitats: ${missing.join(', ')}`);
 }
 
 if (habitats) {

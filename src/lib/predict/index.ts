@@ -18,6 +18,7 @@ export function predict(c: Conditions, points: FlammabilityPoint[]): Prediction 
 
   if (sameClass.length < MIN_POINTS_PER_CLASS) {
     return {
+      mode: 'none',
       zone: 'no_evidence',
       p_sustained: null,
       confidence: 0,
@@ -36,6 +37,7 @@ export function predict(c: Conditions, points: FlammabilityPoint[]): Prediction 
   }));
 
   return {
+    mode: 'none',
     zone: 'marginal',
     p_sustained: 0.5,
     confidence: 0.3,

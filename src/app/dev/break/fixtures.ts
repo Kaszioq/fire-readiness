@@ -53,6 +53,7 @@ export const worstConditions: Conditions = {
 
 export const worstPredictions: Prediction[] = [
   {
+    mode: 'physics_only',
     zone: 'no_evidence',
     p_sustained: null,
     confidence: 0,
@@ -69,6 +70,7 @@ export const worstPredictions: Prediction[] = [
     ],
   },
   {
+    mode: 'data',
     zone: 'sustained',
     p_sustained: 1,
     confidence: 0.9999,
@@ -78,6 +80,7 @@ export const worstPredictions: Prediction[] = [
     warnings: [],
   },
   {
+    mode: 'data',
     zone: 'marginal',
     p_sustained: Number.NaN,
     confidence: Number.NaN,

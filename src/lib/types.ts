@@ -175,14 +175,37 @@ export interface SuppressionNote {
   prov: Provenance;
 }
 
+/** Fuel models of the physics layer (docs/PHYSICS.md). Solids use n-heptane as a surrogate. */
+export type FuelModel = 'n-heptane' | 'methanol';
+
+/**
+ * How a prediction was made (docs/PHYSICS.md section 7).
+ * data = nearest test runs; physics_only = outside the tested envelope, flame-temperature margin only;
+ * none = neither applies (helium-diluted atmosphere, or no data and no physics).
+ */
+export type PredictionMode = 'data' | 'physics_only' | 'none';
+
+export interface PhysicsEstimate {
+  t_ad_k: number; // adiabatic flame temperature of the target atmosphere (fuel model below)
+  fuel_model: FuelModel;
+  surrogate: boolean; // true for solids
+  limit_k: number | null; // fuel limit (droplets) or coldest burning solid test (solids)
+  margin_k: number | null; // t_ad_k - limit_k
+  margin_ratio_vs_iss: number | null;
+  valid: boolean; // false for helium-diluted atmospheres
+  note: string;
+}
+
 export interface Prediction {
   zone: Zone;
   p_sustained: number | null; // null when zone = no_evidence
-  confidence: number; // 0..1
+  confidence: number; // 0..1, evidence coverage (how close and how many test runs), not a probability
   evidence: EvidenceRef[]; // nearest supporting test runs, max 8
   suppression_notes: SuppressionNote[];
   explanation: string; // short, deterministic text built from evidence (no LLM)
   warnings: string[];
+  mode: PredictionMode;
+  physics?: PhysicsEstimate; // physics estimate, never test data; absent when mode = none
 }
 
 /** Signature of `predict` exported from src/lib/predict. */
@@ -235,6 +258,60 @@ export interface SmokeSimProps {
 }
 
 // ---------- 9. Data files ----------
+
+/** data/curated/flame_temperature.json, produced by scripts/compute_flame_temperature.py (docs/PHYSICS.md). */
+export interface FlameTemperature {
+  generated_at: string;
+  method: string;
+  units: { t_ad: string; pressure: string; o2: string };
+  caveats: string[];
+  /** Published FLEX limiting oxygen index converted to T_ad. */
+  calibration: {
+    fuel: FuelModel;
+    atmosphere: string;
+    o2: number;
+    co2: number;
+    quote: string;
+    t_ad_k: number;
+    source: string;
+    pressure_kpa: number;
+  }[];
+  /** Limiting T_ad per fuel: mean of the calibration rows, with their spread. */
+  limiting_t_ad: Record<FuelModel, { t_limit_k: number; spread_k: number; n: number }>;
+  habitats: {
+    habitat_id: HabitatId;
+    o2: number;
+    pressure_kpa: number;
+    t_ad_methanol_k: number;
+    margin_methanol_k: number;
+    't_ad_n-heptane_k': number;
+    'margin_n-heptane_k': number;
+    margin_ratio_vs_iss_methanol: number;
+    'margin_ratio_vs_iss_n-heptane': number;
+  }[];
+  /** Every FLEX test, including CO2 and He suppressant runs that are not predictor points. */
+  flex_tests: {
+    point_id: string;
+    fuel: FuelModel;
+    o2: number;
+    co2: number;
+    he: number;
+    pressure_kpa: number;
+    t_ad_k: number;
+    margin_k: number;
+    burn_time_s: string | null;
+    test_end: string;
+  }[];
+  /** T_ad of every flammability point, keyed by FlammabilityPoint.id. */
+  points: Record<string, { t_ad_k: number; fuel_model: FuelModel; surrogate: boolean }>;
+  /** O2/N2 grid for client-side bilinear interpolation: t_ad_k[fuel][i_o2][i_pressure]. */
+  grid: {
+    o2: number[];
+    pressure_kpa: number[];
+    t_ad_k: Record<FuelModel, number[][]>;
+    note: string;
+  };
+}
 
 export interface Meta {
   fetched_at: string;
