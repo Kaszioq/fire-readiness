@@ -54,6 +54,18 @@ Rules that keep the three roles independent:
 
 To be filled in before submission: NASA PSI investigations (PSI IDs and DOIs), publications, libraries with licenses, the LLM model and provider, fonts, icons.
 
+### Media
+
+All photos and video on the site are NASA material from the [NASA Image and Video Library](https://images.nasa.gov), used under the [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) (not copyrighted; no NASA insignia is used and no endorsement is implied). Files live in `public/media/`. The two clips were trimmed and re-encoded; nothing else was altered.
+
+| File | What it shows | NASA ID and source |
+|---|---|---|
+| `bass-ii-iss040e088023.jpg` | Flame over a solid fuel sample, BASS-II (PSI-25), ISS, 2014 | [iss040e088023](https://images.nasa.gov/details/iss040e088023) |
+| `saffire-vi-pmma.mp4`, `.jpg` | Saffire-VI PMMA sample burning inside a Cygnus cargo spacecraft (14 s excerpt and poster frame). Not part of the PSI snapshot. | [Saf-VI S8C3+C4 1-sided PMMA](https://images.nasa.gov/details/Saf-VI%20S8C3+C4%201-sided%20PMMA_unmapped_jpeg-20x%20no%20text) |
+| `sofie-gel.mp4`, `.jpg` | SoFIE-GEL flame shrinking towards extinction (16 s excerpt and poster frame). Not part of the PSI snapshot. | [SoFIE-GEL](https://images.nasa.gov/details/SoFIE-GEL) |
+
+The flame drawing in the intro and the site icon are original SVG. The site uses system fonts only.
+
 ## License
 
 Apache 2.0, see [LICENSE](LICENSE).

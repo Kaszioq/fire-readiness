@@ -31,6 +31,9 @@ export default function HomePage() {
     <>
       <section className="hero hero-intro">
         <div className="hero-backdrop" aria-hidden="true" />
+        {/* Real flame from BASS-II (PSI-25), one of the investigations in the dataset. Decorative here; credited below. */}
+        {/* eslint-disable-next-line @next/next/no-img-element -- static decorative photo, no layout shift (absolutely positioned) */}
+        <img className="hero-photo" src="/media/bass-ii-iss040e088023.jpg" alt="" aria-hidden="true" />
         <div className="hero-copy">
           <span className="eyebrow rise">NASA PSI microgravity combustion data</span>
           <h1 className="rise rise-1">
@@ -53,6 +56,13 @@ export default function HomePage() {
           <span>Scroll</span>
           <i />
         </div>
+        <p className="hero-credit">
+          Flame over a solid fuel sample in microgravity,{' '}
+          <Link href="/investigations/PSI-25">BASS-II</Link> on the ISS.{' '}
+          <a href="https://images.nasa.gov/details/iss040e088023" target="_blank" rel="noreferrer">
+            Photo: NASA
+          </a>
+        </p>
       </section>
 
       <IntroStory
@@ -61,6 +71,8 @@ export default function HomePage() {
         focus={focus}
         earth={getHabitat('earth')}
         nInvestigations={investigations.length}
+        nFieldsVerified={meta.n_fields_verified}
+        nFieldsTotal={meta.n_fields_total}
         partialGravityNote={PARTIAL_GRAVITY_WARNING}
       />
 

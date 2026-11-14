@@ -3,8 +3,10 @@
 // without it, or users who prefer reduced motion, get the same content as a plain static page.
 // Every number comes from '@/lib/data'; the two quotes are verbatim from the challenge statement.
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import { CoverageTeaser } from '@/components/CoverageTeaser';
 import { formatKpa, formatPercent, formatPsi, SOLID_CLASSES, sourceHref } from '@/components/format';
+import { LoopVideo } from '@/components/LoopVideo';
 import type { FlammabilityPoint, Habitat } from '@/lib/types';
 
 function Chapter({
@@ -14,6 +16,7 @@ function Chapter({
   title,
   children,
   scene,
+  wide = false,
 }: {
   index: number;
   total: number;
@@ -21,10 +24,12 @@ function Chapter({
   title: string;
   children: ReactNode;
   scene: ReactNode;
+  /** Text above, scene across the full width below. */
+  wide?: boolean;
 }) {
   return (
     <section className="story-step" aria-labelledby={`story-${index}`}>
-      <div className="story-pin">
+      <div className={wide ? 'story-pin story-wide' : 'story-pin'}>
         <div className="story-copy">
           <span className="story-count num">
             {String(index).padStart(2, '0')} <i>/ {String(total).padStart(2, '0')}</i>
@@ -134,12 +139,95 @@ function AtmosphereScene({ rows }: { rows: Habitat[] }) {
   );
 }
 
+/** Real footage. These two experiments are NASA fire-safety work but are not in the PSI snapshot analysed here. */
+function FootageScene() {
+  return (
+    <div className="clips">
+      <LoopVideo
+        src="/media/saffire-vi-pmma.mp4"
+        poster="/media/saffire-vi-pmma.jpg"
+        label="A plastic sample burning in microgravity: bright yellow flames spreading along the sample"
+        caption="Saffire-VI: a PMMA plastic sample burning inside a Cygnus cargo spacecraft."
+        creditHref="https://images.nasa.gov/details/Saf-VI%20S8C3+C4%201-sided%20PMMA_unmapped_jpeg-20x%20no%20text"
+      />
+      <LoopVideo
+        src="/media/sofie-gel.mp4"
+        poster="/media/sofie-gel.jpg"
+        label="A blue flame wrapped around a small sphere, shrinking and breaking apart until it goes out"
+        caption="SoFIE-GEL: a flame around a solid sphere shrinking towards extinction."
+        creditHref="https://images.nasa.gov/details/SoFIE-GEL"
+      />
+    </div>
+  );
+}
+
+/** The method as a four-stage pipeline. Numbers come from the dataset. */
+function FlowScene({
+  nInvestigations,
+  nPoints,
+  nVerified,
+  nFields,
+}: {
+  nInvestigations: number;
+  nPoints: number;
+  nVerified: number;
+  nFields: number;
+}) {
+  const stages: { title: string; text: string; stat: string; href?: string; link?: string }[] = [
+    {
+      title: 'Source',
+      text: 'Combustion investigations in the NASA PSI repository, snapshotted once. The app never guesses beyond it.',
+      stat: `${nInvestigations} investigations`,
+      href: '/investigations',
+      link: 'Browse them',
+    },
+    {
+      title: 'Curate',
+      text: 'Every extracted field keeps its source, a verbatim quote and a verified flag. Unknown stays “not reported”.',
+      stat: `${nVerified} of ${nFields} fields verified`,
+      href: '/about',
+      link: 'Method',
+    },
+    {
+      title: 'Analyse',
+      text: 'Rank investigations for a habitat, map tested conditions, and estimate fire behaviour from the nearest test runs.',
+      stat: `${nPoints} test runs`,
+      href: '/lens',
+      link: 'Open the Lens',
+    },
+    {
+      title: 'Report',
+      text: 'A written summary that may only cite PSI IDs present in the data. Anything else is stripped and flagged.',
+      stat: 'citations checked',
+    },
+  ];
+  return (
+    <ol className="flow">
+      {stages.map((st, i) => (
+        <li key={st.title} className="flow-node hud">
+          <span className="flow-index num">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{st.title}</h3>
+          <p className="muted">{st.text}</p>
+          <span className="tag tag-accent">{st.stat}</span>
+          {st.href && (
+            <Link href={st.href} className="flow-link">
+              {st.link} →
+            </Link>
+          )}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export function IntroStory({
   points,
   habitats,
   focus,
   earth,
   nInvestigations,
+  nFieldsVerified,
+  nFieldsTotal,
   partialGravityNote,
 }: {
   points: FlammabilityPoint[];
@@ -147,12 +235,14 @@ export function IntroStory({
   focus: Habitat;
   earth: Habitat | undefined;
   nInvestigations: number;
+  nFieldsVerified: number;
+  nFieldsTotal: number;
   /** Vetted wording owned by role C (PARTIAL_GRAVITY_WARNING), shown verbatim. */
   partialGravityNote: string;
 }) {
   const solids = points.filter((p) => SOLID_CLASSES.includes(p.material_class));
   const solidsAtFocus = solids.filter((p) => p.o2_mole_fraction >= focus.o2_mole_fraction).length;
-  const total = 4;
+  const total = 6;
 
   return (
     <div className="story">
@@ -178,6 +268,23 @@ export function IntroStory({
       <Chapter
         index={2}
         total={total}
+        kicker="What it looks like"
+        title="Real flames, filmed in orbit"
+        scene={<FootageScene />}
+      >
+        <p className="muted">
+          NASA has been lighting fires in space on purpose for decades, to learn how materials burn before a crew has to
+          find out.
+        </p>
+        <p className="card-foot">
+          These two clips are from NASA experiments that are not part of the PSI snapshot analysed here. They are shown
+          for context only.
+        </p>
+      </Chapter>
+
+      <Chapter
+        index={3}
+        total={total}
         kicker="The atmosphere changes"
         title="The Moon base will have more oxygen at lower pressure"
         scene={<AtmosphereScene rows={earth ? [earth, focus] : [focus]} />}
@@ -192,7 +299,7 @@ export function IntroStory({
       </Chapter>
 
       <Chapter
-        index={3}
+        index={4}
         total={total}
         kicker="What has been tested"
         title={`${nInvestigations} investigations, ${points.length} test runs, one chart`}
@@ -205,7 +312,7 @@ export function IntroStory({
       </Chapter>
 
       <Chapter
-        index={4}
+        index={5}
         total={total}
         kicker="The gap"
         title="The data stops short of where the crew will live"
@@ -226,6 +333,24 @@ export function IntroStory({
           PSI near the Moon base atmosphere.
         </p>
         <div className="callout">{partialGravityNote}</div>
+      </Chapter>
+
+      <Chapter
+        index={6}
+        total={total}
+        kicker="How this tool works"
+        title="From NASA records to an answer you can trace"
+        wide
+        scene={
+          <FlowScene
+            nInvestigations={nInvestigations}
+            nPoints={points.length}
+            nVerified={nFieldsVerified}
+            nFields={nFieldsTotal}
+          />
+        }
+      >
+        <p className="muted">Four steps, and every number on screen can be followed back through them.</p>
       </Chapter>
     </div>
   );
