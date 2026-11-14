@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { CoverageTeaser } from '@/components/CoverageTeaser';
 import { HabitatCard } from '@/components/HabitatCard';
+import { IntroStory } from '@/components/IntroStory';
 import { plural } from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
+import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
 const FEATURES = [
   {
@@ -28,7 +29,8 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-intro">
+        <div className="hero-backdrop" aria-hidden="true" />
         <div className="hero-copy">
           <span className="eyebrow rise">NASA PSI microgravity combustion data</span>
           <h1 className="rise rise-1">
@@ -42,17 +44,27 @@ export default function HomePage() {
             <Link href={`/lens?habitat=${focus.id}`} className="btn btn-primary">
               Check the {focus.name.replace(/\s*\(.*\)$/, '')}
             </Link>
-            <Link href="/map" className="btn">
-              See the data gaps
-            </Link>
+            <a href="#check" className="btn">
+              Skip the intro
+            </a>
           </div>
         </div>
-        <div className="rise rise-2">
-          <CoverageTeaser points={flammabilityPoints} habitats={habitats} focus={focus} />
+        <div className="scroll-cue rise rise-3" aria-hidden="true">
+          <span>Scroll</span>
+          <i />
         </div>
       </section>
 
-      <section className="section" aria-label="Dataset summary">
+      <IntroStory
+        points={flammabilityPoints}
+        habitats={habitats}
+        focus={focus}
+        earth={getHabitat('earth')}
+        nInvestigations={investigations.length}
+        partialGravityNote={PARTIAL_GRAVITY_WARNING}
+      />
+
+      <section className="section" aria-label="Dataset summary" id="check">
         <div className="stats">
           <div className="stat">
             <span className="stat-value">{investigations.length}</span>
