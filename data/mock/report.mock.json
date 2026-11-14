@@ -1,0 +1,12 @@
+{
+  "markdown": "## What the data says\nMOCK report. Thin fabric samples kept burning at oxygen levels below the habitat value in these mock tests [PSI-25].\n\n## How confident we can be\nMOCK. The nearest mock tests sit close to the target oxygen level and pressure [PSI-25]. Large samples were tested only at Earth-like conditions [PSI-98].\n\n## Gaps\nMOCK. Partial gravity is not covered by PSI data.\n\n## What future experiments (e.g. LUCI, FM2) should measure\nMOCK. Flame spread on thin fabrics at 30% oxygen and reduced pressure under lunar gravity, with suppression by CO2 dilution as studied for droplets [PSI-69].",
+  "citations": [
+    "PSI-25",
+    "PSI-98",
+    "PSI-69"
+  ],
+  "stripped_citations": [],
+  "model": "mock",
+  "generated_at": "2026-11-14T00:00:00.000Z",
+  "cached": true
+}

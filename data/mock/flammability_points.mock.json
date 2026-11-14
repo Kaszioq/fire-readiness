@@ -1,0 +1,2862 @@
+[
+  {
+    "id": "PSI-25:MOCK-001",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-001",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 1"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-002",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-002",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 2"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-003",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-003",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 3"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-004",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-004",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 4"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-005",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-005",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 5"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-006",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-006",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 6"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-007",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-007",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 7"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-008",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-008",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 8"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-009",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-009",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 9"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-010",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-010",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 10"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-011",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-011",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 11"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-012",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-012",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 12"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-013",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-013",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 13"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-014",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-014",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 14"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-015",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-015",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 15"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-016",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-016",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 16"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-017",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-017",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 17"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-018",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-018",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 18"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-019",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-019",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 19"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-020",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-020",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 20"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-021",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-021",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 21"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-022",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-022",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 22"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-023",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-023",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 23"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-024",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-024",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 24"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-025",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-025",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 25"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-026",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-026",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 26"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-027",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-027",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 27"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-028",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-028",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 28"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-029",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-029",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 29"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-030",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-030",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 30"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-031",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-031",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 31"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-032",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-032",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 32"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-033",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-033",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 33"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-034",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-034",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 34"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-035",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-035",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 35"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-036",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-036",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 36"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-037",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-037",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 37"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-038",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-038",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 38"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-039",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-039",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 39"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-040",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-040",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 40"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-041",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-041",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 41"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-042",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-042",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 42"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-043",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-043",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 43"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-044",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-044",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 44"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-045",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-045",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.27,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.2,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 45"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-046",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-046",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 46"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-047",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-047",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 47"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-048",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-048",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 48"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-049",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-049",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 49"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-050",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-050",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 50"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-051",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-051",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 51"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-052",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-052",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 52"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-053",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-053",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 53"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-054",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-054",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 54"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-055",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-055",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 55"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-056",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-056",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 56"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-057",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-057",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 57"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-058",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-058",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 58"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-059",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-059",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 59"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-060",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-060",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 60"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-061",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-061",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 61"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-062",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-062",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 62"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-063",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-063",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.34,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 63"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-064",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-064",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 50,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 64"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-065",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-065",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 50,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 65"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-066",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-066",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 50,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 66"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-067",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-067",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 67"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-068",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-068",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 68"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-069",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-069",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 70.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 69"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-070",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-070",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 0,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 70"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-071",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-071",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 5,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 71"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-25:MOCK-072",
+    "psi_id": "PSI-25",
+    "test_id": "MOCK-072",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+        "file": "PSI-25_mock_table.csv",
+        "locator": "row 72"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-98:MOCK-001",
+    "psi_id": "PSI-98",
+    "test_id": "MOCK-001",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 20,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+        "file": "PSI-98_mock_table.csv",
+        "locator": "row 1"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-98:MOCK-002",
+    "psi_id": "PSI-98",
+    "test_id": "MOCK-002",
+    "material": "mock cotton-fiberglass fabric",
+    "material_class": "thin_fabric",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 25,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+        "file": "PSI-98_mock_table.csv",
+        "locator": "row 2"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-001",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-001",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 2,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 1"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-002",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-002",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 2"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-003",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-003",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.15,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 40,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 3"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-004",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-004",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.17,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 2,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 4"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-005",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-005",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.17,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 5"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-006",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-006",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.17,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 40,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 6"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-007",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-007",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.19,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 2,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 7"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-008",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-008",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.19,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.4,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 8"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-009",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-009",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.19,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 40,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.4,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 9"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-010",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-010",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 2,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 10"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-011",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-011",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 11"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-012",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-012",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 40,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 12"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-013",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-013",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 2,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 13"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-014",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-014",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 14"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-26:MOCK-015",
+    "psi_id": "PSI-26",
+    "test_id": "MOCK-015",
+    "material": "mock acrylic sphere",
+    "material_class": "thick_solid",
+    "o2_mole_fraction": 0.24,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 40,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+        "file": "PSI-26_mock_table.csv",
+        "locator": "row 15"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-001",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-001",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.1,
+    "pressure_kpa": 50.7,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 1"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-002",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-002",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.1,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "extinguished",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 2"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-003",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-003",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.1,
+    "pressure_kpa": 303.9,
+    "flow_cm_s": null,
+    "diluent": "CO2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 3"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-004",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-004",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.14,
+    "pressure_kpa": 50.7,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 4"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-005",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-005",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.14,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "marginal",
+    "spread_rate_mm_s": null,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 5"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-006",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-006",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.14,
+    "pressure_kpa": 303.9,
+    "flow_cm_s": null,
+    "diluent": "CO2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 0.9,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 6"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-007",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-007",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 50.7,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.3,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 7"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-008",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-008",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.3,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 8"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-009",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-009",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.18,
+    "pressure_kpa": 303.9,
+    "flow_cm_s": null,
+    "diluent": "CO2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.3,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 9"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-010",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-010",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 50.7,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 10"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-011",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-011",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 11"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-012",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-012",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 303.9,
+    "flow_cm_s": null,
+    "diluent": "CO2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 12"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-013",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-013",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 50.7,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 13"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-014",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-014",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 14"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-015",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-015",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.3,
+    "pressure_kpa": 303.9,
+    "flow_cm_s": null,
+    "diluent": "CO2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 2.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 15"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-016",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-016",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 50.7,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 16"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-017",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-017",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": null,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 17"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-69:MOCK-018",
+    "psi_id": "PSI-69",
+    "test_id": "MOCK-018",
+    "material": "mock n-heptane",
+    "material_class": "liquid_droplet",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 303.9,
+    "flow_cm_s": null,
+    "diluent": "CO2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+        "file": "PSI-69_mock_table.csv",
+        "locator": "row 18"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-159:MOCK-001",
+    "psi_id": "PSI-159",
+    "test_id": "MOCK-001",
+    "material": "mock methane",
+    "material_class": "gas_jet",
+    "o2_mole_fraction": 0.21,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 1.6,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+        "file": "PSI-159_mock_table.csv",
+        "locator": "row 1"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-159:MOCK-002",
+    "psi_id": "PSI-159",
+    "test_id": "MOCK-002",
+    "material": "mock methane",
+    "material_class": "gas_jet",
+    "o2_mole_fraction": 0.4,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 3.5,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+        "file": "PSI-159_mock_table.csv",
+        "locator": "row 2"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  },
+  {
+    "id": "PSI-159:MOCK-003",
+    "psi_id": "PSI-159",
+    "test_id": "MOCK-003",
+    "material": "mock methane",
+    "material_class": "gas_jet",
+    "o2_mole_fraction": 0.85,
+    "pressure_kpa": 101.3,
+    "flow_cm_s": 10,
+    "diluent": "N2",
+    "gravity": "micro",
+    "outcome": "sustained",
+    "spread_rate_mm_s": 8,
+    "prov": {
+      "source_type": "experimental_table",
+      "source_ref": {
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+        "file": "PSI-159_mock_table.csv",
+        "locator": "row 3"
+      },
+      "quote": "MOCK row.",
+      "method": "manual",
+      "verified": false,
+      "note": "MOCK DATA: fake value for development, not from NASA sources"
+    }
+  }
+]

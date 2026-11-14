@@ -1,0 +1,3179 @@
+[
+  {
+    "psi_id": "PSI-26",
+    "acronym": "BASS",
+    "title": "[MOCK] Solid fuel burning and suppression study",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "project_type": "flight",
+    "hardware": {
+      "value": [
+        "Mock glovebox",
+        "Mock flow duct"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "ISS",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of BASS: study how mock acrylic sphere burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of BASS: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of BASS: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of BASS: flow speed changed the outcome.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "solid"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock acrylic sphere",
+          "mock cotton-fiberglass fabric"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "thin flat sample",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": "10 mm x 100 mm",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": {
+          "min": 0.15,
+          "max": 0.24
+        },
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": {
+          "min": 101.3,
+          "max": 101.3
+        },
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": {
+          "min": 1,
+          "max": 40
+        },
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "micro",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": 40,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "prevention",
+        "suppression"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 1,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {
+      "moon_base": {
+        "value": "MOCK note: how BASS relates to a 30% O2, 70 kPa habitat.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "uses_data_from": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 120,
+      "total_bytes": 2500000000,
+      "has_experimental_table": true,
+      "formats": [
+        "csv",
+        "pdf",
+        "avi"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about BASS",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  },
+  {
+    "psi_id": "PSI-25",
+    "acronym": "BASS-II",
+    "title": "[MOCK] Solid fuel burning and suppression study II",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "project_type": "flight",
+    "hardware": {
+      "value": [
+        "Mock glovebox",
+        "Mock flow duct"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "ISS",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of BASS-II: study how mock cotton-fiberglass fabric burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of BASS-II: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of BASS-II: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of BASS-II: flow speed changed the outcome.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "solid"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock cotton-fiberglass fabric",
+          "mock acrylic slab"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "thin flat sample",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": "20 mm x 100 mm",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": {
+          "min": 0.15,
+          "max": 0.4
+        },
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": {
+          "min": 50,
+          "max": 101.3
+        },
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": {
+          "min": 0,
+          "max": 20
+        },
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "micro",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": 100,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "prevention"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 1,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {
+      "moon_base": {
+        "value": "MOCK note: how BASS-II relates to a 30% O2, 70 kPa habitat.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "uses_data_from": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 120,
+      "total_bytes": 2500000000,
+      "has_experimental_table": true,
+      "formats": [
+        "csv",
+        "pdf",
+        "avi"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about BASS-II",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  },
+  {
+    "psi_id": "PSI-98",
+    "acronym": "Saffire-I",
+    "title": "[MOCK] Large-scale spacecraft fire experiment",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "project_type": "flight",
+    "hardware": {
+      "value": [
+        "Mock flow duct module"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "Cygnus (after ISS departure)",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of Saffire-I: study how mock cotton-fiberglass fabric burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of Saffire-I: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of Saffire-I: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of Saffire-I: flow speed changed the outcome.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "solid"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock cotton-fiberglass fabric"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "large thin sheet",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": "400 mm x 940 mm",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": {
+          "min": 0.21,
+          "max": 0.21
+        },
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": {
+          "min": 101.3,
+          "max": 101.3
+        },
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": {
+          "min": 20,
+          "max": 25
+        },
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "micro",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": 2,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "prevention",
+        "detection"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 1,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {
+      "moon_base": {
+        "value": "MOCK note: how Saffire-I relates to a 30% O2, 70 kPa habitat.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "uses_data_from": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 15,
+      "total_bytes": 40000000,
+      "has_experimental_table": false,
+      "formats": [
+        "pdf"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about Saffire-I",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  },
+  {
+    "psi_id": "PSI-69",
+    "acronym": "FLEX",
+    "title": "[MOCK] Droplet flame extinguishment experiment",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+    "project_type": "flight",
+    "hardware": {
+      "value": [
+        "Mock combustion rack",
+        "Mock droplet apparatus"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "ISS",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of FLEX: study how mock n-heptane burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of FLEX: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of FLEX: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of FLEX: adding CO2 raised the oxygen level needed to keep burning.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "liquid"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock n-heptane",
+          "mock methanol"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "spherical droplet",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": "2 to 5 mm diameter",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": {
+          "min": 0.1,
+          "max": 0.4
+        },
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": {
+          "min": 50.7,
+          "max": 303.9
+        },
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": null,
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2",
+          "CO2",
+          "He"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "micro",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": 300,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "XX",
+          "verified_at": "2026-11-14T00:00:00.000Z",
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "suppression",
+        "fundamental"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 1,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {
+      "moon_base": {
+        "value": "MOCK note: how FLEX relates to a 30% O2, 70 kPa habitat.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "uses_data_from": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": true,
+        "verified_by": "XX",
+        "verified_at": "2026-11-14T00:00:00.000Z",
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 120,
+      "total_bytes": 2500000000,
+      "has_experimental_table": true,
+      "formats": [
+        "csv",
+        "pdf",
+        "avi"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about FLEX",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  },
+  {
+    "psi_id": "PSI-102",
+    "acronym": "SAME",
+    "title": "[MOCK] Smoke aerosol measurement experiment",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+    "project_type": "flight",
+    "hardware": {
+      "value": [
+        "Mock glovebox",
+        "Mock aerosol instruments"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "ISS",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of SAME: study how mock wire insulation burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of SAME: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of SAME: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of SAME: flow speed changed the outcome.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "solid"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock wire insulation",
+          "mock cellulose"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "heated sample",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": null,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": null,
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": null,
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": null,
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "micro",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": null,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "detection"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 1,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {
+      "moon_base": {
+        "value": "MOCK note: how SAME relates to a 30% O2, 70 kPa habitat.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "uses_data_from": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 15,
+      "total_bytes": 40000000,
+      "has_experimental_table": false,
+      "formats": [
+        "pdf"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about SAME",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  },
+  {
+    "psi_id": "PSI-159",
+    "acronym": "ACME CFI-G",
+    "title": "[MOCK] Gaseous coflow flame study",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+    "project_type": "flight",
+    "hardware": {
+      "value": [
+        "Mock combustion rack",
+        "Mock gas burner insert"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "ISS",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of ACME CFI-G: study how mock methane burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of ACME CFI-G: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of ACME CFI-G: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of ACME CFI-G: flow speed changed the outcome.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "gas"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock methane",
+          "mock ethylene"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "co-flow burner tube",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": "2 mm nozzle",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": {
+          "min": 0.21,
+          "max": 0.85
+        },
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": {
+          "min": 101.3,
+          "max": 101.3
+        },
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": {
+          "min": 5,
+          "max": 30
+        },
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "micro",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": 60,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "fundamental"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 2,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {},
+    "uses_data_from": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 120,
+      "total_bytes": 2500000000,
+      "has_experimental_table": true,
+      "formats": [
+        "csv",
+        "pdf",
+        "avi"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about ACME CFI-G",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  },
+  {
+    "psi_id": "PSI-62",
+    "acronym": "FGM",
+    "title": "[MOCK] Ground modelling of concurrent flame spread",
+    "doi": null,
+    "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+    "project_type": "ground",
+    "hardware": {
+      "value": [],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "platform": {
+      "value": "ground",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "start_date": {
+      "value": "2012-01-01",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "end_date": {
+      "value": "2013-12-31",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "managing_center": {
+      "value": "Mock Research Center",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "license": {
+      "value": "CC0-1.0",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "objective_summary": {
+      "value": "MOCK objective of FGM: study how mock cotton-fiberglass fabric burns and goes out.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "approach_summary": {
+      "value": "MOCK approach of FGM: ignite samples and vary the atmosphere.",
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "key_findings": [
+      {
+        "value": "MOCK finding 1 of FGM: flames persisted at lower oxygen than expected.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      {
+        "value": "MOCK finding 2 of FGM: flow speed changed the outcome.",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    ],
+    "fuel": {
+      "phase": {
+        "value": [
+          "solid"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "materials": {
+        "value": [
+          "mock cotton-fiberglass fabric"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "geometry": {
+        "value": "thin flat sample",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "size": {
+        "value": null,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "conditions": {
+      "o2_mole_fraction": {
+        "value": {
+          "min": 0.18,
+          "max": 0.3
+        },
+        "unit": "mole fraction",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "pressure_kpa": {
+        "value": {
+          "min": 101.3,
+          "max": 101.3
+        },
+        "unit": "kPa",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "flow_cm_s": {
+        "value": {
+          "min": 5,
+          "max": 20
+        },
+        "unit": "cm/s",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "diluents": {
+        "value": [
+          "N2"
+        ],
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "gravity": {
+        "value": "mixed",
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      },
+      "n_tests": {
+        "value": null,
+        "prov": {
+          "source_type": "psi_api",
+          "source_ref": {
+            "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+            "locator": "mock"
+          },
+          "quote": "MOCK quote supporting this value.",
+          "method": "llm_extracted",
+          "verified": false,
+          "note": "MOCK DATA: fake value for development, not from NASA sources"
+        }
+      }
+    },
+    "variables_varied": {
+      "value": [
+        "oxygen concentration",
+        "flow speed"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "variables_constant": {
+      "value": [
+        "pressure"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "measurements": {
+      "value": [
+        "video",
+        "radiometer",
+        "thermocouples"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "safety_domains": {
+      "value": [
+        "fundamental"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "tier": {
+      "value": 3,
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "habitat_relevance_notes": {},
+    "uses_data_from": {
+      "value": [
+        "PSI-25",
+        "PSI-26"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "quote": "MOCK quote supporting this value.",
+        "method": "llm_extracted",
+        "verified": false,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "data_availability": {
+      "n_files": 15,
+      "total_bytes": 40000000,
+      "has_experimental_table": false,
+      "formats": [
+        "pdf"
+      ],
+      "prov": {
+        "source_type": "psi_api",
+        "source_ref": {
+          "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62",
+          "locator": "mock"
+        },
+        "method": "api_direct",
+        "verified": true,
+        "note": "MOCK DATA: fake value for development, not from NASA sources"
+      }
+    },
+    "publications": [
+      {
+        "title": "[MOCK] Publication about FGM",
+        "authors": "Mock A., Mock B.",
+        "doi": null
+      }
+    ]
+  }
+]

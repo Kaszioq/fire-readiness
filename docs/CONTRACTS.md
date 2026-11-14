@@ -2,6 +2,14 @@
 
 This file is the source of truth for everything that crosses role boundaries. `src/lib/types.ts` implements it 1:1. **Frozen after the 15:30 sync on Saturday.** Changes only with team agreement, and this file is updated in the same commit.
 
+## 0. Units (internal representation)
+
+- Oxygen: **mole fraction 0 to 1** (0.21 = 21%). Display as %.
+- Pressure: **kPa**. Display kPa with psi and atm in tooltips. 1 atm = 101.325 kPa = 14.696 psi; 1 psi = 6.894757 kPa.
+- Flow velocity: **cm/s**.
+- Time: seconds. Lengths: mm.
+- Convert at the edges (data ingestion and display), never in the middle of logic.
+
 ## 1. Provenance (attached to every extracted field)
 
 ```ts
@@ -34,7 +42,7 @@ export interface Provenance {
 
 export interface Field<T> {
   value: T | null;        // null = not reported in sources; UI shows "not reported"
-  unit?: string;          // always the internal unit from CLAUDE.md
+  unit?: string;          // always the internal unit from section 0
   prov: Provenance;
 }
 
