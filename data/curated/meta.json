@@ -5,7 +5,7 @@
   "n_investigations": 24,
   "n_fields_total": 622,
   "n_fields_verified": 299,
-  "n_flammability_points": 413,
-  "n_points_unverified": 140,
+  "n_flammability_points": 241,
+  "n_points_unverified": 241,
   "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) as verified; all llm_extracted and manual fields await human review in data/verification.csv"
 }

@@ -17,29 +17,26 @@ Snapshot date: 2026-11-14. Built by `scripts/build_seed_data.py` (run `python sc
 
 ## flammability_points.json
 
-413 points from 4 investigations. **All solid-material points are at roughly 0.21 to 0.22 O2 or below, and at about 1 atm.** There is no solid-material test point at the Moon base atmosphere (0.30 O2, 70 kPa). Only FLEX droplets and ACME BRE (gas burner emulation, no point data) come close. This is a real data gap and should be shown as such.
+241 points from 4 investigations (revised 2026-11-14 16:10). **All solid-material points are at roughly 0.22 O2 or below, and at about 1 atm.** There is no solid-material test point at the Moon base atmosphere (0.30 O2, 70 kPa). Only FLEX droplets and ACME BRE (gas burner emulation, no point data) come close. This is a real data gap and should be shown as such.
 
-### FLEX (PSI-69), 273 points, `liquid_droplet`
-Source: `PSI-69_Experimental table_FLEX.csv`, one point per test row. Test 114 dropped (pressure listed as 0 mmHg).
+### FLEX (PSI-69), 101 points, `liquid_droplet`
+Source: `PSI-69_Experimental table_FLEX.csv`. Only O2/N2 tests (no CO2, no He). Test 114 dropped (pressure listed as 0 mmHg).
 - `o2_mole_fraction` = "O initial ambient composition; mole fraction"
 - `pressure_kpa` = "Ambient pressure; mmHg" x 0.1333224
-- `diluent` = CO2 or He fraction from the table, balance N2
 - `flow_cm_s` = 0 (quiescent chamber, **assumed**)
-- `outcome` from "Test end":
-  - Completion or Disruption → `sustained` (flame burned until the droplet was consumed or broke up)
-  - Extinction with burn time < 2 s → `extinguished` (flame survived only briefly; FLEX defines its limit as "flame exists for only a short time after ignition")
-  - Extinction with burn time ≥ 2 s → `marginal` (flame burned, then self-extinguished before the droplet was consumed)
-  - **The 2 s threshold is a curator choice. Review it with the FLEX publications before the demo.**
-- Burn time, test-end mode and initial diameter are kept in `prov.note`.
+- `outcome` = position relative to the **published limiting oxygen index** (Dietrich et al. 2014, doi 10.1007/s12217-014-9372-2: methanol 0.12, heptane 0.15 in O2/N2): above LOI + 0.005 = `sustained`; within 0.005 = `marginal`; below = `extinguished`.
+- Why: the earlier rule based on burn time and "Test end" could not separate 12% from 21% O2 for methanol (almost every methanol droplet self-extinguishes before burnout, which is normal droplet physics). The LOI is the quantity FLEX was designed to measure.
+- CO2 and He suppressant tests are not points because the predictor has no diluent dimension; their effect (LOI rises to about 0.14 and 0.17 with CO2) is in `key_findings`.
+- Burn time, test end and initial diameter are kept in `prov.note`.
 
 ### BASS-II (PSI-25), 128 points, solids
 Source: `PSI-25_Experimental table_BASS-II.csv`. Wax candle row (F4) dropped.
 - `o2_mole_fraction` = "Calibrated initial O2 % by vol" / 100
-- `material_class`: SIBAL and Nomex → `thin_fabric`; PMMA films (≤ 0.4 mm) → `thin_solid`; PMMA slabs ≥ 1 mm, rods, spherical sections → `thick_solid`
-- `outcome` parsed from the free-text "Fan display" and "Air display" columns: "no ign" → `no_ignition`; "ext", "blowoff", "out", "would not stay" → `marginal` (flame lost during a flow sweep); otherwise `sustained`
+- `material_class`: SIBAL and Nomex = `thin_fabric`; PMMA films (0.4 mm or less) = `thin_solid`; PMMA slabs 1 mm or more, rods, spherical sections = `thick_solid`
+- `outcome` = result at the **initial** O2 and flow (revised 16:10): "no ign" = `no_ignition`, every other test = `sustained`. Extinctions that happened later, when the crew changed the flow (quenching or blowoff), are noted in `prov.note` and not attached to the initial flow.
 - `flow_cm_s` = first number in "Air display". **Confirmed:** the video overlay showed the "air velocity transducer reading (cm/s)" (BASS-II Summary Report, NASA/TM-20210011385, pdf p. 12).
 - `pressure_kpa` = 101.3. **Confirmed approximately:** "Ambient pressure was 1 atm." (pdf p. 102) and total pressure "varied from 99.2 to 99.5 kPa" (pdf p. 46).
-- Outcome parsing from free text is still a curator interpretation: all BASS-II points stay `manual` and unverified until a human checks them.
+- Points stay `manual` and unverified until a human spot-checks them.
 
 ### Saffire-I (PSI-98) 2 points, Saffire-II (PSI-99) 10 points
 Rows typed from the CSV (quotes are the raw CSV rows).
