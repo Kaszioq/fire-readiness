@@ -1,0 +1,47 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js / build
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel/
+
+# env and secrets (only .env.example is committed)
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# python (scripts/)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# raw PSI documents fetched on demand (large PDFs / videos), see docs/DATA_SOURCES.md
+data/raw/docs/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# local assistant tooling, never committed
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.mcp.json
