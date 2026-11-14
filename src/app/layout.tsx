@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { NavLinks } from '@/components/NavLinks';
 import { DATA_IS_MOCK, meta } from '@/lib/data';
 import '@/styles/globals.css';
 
@@ -10,33 +11,30 @@ export const metadata: Metadata = {
     'Which NASA PSI microgravity combustion investigations tell us whether a habitat atmosphere is fire-safe, and how confident can we be?',
 };
 
-const NAV = [
-  { href: '/lens', label: 'Habitat Lens' },
-  { href: '/map', label: 'Gap map' },
-  { href: '/investigations', label: 'Investigations' },
-  { href: '/simulator', label: 'Smoke simulator' },
-  { href: '/earth', label: 'Earth applications' },
-  { href: '/about', label: 'About' },
-];
+// viewport-fit=cover lets the page paint under the notch; the CSS pads content back with env(safe-area-inset-*).
+// Zoom is never disabled.
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  interactiveWidget: 'resizes-content',
+  themeColor: '#090c11',
+  colorScheme: 'dark',
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
         <header className="site-header">
-          <strong>
-            <Link href="/">Moon Base Fire Readiness</Link>
-          </strong>
-          <nav aria-label="Main">
-            {NAV.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <span className="muted">
-            {meta.n_investigations} investigations, {meta.n_fields_verified} of {meta.n_fields_total} extracted fields
-            verified against NASA source
+          <Link href="/" className="brand">
+            <span className="brand-mark" aria-hidden="true" />
+            Moon Base Fire Readiness
+          </Link>
+          <NavLinks />
+          <span className="header-stat">
+            <strong>{meta.n_investigations}</strong> investigations, <strong>{meta.n_fields_verified}</strong> of{' '}
+            {meta.n_fields_total} extracted fields verified against NASA source
           </span>
         </header>
         {DATA_IS_MOCK && (
@@ -45,6 +43,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         )}
         <main>{children}</main>
+        <footer className="site-footer">
+          <div className="site-footer-inner">
+            <span>Not an official NASA tool. Rockets and propellants are out of scope.</span>
+            <span>
+              Data: NASA PSI snapshot of {meta.fetched_at}. Open source, Apache 2.0. <Link href="/about">About</Link>
+            </span>
+          </div>
+        </footer>
       </body>
     </html>
   );

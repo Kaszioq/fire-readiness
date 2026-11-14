@@ -4,7 +4,10 @@ import { SmokeSim } from '@/components/smoke-sim/SmokeSim';
 export default function SimulatorPage() {
   return (
     <>
-      <h1>Smoke detection simulator</h1>
+      <header className="page-head">
+        <span className="eyebrow">Illustrative model</span>
+        <h1>Smoke detection simulator</h1>
+      </header>
       <SmokeSim />
     </>
   );

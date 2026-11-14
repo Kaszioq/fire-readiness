@@ -2,8 +2,11 @@
 export default function AboutPage() {
   return (
     <>
-      <h1>About</h1>
-      <p>This is not an official NASA tool. Rockets and propellants are out of scope.</p>
+      <header className="page-head">
+        <span className="eyebrow">About</span>
+        <h1>Method, sources and limits</h1>
+        <p className="lead">This is not an official NASA tool. Rockets and propellants are out of scope.</p>
+      </header>
       <div className="placeholder">
         Not written yet: method, data provenance, verification stats, limitations, references, license, team.
       </div>
