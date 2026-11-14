@@ -1130,7 +1130,10 @@ html {
 }
 
 .story-step {
-  padding: 48px 0;
+  display: grid;
+  align-items: center;
+  min-height: 86svh;
+  padding: 56px 0;
 }
 
 .story-pin {
@@ -1346,94 +1349,6 @@ html {
 /* Scroll-driven motion: only where the browser supports it, the pointer is fine enough for a pinned
    layout to make sense, the screen is wide, and the user has not asked for less motion.
    Everywhere else the chapters are a normal static page. */
-@supports (animation-timeline: view()) {
-  @media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
-    .story-step {
-      height: 170svh;
-      padding: 0;
-      view-timeline-name: --step;
-      view-timeline-axis: block;
-    }
-
-    .story-pin {
-      position: sticky;
-      top: var(--header-h);
-      height: calc(100svh - var(--header-h));
-      /* The whole chapter fades away as the next one arrives. */
-      animation: story-out linear both;
-      animation-timeline: --step;
-      animation-range: exit 0% exit 45%;
-    }
-
-    .story-copy > * {
-      animation: story-in linear both;
-      animation-timeline: --step;
-      animation-range: entry 55% contain 6%;
-    }
-
-    .story-copy > :nth-child(3) {
-      animation-range: entry 62% contain 10%;
-    }
-
-    .story-copy > :nth-child(n + 4) {
-      animation-range: entry 72% contain 16%;
-    }
-
-    .story-scene {
-      animation: scene-in linear both;
-      animation-timeline: --step;
-      animation-range: entry 50% contain 12%;
-    }
-
-    .atmo-fill {
-      animation: grow linear both;
-      animation-timeline: --step;
-      animation-range: contain 4% contain 38%;
-    }
-
-    .gap-number {
-      animation: scene-in linear both;
-      animation-timeline: --step;
-      animation-range: contain 0% contain 30%;
-    }
-
-    .story-progress {
-      display: block;
-      position: fixed;
-      top: var(--header-h);
-      left: 0;
-      z-index: 19;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #c2410c, var(--accent));
-      transform-origin: left center;
-      animation: grow linear both;
-      animation-timeline: scroll(root block);
-    }
-  }
-}
-
-@keyframes story-in {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-}
-
-@keyframes scene-in {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-}
-
-@keyframes story-out {
-  to {
-    opacity: 0;
-    transform: translateY(-24px);
-  }
-}
-
 @keyframes grow {
   from {
     transform: scaleX(0);
@@ -1447,6 +1362,7 @@ html {
   }
 
   .story-step {
+    min-height: 0;
     padding: 32px 0;
   }
 
@@ -1578,47 +1494,6 @@ html {
   transform-origin: left center;
 }
 
-@supports (animation-timeline: view()) {
-  @media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
-    .flow-node {
-      animation: scene-in linear both;
-      animation-timeline: --step;
-      animation-range: entry 70% contain 8%;
-    }
-
-    .flow-node:nth-child(2) {
-      animation-range: contain 4% contain 22%;
-    }
-
-    .flow-node:nth-child(3) {
-      animation-range: contain 18% contain 36%;
-    }
-
-    .flow-node:nth-child(4) {
-      animation-range: contain 32% contain 50%;
-    }
-
-    .flow-node > .flow-index::after {
-      animation: grow linear both;
-      animation-timeline: --step;
-      animation-range: contain 2% contain 14%;
-    }
-
-    .flow-node:nth-child(2) > .flow-index::after {
-      animation-range: contain 16% contain 28%;
-    }
-
-    .flow-node:nth-child(3) > .flow-index::after {
-      animation-range: contain 30% contain 42%;
-    }
-
-    /* The pipeline chapter keeps its scene steady: only the cards arrive, one by one. */
-    .story-wide > .story-scene {
-      animation: none;
-    }
-  }
-}
-
 @media (max-width: 1000px) {
   .flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1664,6 +1539,128 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .hero-photo {
     animation: none;
+  }
+}
+
+/* ---------- Home: chapter reveals ----------
+   Purpose: explanation, on a first-visit surface. Triggered once when a chapter scrolls in (StoryReveal),
+   then time-based: text rises in with a short stagger, the scene wipes open, data bars and the pipeline
+   build. Only opacity, transform and clip-path move. The hidden starting state exists only once the script
+   has run (data-reveal) and only for users who have not asked for less motion. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .story[data-reveal] .story-copy > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 520ms var(--ease-out),
+      transform 520ms var(--ease-out);
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(2) {
+    transition-delay: 40ms;
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(3) {
+    transition-delay: 90ms;
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(4) {
+    transition-delay: 150ms;
+  }
+
+  .story[data-reveal] .story-copy > :nth-child(n + 5) {
+    transition-delay: 200ms;
+  }
+
+  .story[data-reveal] .story-pin:not(.story-wide) > .story-scene {
+    clip-path: inset(0 0 100% 0 round 14px);
+    transition: clip-path 640ms var(--ease-in-out) 120ms;
+  }
+
+  .story[data-reveal] .atmo-fill {
+    transform: scaleX(0);
+    transition: transform 800ms var(--ease-out) 520ms;
+  }
+
+  .story[data-reveal] .atmo-row:nth-child(2) .atmo-fill {
+    transition-delay: 640ms;
+  }
+
+  .story[data-reveal] .gap-number {
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+      opacity 500ms var(--ease-out) 420ms,
+      transform 500ms var(--ease-out) 420ms;
+  }
+
+  .story[data-reveal] .flow-node {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+    transition:
+      opacity 460ms var(--ease-out),
+      transform 460ms var(--ease-out);
+    transition-delay: 220ms;
+  }
+
+  .story[data-reveal] .flow-node:nth-child(2) {
+    transition-delay: 300ms;
+  }
+
+  .story[data-reveal] .flow-node:nth-child(3) {
+    transition-delay: 370ms;
+  }
+
+  .story[data-reveal] .flow-node:nth-child(4) {
+    transition-delay: 430ms;
+  }
+
+  .story[data-reveal] .flow-node > .flow-index::after {
+    transform: scaleX(0);
+    transition: transform 360ms var(--ease-out) 620ms;
+  }
+
+  /* Revealed state. */
+  .story[data-reveal] [data-visible] .story-copy > *,
+  .story[data-reveal] [data-visible] .gap-number,
+  .story[data-reveal] [data-visible] .flow-node {
+    opacity: 1;
+    transform: none;
+  }
+
+  .story[data-reveal] [data-visible] .story-pin:not(.story-wide) > .story-scene {
+    clip-path: inset(0 0 0 0 round 14px);
+  }
+
+  .story[data-reveal] [data-visible] .atmo-fill,
+  .story[data-reveal] [data-visible] .flow-node > .flow-index::after {
+    transform: scaleX(1);
+  }
+
+  /* Chapters that were already on screen when the page loaded appear without any animation. */
+  .story[data-reveal] [data-visible='instant'] *,
+  .story[data-reveal] [data-visible='instant'] .flow-index::after {
+    transition: none;
+  }
+}
+
+/* The page progress line is the one thing tied to scroll position: it is a readout of it. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story-progress {
+      display: block;
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      z-index: 19;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #c2410c, var(--accent));
+      transform-origin: left center;
+      animation: grow linear both;
+      animation-timeline: scroll(root block);
+    }
   }
 }
 

@@ -1,12 +1,14 @@
 // Role B. Scroll-driven introduction on the home page: what the problem is, in four pinned chapters.
-// No JavaScript: the motion is CSS scroll-driven animation (animation-timeline: view()), and browsers
-// without it, or users who prefer reduced motion, get the same content as a plain static page.
+// Each chapter plays a short, time-based reveal the first time it scrolls into view (StoryReveal sets
+// data-visible, CSS transitions do the rest). Nothing is tied to the scroll position itself, so the motion
+// is the same with a mouse wheel, a trackpad or a finger. Without JavaScript the chapters are simply visible.
 // Every number comes from '@/lib/data'; the two quotes are verbatim from the challenge statement.
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { CoverageTeaser } from '@/components/CoverageTeaser';
 import { formatKpa, formatPercent, formatPsi, SOLID_CLASSES, sourceHref } from '@/components/format';
 import { LoopVideo } from '@/components/LoopVideo';
+import { StoryReveal } from '@/components/StoryReveal';
 import type { FlammabilityPoint, Habitat } from '@/lib/types';
 
 function Chapter({
@@ -247,6 +249,7 @@ export function IntroStory({
   return (
     <div className="story">
       <div className="story-progress" aria-hidden="true" />
+      <StoryReveal />
 
       <Chapter
         index={1}
