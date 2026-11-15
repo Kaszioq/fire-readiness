@@ -66,6 +66,9 @@ export const HELIUM_WARNING =
 export const CO2_WARNING =
   'CO2-diluted atmosphere: the conditions carry no CO2 fraction and the flame-temperature grid covers O2/N2 only, so no estimate is given. See the FLEX suppression findings.';
 
+export const FIRE_RESISTANT_WARNING =
+  'Fire-resistant does not mean safe: no fire-resistant material was tested in the PSI microgravity data above about 22% O2, and in 1 g Nomex HT90-40 failed NASA-STD-6001 Test 1 at 30% O2 and 70.1 kPa (NTRS 20070018178).';
+
 export const SURROGATE_WARNING =
   'Flame temperature for solids uses n-heptane as a surrogate fuel. Material chemistry is not captured: some materials do not burn even where others do.';
 
@@ -299,6 +302,22 @@ function predictForFuel(
   }
   if (diluent === 'CO2') {
     return noResult(c, 'none', 'No estimate: CO2-diluted atmosphere.', [...warnings, CO2_WARNING], undefined);
+  }
+  if (c.material_class === 'fire_resistant') {
+    // Each fire-resistant material has its own oxygen limit, so runs of one say nothing about another.
+    const runs = points.filter((p) => p.material_class === 'fire_resistant');
+    const burned = runs.filter((p) => p.outcome === 'sustained').length;
+    const tested = runs.length
+      ? ` The data hold ${runs.length} such test runs (${unique(runs.map((p) => materialFamily(p.material))).join(', ')}), ` +
+        `all at no more than ${pct(Math.max(...runs.map((p) => p.o2_mole_fraction)))} O2: ${burned} kept burning and ${runs.length - burned} did not.`
+      : '';
+    return noResult(
+      c,
+      'none',
+      `No estimate: the flammability limit of a fire-resistant material is material-specific, so test runs of one material do not predict another.${tested}`,
+      [...warnings, FIRE_RESISTANT_WARNING],
+      undefined,
+    );
   }
   if (fuel === null) {
     const n = points.filter((p) => p.material_class === c.material_class).length;

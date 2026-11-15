@@ -5,6 +5,7 @@ import type { Conditions, FuelModel, HabitatId, MaterialClass } from '@/lib/type
 import {
   CONFIDENCE_SENTENCE,
   evidenceCoverage,
+  FIRE_RESISTANT_WARNING,
   HELIUM_WARNING,
   interpolateTad,
   MAX_EVIDENCE,
@@ -444,6 +445,19 @@ describe('evidence is always within the distance limit', () => {
     expect(p.zone).toBe('no_evidence');
     expect(p.mode).toBe('none');
     expect(p.evidence).toHaveLength(0);
+    // The reason is the material-specific limit, with the counts from the data, and never "safe".
+    const runs = P.filter((x) => x.material_class === 'fire_resistant');
+    const burned = runs.filter((x) => x.outcome === 'sustained').length;
+    expect(p.explanation).toContain('material-specific');
+    expect(p.explanation).toContain(`${runs.length} such test runs`);
+    expect(p.explanation).toContain(`${burned} kept burning and ${runs.length - burned} did not`);
+    expect(p.warnings).toContain(FIRE_RESISTANT_WARNING);
+    expect(FIRE_RESISTANT_WARNING).toContain('does not mean safe');
+    // Same answer at the Moon base, plus the partial-gravity warning.
+    const moon = predict(habitatConditions('moon_base', 'fire_resistant'), P);
+    expect(moon.mode).toBe('none');
+    expect(moon.warnings).toContain(PARTIAL_GRAVITY_WARNING);
+    expect(moon.warnings).toContain(FIRE_RESISTANT_WARNING);
   });
 
   it('a target placed on any test run is a data result that includes nearby runs', () => {
