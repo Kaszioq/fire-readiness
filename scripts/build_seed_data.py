@@ -685,6 +685,10 @@ EXTRA = {
         P_("Flame spread rate increased linearly with flow; quenching extinction was observed at about 1 cm/s.",
            "PSI-26", "https://ntrs.nasa.gov/citations/20140011099", "Quenching extinction was observed (around 1 cm/s)",
            "Ferkul et al., ASGSR 2013 presentation (NTRS 20140011099)"),
+        P_("Not burning on the ISS does not make Nomex HT90-40 safe at exploration oxygen levels: in ground (1 g) upward flammability tests at 70.1 kPa it failed in 30% oxygen in three of the four configurations tested.",
+           "PSI-26", "https://ntrs.nasa.gov/citations/20070018178",
+           "Nomex (an aramid) failed in 30 % oxygen in J-configuration in both single and double layers and at 15 degrees from vertical as a single layer.",
+           "Hirsch et al. 2007, Oxygen Concentration Flammability Thresholds of Selected Aerospace Materials Considered for the Constellation Program (NTRS 20070018178), section 3; section 2 states the fixed total pressure of 70.1 kPa; Table 2 lists Nomex HT90-40"),
     ],
     "PSI-25": [
         P_("Flame extinctions in BASS-II indicate that materials can burn at a lower oxygen concentration in microgravity than in normal gravity.",
