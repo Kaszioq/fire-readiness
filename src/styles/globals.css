@@ -2178,3 +2178,59 @@ select.input {
   opacity: 0.45;
   transition: opacity 200ms ease;
 }
+
+/* ---------- About ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.prose h2 {
+  margin: 22px 0 8px;
+  font-size: 16px;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 10px;
+  line-height: 1.65;
+}
+
+.prose ul,
+.prose ol {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.prose .about-sources,
+.prose .about-inv {
+  padding-left: 0;
+  list-style: none;
+}
+
+.about-sources li {
+  display: grid;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.prose .about-inv {
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 4px 16px;
+  font-size: 13.5px;
+}
