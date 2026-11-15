@@ -2,6 +2,7 @@
 // client workbench, which runs rankInvestigations() and predict() (role C) on every change.
 import { MATERIAL_LABEL } from '@/components/format';
 import { LensWorkbench } from '@/components/LensWorkbench';
+import { PageBanner } from '@/components/PageBanner';
 import { flammabilityPoints, getCachedReport, getHabitat, habitats, investigations } from '@/lib/data';
 import type { MaterialClass } from '@/lib/types';
 
@@ -30,6 +31,12 @@ export default async function LensPage({
 
   return (
     <>
+      <PageBanner
+        src="/media/orion-moon-earth-art001e002083.jpg"
+        caption="Orion, the Moon and a crescent Earth, Artemis I, 5 December 2022."
+        creditHref="https://images.nasa.gov/details/art001e002083"
+        position="70% 60%"
+      />
       {unknownParam && (
         <div className="callout" role="status" style={{ marginBottom: 16 }}>
           No habitat preset called “{habitatParam.slice(0, 40)}”. Showing {habitat.name} instead.

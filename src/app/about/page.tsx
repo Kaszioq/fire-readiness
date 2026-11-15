@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 import { formatKpa, formatPercent, HABITAT_SHORT, investigationName, plural, SOLID_CLASSES } from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
 import { REPO_URL, repoFile } from '@/components/site';
+import { PageBanner } from '@/components/PageBanner';
 import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
 export const metadata = { title: 'About' };
@@ -54,6 +55,12 @@ export default function AboutPage() {
 
   return (
     <>
+      <PageBanner
+        src="/media/sun-plasma-pia21866.jpg"
+        caption="A sheet of plasma leaving the Sun, Solar Dynamics Observatory, 28 July 2017. Decorative: not combustion data."
+        creditHref="https://images.nasa.gov/details/PIA21866"
+        position="80% 55%"
+      />
       <header className="page-head">
         <span className="eyebrow">About</span>
         <h1>Method, sources and limits</h1>

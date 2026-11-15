@@ -1,8 +1,19 @@
 import Link from 'next/link';
+import { BackdropVideo } from '@/components/BackdropVideo';
 import { ExplainerReel, type ReelData } from '@/components/ExplainerReel';
 import { HabitatCard } from '@/components/HabitatCard';
 import { IntroStory } from '@/components/IntroStory';
-import { HABITAT_SHORT, investigationName, MATERIAL_LABEL, plural, SOLID_CLASSES, SOURCE_LABEL } from '@/components/format';
+import {
+  formatKpa,
+  formatPercent,
+  formatPsi,
+  HABITAT_SHORT,
+  investigationName,
+  MATERIAL_LABEL,
+  plural,
+  SOLID_CLASSES,
+  SOURCE_LABEL,
+} from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
 import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
@@ -123,7 +134,33 @@ export default function HomePage() {
         partialGravityNote={PARTIAL_GRAVITY_WARNING}
       />
 
-      <section className="section" aria-label="Dataset summary" id="check">
+      <section className="band band-video" aria-labelledby="moon-h">
+        <BackdropVideo src="/media/moon-flyover.mp4" poster="/media/moon-flyover.jpg" />
+        <div className="band-inner">
+          <span className="eyebrow">Where this matters</span>
+          <h2 id="moon-h" className="band-title">
+            {focus.name.replace(/\s*\(.*\)$/, '')}: {formatPercent(focus.o2_mole_fraction)} oxygen at{' '}
+            {formatKpa(focus.pressure_kpa)}, {focus.gravity_g} g.
+          </h2>
+          <p className="lead">
+            More oxygen than the air on Earth, at lower pressure ({formatPsi(focus.pressure_kpa)}), in gravity that no
+            test in this dataset has reached.
+          </p>
+          <p className="band-credit">
+            Flyover of the Taurus-Littrow valley, the Apollo 17 landing site, built from Lunar Reconnaissance Orbiter
+            data.{' '}
+            <a
+              href="https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Video: NASA
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section className="band tex-carbon" aria-label="Dataset summary" id="check">
         <div className="stats">
           <div className="stat">
             <span className="stat-value"><span data-count>{investigations.length}</span></span>
@@ -149,7 +186,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="band tex-hex">
         <div className="section-head">
           <h2>Check a habitat</h2>
           <span className="muted">Each preset opens the Habitat Lens with its atmosphere.</span>
@@ -161,7 +198,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="band tex-brushed">
         <div className="section-head">
           <h2>Explore</h2>
         </div>

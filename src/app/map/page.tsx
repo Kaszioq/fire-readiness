@@ -1,6 +1,7 @@
 // Role B. Coverage and gap map, see docs/SPEC.md module 3.
 import { investigationName } from '@/components/format';
 import { GapMap, type MapInvestigation, type MapPoint } from '@/components/GapMap';
+import { PageBanner } from '@/components/PageBanner';
 import { flammabilityPoints, getHabitat, habitats, investigations } from '@/lib/data';
 import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
@@ -36,6 +37,12 @@ export default async function MapPage({
 
   return (
     <>
+      <PageBanner
+        src="/media/orion-earth-moon-art001e001822.jpg"
+        caption="Earth and the Moon either side of Orion's solar array, Artemis I, 28 November 2022."
+        creditHref="https://images.nasa.gov/details/art001e001822"
+        position="70% 45%"
+      />
       <header className="page-head">
         <span className="eyebrow">Coverage and gap map</span>
         <h1>What has been tested, and what has not</h1>

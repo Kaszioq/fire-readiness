@@ -3156,3 +3156,168 @@ h2 {
     backdrop-filter: none;
   }
 }
+
+/* ---------- Full-bleed layout, bands, banners, tech textures ---------- */
+
+@media (min-width: 861px) {
+  :root {
+    --gutter: clamp(24px, 5vw, 96px);
+  }
+}
+
+main,
+.site-footer-inner {
+  max-width: 1760px;
+}
+
+.page-enter {
+  position: relative;
+  isolation: isolate;
+}
+
+/* A band spans the whole viewport width; its content keeps the page gutter. */
+.band {
+  position: relative;
+  margin: 72px calc(-1 * var(--gutter)) 0;
+  padding: 64px var(--gutter);
+  border-block: 1px solid var(--glass-border);
+  isolation: isolate;
+}
+
+.band + .band {
+  margin-top: 0;
+  border-top: 0;
+}
+
+.band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* Carbon fibre: two crossed diagonal weaves over a dark base. */
+.tex-carbon::before {
+  background:
+    linear-gradient(180deg, rgba(9, 12, 17, 0.2), rgba(9, 12, 17, 0.75)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.5) 0 2px, transparent 2px 6px),
+    #0d1117;
+}
+
+/* Hex mesh. */
+.tex-hex::before {
+  background:
+    radial-gradient(60% 80% at 80% 0%, rgba(108, 182, 255, 0.08), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0l28 16v33L28 65 0 49V16zM28 65v32M0 49l-28 16M56 49l28 16' fill='none' stroke='%23ffffff' stroke-opacity='.055'/%3E%3C/svg%3E"),
+    #0a0e14;
+}
+
+/* Brushed metal: fine horizontal strokes with a soft highlight. */
+.tex-brushed::before {
+  background:
+    linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 3px),
+    #0c1016;
+}
+
+.band-video {
+  display: grid;
+  align-items: end;
+  min-height: min(78svh, 720px);
+  overflow: hidden;
+}
+
+.backdrop-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) contrast(1.05);
+}
+
+.band-video::before {
+  background:
+    linear-gradient(180deg, var(--bg) 0%, transparent 22%, transparent 45%, rgba(9, 12, 17, 0.92) 100%),
+    linear-gradient(90deg, rgba(9, 12, 17, 0.7), transparent 65%);
+  opacity: 1;
+}
+
+.band-inner {
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+}
+
+.band-title {
+  font-size: clamp(26px, 3.6vw, 46px);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.band-credit,
+.banner-credit {
+  color: var(--text-faint);
+  font-size: 11.5px;
+}
+
+.band-credit a,
+.banner-credit a {
+  color: var(--text-muted);
+}
+
+/* Page banner: a photo across the top of the page, fading down into the backdrop. */
+.banner {
+  position: absolute;
+  inset: -40px calc(-1 * var(--gutter)) auto;
+  z-index: -1;
+  height: 440px;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 30%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 100%);
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(9, 12, 17, 0.92) 0%, rgba(9, 12, 17, 0.55) 45%, transparent 85%);
+}
+
+.banner-credit {
+  margin: -24px 0 12px;
+  text-align: right;
+}
+
+.site-footer {
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.035) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.45) 0 2px, transparent 2px 6px),
+    #0b0e13;
+}
+
+@media (max-width: 860px) {
+  .band {
+    margin-top: 48px;
+    padding-block: 40px;
+  }
+
+  .banner {
+    height: 300px;
+  }
+
+  .banner-credit {
+    margin-top: -12px;
+    text-align: left;
+  }
+}

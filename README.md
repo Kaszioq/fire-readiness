@@ -153,7 +153,12 @@ All photos and video on the site are NASA material from the [NASA Image and Vide
 | `saffire-vi-pmma.mp4`, `.jpg` | Saffire-VI PMMA sample burning inside a Cygnus cargo spacecraft (14 s excerpt and poster frame). Not part of the PSI snapshot. | [Saf-VI S8C3+C4 1-sided PMMA](https://images.nasa.gov/details/Saf-VI%20S8C3+C4%201-sided%20PMMA_unmapped_jpeg-20x%20no%20text) |
 | `sofie-gel.mp4`, `.jpg` | SoFIE-GEL flame shrinking towards extinction (16 s excerpt and poster frame). Not part of the PSI snapshot. | [SoFIE-GEL](https://images.nasa.gov/details/SoFIE-GEL) |
 
-The flame drawing in the intro and the site icon are original SVG. The site uses system fonts only.
+| `moon-flyover.mp4`, `.jpg` | Flyover of the Taurus-Littrow valley (Apollo 17 site) from Lunar Reconnaissance Orbiter data (9 s excerpt and poster frame) | [GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover](https://images.nasa.gov/details/GSFC_20190513_m4714_Lee_Lincoln_Scarp_Moon_Flyover) |
+| `orion-moon-earth-art001e002083.jpg` | Orion, the Moon and Earth, Artemis I, 2022 | [art001e002083](https://images.nasa.gov/details/art001e002083) |
+| `orion-earth-moon-art001e001822.jpg` | Earth and the Moon beside Orion's solar array, Artemis I, 2022 | [art001e001822](https://images.nasa.gov/details/art001e001822) |
+| `sun-plasma-pia21866.jpg` | Plasma leaving the Sun, Solar Dynamics Observatory, 2017 (timestamp strip cropped). Decorative, not combustion data. | [PIA21866](https://images.nasa.gov/details/PIA21866) |
+
+The flame drawing in the intro and the site icon are original SVG. Background textures are CSS only. The site uses system fonts only.
 
 ## License
 
