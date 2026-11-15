@@ -1,5 +1,5 @@
 // Role B. Shows a Prediction from predict() (role C). Never shows a result without its confidence and evidence count.
-import { formatNumber, formatPercent, ZONE_LABEL } from '@/components/format';
+import { clamp01, formatNumber, formatPercent, ZONE_LABEL } from '@/components/format';
 import type { Prediction } from '@/lib/types';
 
 export function PredictionCard({ prediction }: { prediction: Prediction }) {
@@ -9,17 +9,31 @@ export function PredictionCard({ prediction }: { prediction: Prediction }) {
       <div>
         <span className={`zone zone-${prediction.zone}`}>{ZONE_LABEL[prediction.zone] ?? prediction.zone}</span>
       </div>
-      <div className="habitat-values">
+      <div className="pred-figs">
         <div>
-          <span className="num">{prediction.p_sustained === null ? 'n/a' : formatPercent(prediction.p_sustained)}</span>
+          <span className="bignum pred-num">
+            {prediction.p_sustained === null ? 'n/a' : formatPercent(prediction.p_sustained).replace('%', '')}
+            {prediction.p_sustained !== null && <small>%</small>}
+          </span>
+          <span className="meter">
+            <i style={{ width: `${clamp01(prediction.p_sustained ?? 0) * 100}%` }} />
+          </span>
           <small>share of similar tests that kept burning</small>
         </div>
         <div>
-          <span className="num">{formatNumber(prediction.confidence)}</span>
-          <small>confidence (0 to 1)</small>
+          <span className="bignum pred-num">{formatNumber(prediction.confidence)}</span>
+          <span className="meter meter-cool">
+            <i style={{ width: `${clamp01(prediction.confidence) * 100}%` }} />
+          </span>
+          <small>confidence, 0 to 1</small>
         </div>
         <div>
-          <span className="num">{prediction.evidence.length}</span>
+          <span className="bignum pred-num">{prediction.evidence.length}</span>
+          <span className="pred-pips" aria-hidden="true">
+            {prediction.evidence.map((e) => (
+              <i key={e.point_id} data-outcome={e.outcome} />
+            ))}
+          </span>
           <small>{prediction.evidence.length === 1 ? 'evidence test run' : 'evidence test runs'}</small>
         </div>
       </div>

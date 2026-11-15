@@ -200,6 +200,11 @@ export function GapMap({
     };
   });
 
+  // Axes of the coverage bars: wide enough for every class and for the selected atmosphere.
+  const o2Axis = Math.max(focus.o2_mole_fraction, ...classRows.map((r) => r.o2Max)) * 1.1;
+  const kpaAxis = Math.max(focus.pressure_kpa, ...classRows.map((r) => r.kpaMax)) * 1.1;
+  const pct = (share: number) => Math.round(Math.min(1, Math.max(0, share)) * 1000) / 10;
+
   const sameAtmosphere = habitats.filter(
     (h) => h.o2_mole_fraction === focus.o2_mole_fraction && h.pressure_kpa === focus.pressure_kpa && h.id !== focus.id,
   );
@@ -424,10 +429,29 @@ export function GapMap({
           <section className="card">
             <span className="eyebrow">Selected atmosphere</span>
             <h2 className="gapmap-title">{focus.name}</h2>
-            <p className="gapmap-readout">
-              {formatPercent(focus.o2_mole_fraction)} O2 · {formatKpa(focus.pressure_kpa)}{' '}
-              <span className="muted">({formatPsi(focus.pressure_kpa)})</span> · {focus.gravity_g} g
-            </p>
+            <div className="figs">
+              <div>
+                <b className="bignum fig-num">
+                  {formatPercent(focus.o2_mole_fraction).replace('%', '')}
+                  <small>%</small>
+                </b>
+                <span>oxygen</span>
+              </div>
+              <div>
+                <b className="bignum fig-num">
+                  {Number(focus.pressure_kpa.toFixed(1))}
+                  <small>kPa</small>
+                </b>
+                <span>{formatPsi(focus.pressure_kpa)}</span>
+              </div>
+              <div>
+                <b className="bignum fig-num">
+                  {focus.gravity_g}
+                  <small>g</small>
+                </b>
+                <span>gravity</span>
+              </div>
+            </div>
             {focus.is_assumption && <p className="muted small">Scenario values, not a sourced specification.</p>}
             {sameAtmosphere.length > 0 && (
               <p className="muted small">
@@ -477,35 +501,46 @@ export function GapMap({
 
         <div className="card">
           <h3>Test runs by material class, against {HABITAT_SHORT[focus.id] ?? focus.name}</h3>
-          <div className="table-scroll">
-            <table className="gapmap-table">
-              <thead>
-                <tr>
-                  <th scope="col">Material class</th>
-                  <th scope="col">Test runs</th>
-                  <th scope="col">Oxygen tested</th>
-                  <th scope="col">Pressure tested</th>
-                  <th scope="col">Runs at or above {formatPercent(focus.o2_mole_fraction)} O2</th>
-                  <th scope="col">Runs at or below {formatKpa(focus.pressure_kpa)}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {classRows.map((row) => (
-                  <tr key={row.cls}>
-                    <th scope="row">{materialLabel(row.cls)}</th>
-                    <td>{row.n}</td>
-                    <td>{formatRange({ min: row.o2Min, max: row.o2Max }, formatPercent)}</td>
-                    <td>{formatRange({ min: row.kpaMin, max: row.kpaMax }, formatKpa)}</td>
-                    <td data-gap={row.atOrAbove === 0}>{row.atOrAbove === 0 ? 'none' : row.atOrAbove}</td>
-                    <td data-gap={row.atOrBelow === 0}>{row.atOrBelow === 0 ? 'none' : row.atOrBelow}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="cover">
+            {classRows.map((row) => (
+              <div key={row.cls} className="cover-row">
+                <div className="cover-name">
+                  <b>{materialLabel(row.cls)}</b>
+                  <span>{plural(row.n, 'test run')}</span>
+                </div>
+                <div className="cover-axis">
+                  <span className="cover-cap">
+                    Oxygen {formatRange({ min: row.o2Min, max: row.o2Max }, formatPercent)}
+                  </span>
+                  <span className="rangebar">
+                    <i style={{ left: `${pct(row.o2Min / o2Axis)}%`, width: `${Math.max(1.5, pct((row.o2Max - row.o2Min) / o2Axis))}%` }} />
+                    <u style={{ left: `${pct(focus.o2_mole_fraction / o2Axis)}%` }} />
+                  </span>
+                </div>
+                <div className="cover-axis">
+                  <span className="cover-cap">
+                    Pressure {formatRange({ min: row.kpaMin, max: row.kpaMax }, formatKpa)}
+                  </span>
+                  <span className="rangebar rangebar-cool">
+                    <i style={{ left: `${pct(row.kpaMin / kpaAxis)}%`, width: `${Math.max(1.5, pct((row.kpaMax - row.kpaMin) / kpaAxis))}%` }} />
+                    <u style={{ left: `${pct(focus.pressure_kpa / kpaAxis)}%` }} />
+                  </span>
+                </div>
+                <div className="cover-counts">
+                  <span data-gap={row.atOrAbove === 0}>
+                    <b>{row.atOrAbove === 0 ? 'none' : row.atOrAbove}</b> at or above {formatPercent(focus.o2_mole_fraction)} O2
+                  </span>
+                  <span data-gap={row.atOrBelow === 0}>
+                    <b>{row.atOrBelow === 0 ? 'none' : row.atOrBelow}</b> at or below {formatKpa(focus.pressure_kpa)}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
           <p className="muted small">
-            Counts of individual test runs in the PSI microgravity data. The two right-hand columns are counted
-            separately: a run in one is not necessarily in the other.
+            Bars show the range tested per material class; the white tick is the selected atmosphere. Counts are of
+            individual test runs in the PSI microgravity data, and the two counts are separate: a run in one is not
+            necessarily in the other.
           </p>
         </div>
 

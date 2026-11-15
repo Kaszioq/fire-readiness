@@ -6,7 +6,6 @@
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { scaleLinear } from 'd3-scale';
-import { ConditionStats } from '@/components/ConditionStats';
 import { classPhase, OUTCOME_LABEL, OUTCOMES, OutcomeMark, PHASE_COLOR } from '@/components/GapMap';
 import {
   formatKpa,
@@ -17,6 +16,7 @@ import {
   investigationName,
   MATERIAL_LABEL,
   plural,
+  SOURCE_LABEL,
   sourceHref,
 } from '@/components/format';
 import { PredictionCard } from '@/components/PredictionCard';
@@ -307,9 +307,7 @@ export function LensWorkbench({
         </div>
       </header>
 
-      <ConditionStats conditions={conditions} habitat={habitat} />
-
-      <section className="card lens-controls section" aria-label="Adjust the atmosphere">
+      <section className="lens-deck section" aria-label="Adjust the atmosphere">
         <div className="lens-slider">
           <label htmlFor="lens-o2">
             Oxygen <span className="num">{formatPercent(o2)}</span>
@@ -358,7 +356,13 @@ export function LensWorkbench({
             Set a flow speed (no sourced value for this habitat)
           </label>
         </div>
-        <div className="lens-slider">
+        <div className="lens-slider lens-fixed">
+          <span className="lens-label">
+            Gravity <span className="num">{Number(habitat.gravity_g.toFixed(3))} g</span>
+          </span>
+          <span className="lens-hint">Set by the habitat preset. No test run in the dataset is at partial gravity.</span>
+        </div>
+        <div className="lens-slider lens-material">
           <span className="lens-label" id="lens-mat">
             Material class
           </span>
@@ -382,6 +386,19 @@ export function LensWorkbench({
           </div>
         )}
       </section>
+
+      <p className="card-foot lens-source">
+        Atmosphere source: {SOURCE_LABEL[habitat.prov.source_type] ?? habitat.prov.source_type}
+        {sourceHref(habitat.prov.source_ref.url) && (
+          <>
+            ,{' '}
+            <a href={sourceHref(habitat.prov.source_ref.url)} target="_blank" rel="noreferrer">
+              open source
+            </a>
+          </>
+        )}
+        {habitat.prov.verified ? '' : ' (not yet human-verified)'}
+      </p>
 
       <div className="split split-wide-first section">
         <section className="card-stack" aria-labelledby="predictor-h">
