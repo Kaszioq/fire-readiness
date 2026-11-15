@@ -52,21 +52,21 @@ const yScale = scaleLog().domain(P_DOMAIN).range([H - M.bottom, M.top]);
 const x = (v: number) => Math.round(xScale(v) * 100) / 100;
 const y = (v: number) => Math.round(yScale(v) * 100) / 100;
 
-const PHASE_COLOR: Record<FuelPhase, string> = {
+export const PHASE_COLOR: Record<FuelPhase, string> = {
   solid: 'var(--accent)',
   liquid: 'var(--info)',
   gas: 'var(--gas)',
 };
 
-const OUTCOME_LABEL: Record<Outcome, string> = {
+export const OUTCOME_LABEL: Record<Outcome, string> = {
   sustained: 'Sustained burning',
   marginal: 'Marginal',
   extinguished: 'Extinguished',
   no_ignition: 'No ignition',
 };
-const OUTCOMES: Outcome[] = ['sustained', 'marginal', 'extinguished', 'no_ignition'];
+export const OUTCOMES: Outcome[] = ['sustained', 'marginal', 'extinguished', 'no_ignition'];
 
-function classPhase(cls: MaterialClass): FuelPhase {
+export function classPhase(cls: MaterialClass): FuelPhase {
   if (cls === 'liquid_droplet') return 'liquid';
   if (cls === 'gas_jet') return 'gas';
   return 'solid';
@@ -94,7 +94,7 @@ function formatRange(r: Range | null, fmt: (n: number) => string): string {
 }
 
 /** One mark per outcome, so the outcome reads without relying on colour. */
-function OutcomeMark({ outcome, cx, cy, color }: { outcome: Outcome; cx: number; cy: number; color: string }) {
+export function OutcomeMark({ outcome, cx, cy, color }: { outcome: Outcome; cx: number; cy: number; color: string }) {
   if (outcome === 'sustained') return <circle cx={cx} cy={cy} r="3.2" fill={color} />;
   if (outcome === 'marginal') {
     return <path d={`M${cx} ${cy - 4.4} L${cx + 4.2} ${cy + 3.2} L${cx - 4.2} ${cy + 3.2} Z`} fill={color} />;

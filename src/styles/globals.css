@@ -1986,5 +1986,110 @@ select.input {
 }
 
 .table-scroll table {
-  min-width: 620px;
+  min-width: 540px;
+}
+
+/* ---------- Habitat Lens controls ---------- */
+
+.lens-custom {
+  color: var(--accent);
+  font-size: 0.55em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.lens-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 18px 28px;
+}
+
+.lens-slider {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-width: 0;
+}
+
+.lens-slider > label:first-child,
+.lens-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.lens-slider .num {
+  color: var(--text);
+}
+
+.lens-slider input[type='range'] {
+  width: 100%;
+  height: 28px; /* comfortable touch target around a thin track */
+  margin: 0;
+  accent-color: var(--accent);
+  touch-action: pan-y;
+}
+
+.lens-slider input[type='range']:disabled {
+  opacity: 0.35;
+}
+
+.lens-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+}
+
+.lens-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.lens-reset {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.lens-reset .small {
+  margin: 0;
+}
+
+.lens-h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.lens-notes {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13.5px;
+}
+
+@media (min-width: 861px) {
+  .split-wide-first {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}
+
+.gapmap-table td {
+  white-space: nowrap;
+}
+
+.gapmap-table td.wrap {
+  min-width: 180px;
+  white-space: normal;
 }
