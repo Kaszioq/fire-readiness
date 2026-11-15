@@ -2,6 +2,7 @@
 // The page is static; only the fields the list needs are sent to the client component.
 import { investigationName } from '@/components/format';
 import { InvestigationBrowser, type InvestigationItem } from '@/components/InvestigationBrowser';
+import { PageBanner } from '@/components/PageBanner';
 import { investigations } from '@/lib/data';
 
 /** PSI spells the same hardware in several ways ("… Glovebox" / "… Glovebox (MSG)"): compare without case and brackets. */
@@ -58,6 +59,12 @@ export default function InvestigationsPage() {
 
   return (
     <>
+      <PageBanner
+        src="/media/bass-ii-iss040e088023.jpg"
+        caption="Flame over a solid fuel sample in microgravity, BASS-II (PSI-25) on the ISS."
+        creditHref="https://images.nasa.gov/details/iss040e088023"
+        position="75% 50%"
+      />
       <header className="page-head">
         <span className="eyebrow">Investigation database</span>
         <h1>Investigations</h1>
