@@ -19,6 +19,7 @@
   --accent: #ffb454; /* flame amber: primary actions, solid-material data */
   --accent-ink: #1b1204;
   --info: #6cb6ff; /* liquid / droplet data */
+  --gas: #b79cff; /* gas-fuel data */
   --ok: #56d39b;
   --danger: #ff6b5e;
   --neutral: #8794a3;
@@ -1822,4 +1823,168 @@ select.input {
 .dev-toggle a[aria-current='true'] {
   background: #fff;
   color: #111;
+}
+
+/* ---------- Coverage and gap map (/map) ---------- */
+
+.gapmap {
+  display: grid;
+  gap: 20px;
+}
+
+.gapmap-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  gap: 20px;
+  align-items: start;
+}
+
+.gapmap-side,
+.gapmap-below {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.gapmap-side h3,
+.gapmap-below h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.gapmap-title {
+  margin: 6px 0 4px;
+  font-size: 20px;
+}
+
+.gapmap-readout {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+}
+
+.gapmap-cta {
+  margin-top: 12px;
+}
+
+.small {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+}
+
+.swatch {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  background: color-mix(in srgb, currentColor 25%, transparent);
+}
+
+.gapmap-rect {
+  transition:
+    fill-opacity 160ms ease,
+    stroke-opacity 160ms ease;
+}
+
+.gapmap-habitat {
+  cursor: pointer;
+}
+
+.gapmap-list {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gapmap-list > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0 -8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  transition: background-color 150ms ease;
+}
+
+.gapmap-list > li[data-active='true'] {
+  background: var(--surface-2);
+}
+
+.gapmap-list > li[data-muted='true'] {
+  opacity: 0.45;
+}
+
+.gapmap-list-wide {
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: 2px 24px;
+}
+
+.gapmap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.gapmap-table th,
+.gapmap-table td {
+  padding: 6px 8px 6px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+}
+
+.gapmap-table thead th {
+  color: var(--text-faint);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gapmap-table tbody th {
+  color: var(--text);
+}
+
+.gapmap-table td[data-gap='true'] {
+  color: var(--warn-text);
+  font-weight: 600;
+}
+
+@media (max-width: 1080px) {
+  .gapmap-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* On a phone the chart keeps a readable size and scrolls sideways inside its own frame. */
+@media (max-width: 640px) {
+  .gapmap-figure {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  .gapmap-figure svg {
+    width: 640px;
+    max-width: none;
+  }
+}
+
+.figure .legend svg {
+  flex: none;
+  width: 12px;
+  height: 12px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.table-scroll table {
+  min-width: 620px;
 }
