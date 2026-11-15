@@ -156,6 +156,12 @@ All photos and video on the site are NASA material from the [NASA Image and Vide
 | `orion-moon-earth-art001e002083.jpg` | Orion, the Moon and Earth, Artemis I, 2022 | [art001e002083](https://images.nasa.gov/details/art001e002083) |
 | `orion-earth-moon-art001e001822.jpg` | Earth and the Moon beside Orion's solar array, Artemis I, 2022 | [art001e001822](https://images.nasa.gov/details/art001e001822) |
 | `sun-plasma-pia21866.jpg` | Plasma leaving the Sun, Solar Dynamics Observatory, 2017 (timestamp strip cropped). Decorative, not combustion data. | [PIA21866](https://images.nasa.gov/details/PIA21866) |
+| `candle-1g-vs-microgravity-grc-1998-c-00485.jpg` | Candle flame in normal gravity and in microgravity | [GRC-1998-C-00485](https://images.nasa.gov/details/GRC-1998-C-00485) |
+| `candle-microgravity-9902615.jpg` | Candle Flames in Microgravity experiment | [9902615](https://images.nasa.gov/details/9902615) |
+| `earth-limb-iss028e007274.jpg` | The Sun over Earth's limb from the ISS, 2011 | [iss028e007274](https://images.nasa.gov/details/iss028e007274) |
+| `iss-over-earth-sts098-713a-004.jpg` | The International Space Station, STS-98 fly-around, 2001 | [sts098-713a-004](https://images.nasa.gov/details/sts098-713a-004) |
+| `apollo17-site-as17-134-20435.jpg` | Apollo 17 landing site, Taurus-Littrow, 1972 | [as17-134-20435](https://images.nasa.gov/details/as17-134-20435) |
+| `apollo17-rover-as17-137-20979.jpg` | Lunar roving vehicle, Apollo 17, 1972 | [as17-137-20979](https://images.nasa.gov/details/as17-137-20979) |
 
 The flame drawing in the intro and the site icon are original SVG. Background textures are CSS only. The site uses system fonts only.
 
