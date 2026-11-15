@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moon Base Fire Readiness: demo</title><style>
+@page{size:1920px 1080px;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:#090c11;color:#e8edf2;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.s{position:relative;width:1920px;height:1080px;overflow:hidden;page-break-after:always;break-after:page;padding:120px 110px 96px;display:grid;
+ background:radial-gradient(50% 42% at 86% 0%,rgba(255,180,84,.13),transparent 70%),radial-gradient(46% 40% at 4% 100%,rgba(108,182,255,.10),transparent 70%),radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.6px) 0 0/32px 32px,#090c11}
+.s:last-child{page-break-after:auto}
+.top{position:absolute;top:40px;left:110px;right:110px;display:flex;align-items:center;gap:16px;font-size:22px;font-weight:600;letter-spacing:-.01em}
+.top img{width:44px;height:44px}
+.top span{margin-left:auto;color:#6b7886;font:500 17px ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}
+.foot{position:absolute;left:110px;right:110px;bottom:34px;display:flex;justify-content:space-between;color:#6b7886;font-size:15px}
+.eyebrow{color:#ffb454;font:500 19px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase}
+h1{margin:14px 0 0;font-size:78px;font-weight:620;letter-spacing:-.04em;line-height:1.02}
+h1 em{color:#ffb454;font-style:normal}
+p{margin:0}
+.lead{margin-top:22px;max-width:30em;color:#94a1af;font-size:29px;line-height:1.4}
+.g2{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.g2w{grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.card{border:1px solid rgba(255,255,255,.10);border-radius:26px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015) 50%),#0f141b;padding:30px 34px}
+.num{font-size:118px;font-weight:650;letter-spacing:-.055em;line-height:.92;color:#fff;font-variant-numeric:tabular-nums}
+.num small{font:400 24px ui-monospace,Menlo,monospace;color:#94a1af;letter-spacing:0;margin-left:14px}
+.cap{margin-top:10px;color:#94a1af;font-size:22px;line-height:1.35}
+.shot{border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden;box-shadow:0 50px 100px -40px #000;background:#000}
+.shot img{display:block;width:100%}
+.credit{margin-top:10px;color:#6b7886;font-size:14px}
+.row{display:grid;grid-template-columns:150px 1fr 60px 1.25fr auto;gap:18px;align-items:center;padding:24px 0;border-top:1px solid rgba(255,255,255,.10)}
+.row .l{color:#94a1af;font:500 16px ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}
+.row b{font-size:54px;font-weight:620;letter-spacing:-.045em;white-space:nowrap}
+.row .from{color:#6b7886}
+.row .ar{height:2px;background:linear-gradient(90deg,transparent,#ffb454)}
+.pill{padding:6px 14px;border:1px solid rgba(255,180,84,.6);border-radius:999px;color:#ffb454;font:500 17px ui-monospace,Menlo,monospace;white-space:nowrap}
+.pill.c{border-color:rgba(108,182,255,.5);color:#6cb6ff}
+ul{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:18px}
+li{position:relative;padding-left:30px;font-size:25px;line-height:1.38;color:#c9d2db}
+li::before{content:"";position:absolute;left:0;top:13px;width:11px;height:11px;border-radius:3px;background:#ffb454}
+li b{color:#fff;font-weight:600}
+.warn{margin-top:24px;padding:18px 22px;border:1px solid #5c4310;border-radius:16px;background:#2b2008;color:#ffd479;font-size:20px;line-height:1.4}
+.zero{font-size:420px;font-weight:700;letter-spacing:-.07em;line-height:.8;color:#ffb454;text-shadow:0 0 90px rgba(255,180,84,.35)}
+.zero small{font-size:58px;font-weight:500;color:#94a1af;letter-spacing:-.02em;margin-left:18px}
+.k4{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:34px}
+.k4 h3,.k3 h3{margin:0 0 10px;font-size:29px;letter-spacing:-.02em}
+.k4 p,.k3 p{color:#b4bec9;font-size:21.5px;line-height:1.42}
+.k4 .n,.k3 .n{display:block;margin-bottom:12px;color:#ffb454;font:500 16px ui-monospace,Menlo,monospace;letter-spacing:.14em}
+.k3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.k3 .big{font-size:76px;font-weight:650;letter-spacing:-.05em;line-height:1;margin-bottom:12px}
+.k3 .big small{font:400 19px ui-monospace,Menlo,monospace;color:#94a1af;letter-spacing:0;margin-left:10px}
+.figs{display:flex;gap:56px;margin-top:34px}
+.figs .num{font-size:92px}
+.t{position:relative}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 72%;opacity:.9}
+.scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,12,17,.94) 0%,rgba(9,12,17,.62) 52%,rgba(9,12,17,.2) 100%),linear-gradient(180deg,rgba(9,12,17,.55),transparent 30%,transparent 70%,rgba(9,12,17,.9))}
+.tag{position:absolute;top:18px;padding:6px 14px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(0,0,0,.6);font:500 15px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;transform:translateX(-50%)}
+.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
+.links span{padding:12px 20px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.05);font:500 20px ui-monospace,Menlo,monospace}
+</style></head><body><section class="s t" style="padding:0">
+<img class="bg" src="../../public/media/earth-limb-iss028e007274.jpg" alt=""><div class="scrim"></div>
+<div style="position:absolute;inset:0;padding:96px 110px;display:grid;align-content:center;gap:0">
+<img src="../../public/brand/logo.png" alt="Moon Base Fire Readiness" style="width:560px;margin-bottom:34px">
+<span class="eyebrow">NASA PSI microgravity combustion data</span>
+<h1 style="font-size:104px">Is this habitat atmosphere <em>fire-safe</em>?</h1>
+<p class="lead" style="max-width:26em">Which NASA combustion investigations tell us whether a crewed habitat is fire-safe, how confident can we be, and what must future experiments still measure?</p>
+</div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool</span><span>Photo: NASA, iss028e007274 · 1 / 7</span></div>
+</section><section class="s g2"><div class="top"><img src="../../public/brand/logo-mark.png" alt="">Moon Base Fire Readiness<span>The problem · 2 / 7</span></div>
+<div><span class="eyebrow">Why it matters</span>
+<h1>The Moon base changes the air, and the gravity</h1>
+<div style="margin-top:34px">
+<div class="row"><span class="l">Oxygen</span><b class="from">21%</b><span class="ar"></span><b>30%</b><span class="pill">+9 points</span></div>
+<div class="row"><span class="l">Pressure</span><b class="from">101.3 kPa</b><span class="ar"></span><b>70.3 kPa</b><span class="pill c">-31%</span></div>
+<div class="row" style="border-bottom:1px solid rgba(255,255,255,.10)"><span class="l">Gravity</span><b class="from">1 g</b><span class="ar"></span><b>0.166 g</b><span class="pill c">lunar</span></div>
+</div>
+<p class="cap" style="margin-top:22px">Earth sea level against the planned Moon base atmosphere. More oxygen makes materials easier to burn; without buoyancy a flame behaves differently.</p></div>
+<div><div class="shot" style="position:relative"><img src="../../public/media/candle-1g-vs-microgravity-grc-1998-c-00485.jpg" alt="" style="transform:scale(1.2)"><span class="tag" style="left:25%">Earth gravity</span><span class="tag" style="left:75%">Microgravity</span></div>
+<p class="credit">A candle flame in normal gravity and in microgravity. Photo: NASA, GRC-1998-C-00485</p></div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool · Rockets and propellants are out of scope</span><span>Data: NASA PSI snapshot of 2026-11-14</span></div></section><section class="s g2w"><div class="top"><img src="../../public/brand/logo-mark.png" alt="">Moon Base Fire Readiness<span>What we built · 3 / 7</span></div>
+<div><span class="eyebrow">The tool</span>
+<h1>Every NASA PSI combustion investigation, ranked for a habitat</h1>
+<div class="figs"><div><div class="num">24</div><p class="cap">investigations</p></div><div><div class="num">243</div><p class="cap">individual test runs</p></div><div><div class="num">623<small>of 623</small></div><p class="cap">fields verified against source</p></div></div>
+<ul><li><b>Habitat Lens:</b> pick an atmosphere, get the investigations that matter, every score explained.</li>
+<li><b>Coverage and gap map:</b> oxygen against pressure, what was tested and where the data runs out.</li>
+<li><b>Evidence-based predictor</b> and an <b>AI report that may only cite NASA PSI records.</b></li></ul></div>
+<div><div class="shot"><img src="img/home.jpg" alt=""></div></div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool · Rockets and propellants are out of scope</span><span>Data: NASA PSI snapshot of 2026-11-14</span></div></section><section class="s g2w"><div class="top"><img src="../../public/brand/logo-mark.png" alt="">Moon Base Fire Readiness<span>The finding · 4 / 7</span></div>
+<div><span class="eyebrow">The gap</span>
+<h1>The data stops short of where the crew will live</h1>
+<div class="zero" style="margin-top:26px">0<small>of 142</small></div>
+<p class="cap" style="font-size:25px;margin-top:22px">solid-material test runs in the PSI microgravity data are at or above 30% oxygen. The highest oxygen level tested on a solid is 22.2%.</p>
+<p class="cap" style="font-size:25px;margin-top:14px"><b style="color:#fff">0 of 243</b> test runs are at partial gravity.</p></div>
+<div><div class="shot"><img src="img/map-crop.jpg" alt=""></div><p class="credit">Coverage and gap map: each rectangle is the range one investigation reports, each mark one test run, the diamond is the Moon base.</p></div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool · Rockets and propellants are out of scope</span><span>Data: NASA PSI snapshot of 2026-11-14</span></div></section><section class="s g2w"><div class="top"><img src="../../public/brand/logo-mark.png" alt="">Moon Base Fire Readiness<span>The answer · 5 / 7</span></div>
+<div><span class="eyebrow">Habitat Lens · Moon base</span>
+<h1>When there is no test, it says <em>no evidence</em></h1>
+<ul><li>For fabric at 30% oxygen and 70.3 kPa the predictor returns <b>“No evidence”</b>, with zero test runs behind it, instead of a guess.</li>
+<li>A separate <b>physics estimate</b> (flame temperature about 2550 K, about 530 K above the coldest tested condition that still burned) is shown and labelled as not test data.</li>
+<li>Most relevant investigations: <b>FLEX-2, FLEX, ACME BRE</b>, whose tested ranges include this atmosphere.</li></ul></div>
+<div><div class="shot"><img src="img/lens-crop.jpg" alt=""></div></div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool · Rockets and propellants are out of scope</span><span>Data: NASA PSI snapshot of 2026-11-14</span></div></section><section class="s" style="align-content:center"><div class="top"><img src="../../public/brand/logo-mark.png" alt="">Moon Base Fire Readiness<span>Trust · 6 / 7</span></div>
+<div><span class="eyebrow">Built for combustion experts</span>
+<h1>Every number can be followed back to NASA</h1>
+<div class="k4">
+<div class="card"><span class="n">01 · PROVENANCE</span><h3>623 of 623 fields verified</h3><p>Each value carries its source, locator and a verbatim quote. A value the sources do not report is shown as “not reported”, never filled in.</p></div>
+<div class="card"><span class="n">02 · CITED REPORT</span><h3>The AI may only cite PSI records</h3><p>The report is written from the curated data only. Citations that are not in the data are stripped and counted. No model name is shown.</p></div>
+<div class="card"><span class="n">03 · HONEST PREDICTOR</span><h3>Evidence coverage, not a probability</h3><p>Leave-one-out reproduces all 101 droplet runs, which only confirms the labelling rule. For solids it is no better than “always sustained”: 131 of 134 runs burned. We say so in the app.</p></div>
+<div class="card"><span class="n">04 · PHYSICS GUARDRAIL</span><h3>0 g and 1 g do not bound lunar gravity</h3><p>NASA’s FM2 team reports that the oxygen needed for flame spread may be lowest near lunar gravity (Ferkul et al., LPSC 2026). The tool never interpolates across gravity.</p></div>
+</div></div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool · Rockets and propellants are out of scope</span><span>Data: NASA PSI snapshot of 2026-11-14</span></div></section><section class="s" style="align-content:center"><div class="top"><img src="../../public/brand/logo-mark.png" alt="">Moon Base Fire Readiness<span>What is next · 7 / 7</span></div>
+<div><span class="eyebrow">For LUCI, FM2 and future experiments</span>
+<h1>What the data says still has to be measured</h1>
+<div class="k3">
+<div class="card"><div class="big">0<small>of 142</small></div><h3>Solids at the habitat atmosphere</h3><p>Fabrics and plastics at 30% oxygen or more and about 70.3 kPa. Today no solid run in the PSI microgravity data is above 22.2% oxygen.</p></div>
+<div class="card"><div class="big">0<small>of 243</small></div><h3>Partial gravity</h3><p>Flame spread and extinction at lunar and Martian gravity. Microgravity and Earth-gravity results are not a safe bound.</p></div>
+<div class="card"><div class="big">131<small>of 134</small></div><h3>Where solids stop burning</h3><p>Almost every ordinary solid run sustained burning, so the data say little about limits. Extinction limits at low flow are the missing measurement.</p></div>
+</div>
+<div class="links"><span>github.com/Kaszioq/fire-readiness</span><span>Open source · Apache 2.0</span><span>Next.js · TypeScript · NASA PSI data</span></div></div>
+<div class="foot"><span>NASA Space Apps Challenge 2026 · Not an official NASA tool · Rockets and propellants are out of scope</span><span>Data: NASA PSI snapshot of 2026-11-14</span></div></section></body></html>
