@@ -369,7 +369,8 @@ function main() {
   meta.data.n_points_unverified = new RawNumber(String(pointsUnverified));
   meta.data.note =
     'n_fields_verified counts api_direct fields (copied or computed from PSI) and the llm_extracted and manual fields that a human ' +
-    'marked ok or fixed in data/verification.csv (applied by scripts/apply_verification.ts; decisions kept in data/verification_ledger.csv)';
+    'marked ok or fixed in data/verification.csv (applied by scripts/apply_verification.ts; decisions kept in data/verification_ledger.csv). ' +
+    'psi_snapshot_hash is the sha256 of the extracts (flex_tests.txt, bass2_tests.txt) and of the investigation records, not of the whole PSI snapshot.';
 
   for (const f of [files.inv, files.points, files.habitats, meta]) writeFileSync(f.path, pyJson(f.data) + f.newline);
   writeFileSync(CSV_PATH, toCsv([header, ...body]));

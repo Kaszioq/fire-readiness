@@ -1,11 +1,11 @@
 {
   "fetched_at": "2026-11-14",
-  "psi_snapshot_hash": "sha256:3b71088567edb4273363ccfa80409381ba8213bb97bc70e992a24dccea7fdb46",
+  "psi_snapshot_hash": "sha256:05a1895d8553c30835daeffe11ef76712fcd09e1ad0cd74670886ed0b4039275",
   "psi_search": "https://psi.nasa.gov/geode-py/ws/repo/search?term=combustion&source=psi&type=investigation (26 hits, 2 excluded)",
   "n_investigations": 24,
-  "n_fields_total": 622,
-  "n_fields_verified": 622,
+  "n_fields_total": 623,
+  "n_fields_verified": 623,
   "n_flammability_points": 243,
   "n_points_unverified": 0,
-  "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) and the llm_extracted and manual fields that a human marked ok or fixed in data/verification.csv (applied by scripts/apply_verification.ts; decisions kept in data/verification_ledger.csv)"
+  "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) and the llm_extracted and manual fields that a human marked ok or fixed in data/verification.csv (applied by scripts/apply_verification.ts; decisions kept in data/verification_ledger.csv). psi_snapshot_hash is the sha256 of the extracts (flex_tests.txt, bass2_tests.txt) and of the investigation records, not of the whole PSI snapshot."
 }

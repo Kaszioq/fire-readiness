@@ -1,5 +1,7 @@
 # Moon Base Fire Readiness
 
+<img src="public/brand/logo.png" alt="Moon Base Fire Readiness logo" width="360">
+
 NASA Space Apps Challenge 2026 entry (working name).
 
 > Of the NASA PSI microgravity combustion investigations, which ones tell us whether a habitat atmosphere (e.g. the Artemis Moon base at 30%+ O2 and 10.2 psi) is fire-safe, how confident can we be, and what must future experiments (LUCI, FM2) still measure?
@@ -8,7 +10,21 @@ This is not an official NASA tool. Rockets and propellants are out of scope.
 
 ## Status
 
-The app runs on a curated snapshot of the NASA PSI repository taken on 2026-11-14: 24 combustion investigations, 241 individual test runs and 9 habitat atmospheres, every field with its source. See [docs/STATUS.md](docs/STATUS.md) for the current state of each module and of the data.
+The app runs on a curated snapshot of the NASA PSI repository taken on 2026-11-14: 24 combustion investigations, 243 individual test runs and 9 habitat atmospheres, every field with its source. All 576 verification rows were checked by the team (`data/verification.csv`). See [docs/STATUS.md](docs/STATUS.md) for the current state of each module and of the data.
+
+## Screenshots
+
+Habitat Lens for the Moon base, thin fabric: no test data at this atmosphere, so the predictor shows a physics estimate and says what the solid data can and cannot tell.
+
+![Habitat Lens: Moon base, physics estimate and the limitation of the solid data](docs/screenshots/moon-base-lens.jpg)
+
+Coverage and gap map: tested oxygen and pressure ranges, the individual test runs and the habitat atmospheres.
+
+![Coverage and gap map with the Moon base atmosphere selected](docs/screenshots/gap-map.jpg)
+
+Fire-readiness report for the Moon base, with citations that link to the investigations.
+
+![Fire-readiness report with citation chips](docs/screenshots/report.jpg)
 
 ## Docs
 
@@ -27,8 +43,9 @@ npm run build          # must pass before every PR
 npm run lint
 npm run typecheck
 npm test
-npm run validate:data  # validates data/curated/*.json, or the mocks while curated files do not exist
-npm run mocks          # regenerates data/mock/*.mock.json
+npm run validate:data  # validates data/curated/*.json and data/cached_reports/*.json
+npm run verify:apply   # writes the statuses of data/verification.csv into the curated data
+npm run reports        # regenerates data/cached_reports/ (needs the LLM_* variables)
 ```
 
 The report route needs no key: without `LLM_*` variables it serves cached reports. To call a model, copy `.env.example` to `.env.local` and fill it in.
@@ -48,7 +65,7 @@ Rules that keep the three roles independent:
 
 - Import data only through `@/lib/data`. ESLint rejects direct imports from `data/`.
 - `src/lib/types.ts` mirrors `docs/CONTRACTS.md`; `src/lib/schemas.ts` must match it (the build fails if they drift). Change them only with team agreement.
-- When real data lands, role A switches the imports in `src/lib/data/index.ts` from `data/mock/` to `data/curated/`. Nothing else changes.
+- The app reads only `data/curated/` and `data/cached_reports/`, through `src/lib/data/index.ts`. The data are rebuilt with the Python scripts in `scripts/` (see [docs/STATUS.md](docs/STATUS.md) section 3), never edited by hand.
 
 ## References
 
@@ -163,6 +180,8 @@ All photos and video on the site are NASA material from the [NASA Image and Vide
 | `apollo17-site-as17-134-20435.jpg` | Apollo 17 landing site, Taurus-Littrow, 1972 | [as17-134-20435](https://images.nasa.gov/details/as17-134-20435) |
 | `apollo17-rover-as17-137-20979.jpg` | Lunar roving vehicle, Apollo 17, 1972 | [as17-137-20979](https://images.nasa.gov/details/as17-137-20979) |
 | `moon-gsfc-e001862.jpg` | The Moon, waxing gibbous, rendered from Lunar Reconnaissance Orbiter data | [GSFC_20171208_Archive_e001862](https://images.nasa.gov/details/GSFC_20171208_Archive_e001862) |
+
+The logo and the site icon (`public/brand/logo.png`, `public/brand/logo-mark.png`, `src/app/icon.png`, `src/app/apple-icon.png`) are the team's own artwork, released with the code under Apache 2.0. They are not NASA insignia.
 
 The flame drawing in the intro and the site icon are original SVG. Background textures are CSS only. The site uses system fonts only.
 

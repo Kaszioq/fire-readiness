@@ -30,7 +30,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ScrollFx />
         <header className="site-header">
           <Link href="/" className="brand">
-            <span className="brand-mark" aria-hidden="true" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="brand-logo" src="/brand/logo-mark.png" alt="" aria-hidden="true" width={28} height={28} />
             Moon Base Fire Readiness
           </Link>
           <NavLinks />

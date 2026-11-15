@@ -12,9 +12,9 @@ The tables below are the unedited output of those two scripts.
 ## Summary in plain numbers
 
 - **Droplets: 101 of 101 runs reproduced. This is a consistency check, not a prediction score.** The droplet outcomes were assigned from the published FLEX limiting oxygen index (above it = sustained, at it = marginal, below it = extinguished; `data/curated/mappings.md`). The predictor works on flame temperature, which rises with oxygen, so it is recovering the labelling rule. It shows the code is consistent with the rule; it does not show that the predictor forecasts an independent measurement.
-- **Solids: the predictor does no better than "always sustained".** Balanced accuracy is 49% for thick solids and 48% for thin solids, against a baseline of 50%. 131 of the 134 ordinary solid runs are "sustained", and the predictor reproduces those. Of the three that are not, it reproduces none when the run is left out: the PMMA rod that did not ignite at 13.6% O2 comes out "sustained", the extinction-velocity point at 16% O2 comes out "sustained", and the one at 21% O2 gets no data result because it is the lowest flow tested.
+- **Solids: the predictor does no better than "always sustained".** Balanced accuracy is 49% for thick solids and 46% for thin solids, against a baseline of 50%. 131 of the 134 ordinary solid runs are "sustained", and the predictor reproduces those. Of the three that are not, it reproduces none when the run is left out: the PMMA rod that did not ignite at 13.6% O2 comes out "sustained", the extinction-velocity point at 16% O2 comes out "sustained", and the one at 21% O2 gets no data result because it is the lowest flow tested. One sustained thin-solid run that sits next to a measured extinction-velocity point comes out "marginal", because a measured limit at the target decides the zone.
 - **Thin fabric: 31 of 31, which says nothing.** Every thin-fabric run in the data is "sustained", so any method that answers "sustained" scores 100%.
-- **The 91% in the "all" row is carried by the droplets.** Do not quote it as the accuracy of the tool.
+- **The 90% in the "all" row is carried by the droplets.** Do not quote it as the accuracy of the tool.
 - **Ranking: stable, not validated.** With each weight moved by 20%, the top 5 for the Moon base is the same five investigations in all 10 variants. For ISS air and the 8.2 psia exploration atmosphere it is the same five in 8 and 9 of 10 variants; in the others one investigation in fifth place is swapped (overlap 0.67). There is no ground truth for relevance, so this measures stability only.
 
 ## What this evaluation cannot test
@@ -38,13 +38,14 @@ For each run: remove it from the data, build the conditions of that run (oxygen,
 | liquid_droplet (n-heptane) | 47 | 36 sustained, 5 marginal, 6 not burning | 0 (0%) | 36/36 (100%) | 5/5 (100%) | 6/6 (100%) | 100% | 33% |
 | thick_solid | 79 | 78 sustained, 1 not burning | 1 (1%) | 77/78 (99%) | none in data | 0/1 (0%) | 49% | 50% |
 | thin_fabric | 31 | 31 sustained | 0 (0%) | 31/31 (100%) | none in data | none in data | 100% | 100% |
-| thin_solid | 24 | 22 sustained, 2 marginal | 2 (8%) | 21/22 (95%) | 0/2 (0%) | none in data | 48% | 50% |
-| all | 235 | 213 sustained, 15 marginal, 7 not burning | 3 (1%) | 211/213 (99%) | 13/15 (87%) | 6/7 (86%) | 91% | 33% |
+| thin_solid | 24 | 22 sustained, 2 marginal | 2 (8%) | 20/22 (91%) | 0/2 (0%) | none in data | 46% | 50% |
+| all | 235 | 213 sustained, 15 marginal, 7 not burning | 3 (1%) | 210/213 (99%) | 13/15 (87%) | 6/7 (86%) | 90% | 33% |
 
-Runs not reproduced: 5 of 235.
+Runs not reproduced: 6 of 235.
 
 | Run | Class | Material | O2 | Flow cm/s | Recorded | Predicted without it |
 |---|---|---|---|---|---|---|
+| PSI-25:B9 | thin_solid | PMMA film (2 cm   0.1 mm PMMA film) | 21% | 2 | sustained | marginal |
 | PSI-25:B14 | thin_solid | PMMA film (1 cm wide 200 micron thick PM | 15% | 5 | sustained | no data result (physics_only) |
 | PSI-25:M12 | thick_solid | PMMA (slab, rod or spherical section) (2 | 21.7% | 1 | sustained | no data result (physics_only) |
 | PSI-25:O12 | thick_solid | PMMA (slab, rod or spherical section) (3 | 13.6% | not reported | not burning | sustained |
@@ -94,4 +95,3 @@ Baseline top 5: PSI-20, PSI-69, PSI-68, PSI-25, PSI-99
 | tier (0.1) | 1.00 | PSI-20, PSI-69, PSI-68, PSI-25, PSI-99 | 1.00 | PSI-20, PSI-69, PSI-68, PSI-25, PSI-99 |
 
 Lowest overlap 0.67, mean 0.97; the top 5 kept the same order in 7 of 10 variants.
-

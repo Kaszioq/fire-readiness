@@ -2,7 +2,15 @@
 // Every number on this page is computed from '@/lib/data'; the prose states only what docs/STATUS.md records.
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { formatKpa, formatPercent, HABITAT_SHORT, investigationName, plural, SOLID_CLASSES } from '@/components/format';
+import {
+  formatKpa,
+  formatPercent,
+  HABITAT_SHORT,
+  investigationName,
+  plural,
+  SOLID_CLASSES,
+  solidDataLimitation,
+} from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
 import { REPO_URL, repoFile } from '@/components/site';
 import { PageBanner } from '@/components/PageBanner';
@@ -49,6 +57,22 @@ export default function AboutPage() {
   const solids = flammabilityPoints.filter((p) => SOLID_CLASSES.includes(p.material_class));
   const solidsAtMoon = moon ? solids.filter((p) => p.o2_mole_fraction >= moon.o2_mole_fraction).length : null;
   const pointsVerified = flammabilityPoints.filter((p) => p.prov.verified).length;
+  // How the fields of the investigations became verified: copied from PSI, or checked by a person.
+  const fieldStats = { direct: 0, checked: 0, open: 0 };
+  const countFields = (node: unknown) => {
+    if (Array.isArray(node)) node.forEach(countFields);
+    else if (node && typeof node === 'object') {
+      const f = node as { prov?: { method?: string; verified?: boolean }; value?: unknown };
+      if (f.prov && 'value' in f) {
+        if (f.prov.method === 'api_direct') fieldStats.direct += 1;
+        else if (f.prov.verified) fieldStats.checked += 1;
+        else fieldStats.open += 1;
+        return;
+      }
+      for (const [k, v] of Object.entries(node)) if (k !== 'prov') countFields(v);
+    }
+  };
+  countFields(investigations);
   const pointInvestigations = new Set(flammabilityPoints.map((p) => p.psi_id)).size;
   const scenarios = habitats.filter((h) => h.is_assumption);
   const verifiedShare = meta.n_fields_total > 0 ? meta.n_fields_verified / meta.n_fields_total : null;
@@ -127,7 +151,7 @@ export default function AboutPage() {
             <li>
               <strong>Predict.</strong> The predictor compares the chosen conditions with the nearest test runs of the
               same material class. It is an evidence-based estimate, not a certified model: it always shows its
-              confidence and the test runs behind it, and outside the tested range it answers “no evidence”.
+              evidence coverage (0 to 1) and the test runs behind it, and outside the tested range it answers “no evidence”.
             </li>
             <li>
               <strong>Report.</strong> A language model writes a short report from the curated data only. It may cite
@@ -142,6 +166,9 @@ export default function AboutPage() {
             <li>
               <strong>Gravity.</strong> {PARTIAL_GRAVITY_WARNING}
             </li>
+            <li>
+              <strong>Solid-material data.</strong> {solidDataLimitation(flammabilityPoints)}
+            </li>
             {moon && solidsAtMoon !== null && (
               <li>
                 <strong>Solid materials at the Moon base atmosphere.</strong>{' '}
@@ -153,9 +180,11 @@ export default function AboutPage() {
               </li>
             )}
             <li>
-              <strong>Verification.</strong> {meta.n_fields_verified} of {meta.n_fields_total} extracted fields count
-              as verified because they were copied or computed directly from the PSI record. The remaining fields were
-              extracted by hand or by a language model and await human review. {pointsVerified} of{' '}
+              <strong>Verification.</strong> {meta.n_fields_verified} of {meta.n_fields_total} extracted fields are
+              verified: {fieldStats.direct} were copied or computed directly from the PSI record, and{' '}
+              {fieldStats.checked} that were extracted by hand or by a language model were checked against their
+              source by a team member.
+              {fieldStats.open > 0 && ` ${fieldStats.open} still await review.`} {pointsVerified} of{' '}
               {flammabilityPoints.length} test runs are marked verified.
             </li>
             {scenarios.length > 0 && (

@@ -145,6 +145,8 @@ export default function HomePage() {
         <img className="hero-bg" src="/media/earth-limb-iss028e007274.jpg" alt="" aria-hidden="true" />
         <div className="hero-grid">
           <div className="hero-copy">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="hero-logo rise" src="/brand/logo.png" alt="Moon Base Fire Readiness" width={1200} height={606} />
             <span className="eyebrow rise">NASA PSI microgravity combustion data</span>
             <h1 className="rise rise-1">
               Is this habitat atmosphere <em>fire-safe</em>?

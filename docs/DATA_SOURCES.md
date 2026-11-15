@@ -60,6 +60,8 @@ The `uses_data_from` values above come from the "Highlights" lines of the PSI se
 3. For each `experimentalTable[]` entry that is not `restricted`, download the CSV to `data/raw/tables/<PSI-ID>/<file_name>`. **Note:** `remote_url` returns 404. Use `GET https://psi.nasa.gov/geode-py/ws/studies/<PSI-ID>/download?file=<url-encoded file_name>&version=1&redirect=false`, which returns a short-lived signed S3 URL as plain text, then GET that URL.
 4. Do **not** bulk-download documents (some investigations have hundreds of files and GBs of video). Download individual PDFs only when needed for a specific field, into `data/raw/docs/<PSI-ID>/`.
 5. Write `data/raw/MANIFEST.json`: `fetched_at`, URL and sha256 of every saved file.
+
+Note on `meta.json`: `psi_snapshot_hash` is the sha256 of the extracts (`flex_tests.txt`, `bass2_tests.txt`) and of the investigation records, not of the whole PSI snapshot. It is written by `scripts/build_seed_data.py`.
 6. Be polite: one request at a time, 0.5 s delay, a descriptive User-Agent.
 7. If a request from Python is blocked, run the same fetches in the browser console on psi.nasa.gov and save the results.
 

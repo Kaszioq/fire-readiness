@@ -49,9 +49,9 @@ def amb(o2, co2=0.0, he=0.0):
 DIETRICH = "https://doi.org/10.1007/s12217-014-9372-2"
 CAL = [
     {"fuel": "methanol", "atmosphere": "O2/N2", "o2": 0.12, "co2": 0.0, "quote": "For oxygen/nitrogen mixtures, the LOI is 0.12 and 0.15 for methanol and heptane, respectively."},
-    {"fuel": "methanol", "atmosphere": "O2/N2/CO2", "o2": 0.14, "co2": 0.30, "quote": "The LOI increases to approximately 0.14"},
+    {"fuel": "methanol", "atmosphere": "O2/N2/CO2", "o2": 0.14, "co2": 0.30, "quote": "The LOI increases to approximately 0.14 (0.14 O2/0.56 N2/0.30 CO2) and 0.17 (0.17 O2/0.63 N2/0.20 CO2) for methanol and heptane, respectively, for ambient environments that simulated dispersing an inert-gas suppressant (carbon dioxide) into a nominally air (1.0 atm) ambient environment."},
     {"fuel": "n-heptane", "atmosphere": "O2/N2", "o2": 0.15, "co2": 0.0, "quote": "For oxygen/nitrogen mixtures, the LOI is 0.12 and 0.15 for methanol and heptane, respectively."},
-    {"fuel": "n-heptane", "atmosphere": "O2/N2/CO2", "o2": 0.17, "co2": 0.20, "quote": "The LOI increases to approximately 0.14"},
+    {"fuel": "n-heptane", "atmosphere": "O2/N2/CO2", "o2": 0.17, "co2": 0.20, "quote": "The LOI increases to approximately 0.14 (0.14 O2/0.56 N2/0.30 CO2) and 0.17 (0.17 O2/0.63 N2/0.20 CO2) for methanol and heptane, respectively, for ambient environments that simulated dispersing an inert-gas suppressant (carbon dioxide) into a nominally air (1.0 atm) ambient environment."},
 ]
 
 

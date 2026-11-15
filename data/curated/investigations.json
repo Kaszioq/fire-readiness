@@ -170,6 +170,21 @@
           "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Quenching extinction was observed (around 1 cm/s)"
         }
+      },
+      {
+        "value": "Not burning on the ISS does not make Nomex HT90-40 safe at exploration oxygen levels: in ground (1 g) upward flammability tests at 70.1 kPa it failed in 30% oxygen in three of the four configurations tested.",
+        "prov": {
+          "source_type": "publication",
+          "source_ref": {
+            "url": "https://ntrs.nasa.gov/citations/20070018178",
+            "locator": "Hirsch et al. 2007, Oxygen Concentration Flammability Thresholds of Selected Aerospace Materials Considered for the Constellation Program (NTRS 20070018178), section 3; section 2 states the fixed total pressure of 70.1 kPa; Table 2 lists Nomex HT90-40"
+          },
+          "method": "llm_extracted",
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T14:18:51Z",
+          "quote": "Nomex (an aramid) failed in 30 % oxygen in J-configuration in both single and double layers and at 15 degrees from vertical as a single layer."
+        }
       }
     ],
     "fuel": {
@@ -2701,8 +2716,8 @@
           "method": "llm_extracted",
           "verified": true,
           "verified_by": "K",
-          "verified_at": "2026-11-15T05:02:32Z",
-          "quote": "The LOI increases to approximately 0.14",
+          "verified_at": "2026-11-15T14:21:07Z",
+          "quote": "The LOI increases to approximately 0.14 (0.14 O2/0.56 N2/0.30 CO2) and 0.17 (0.17 O2/0.63 N2/0.20 CO2) for methanol and heptane, respectively, for ambient environments that simulated dispersing an inert-gas suppressant (carbon dioxide) into a nominally air (1.0 atm) ambient environment.",
           "note": "full sentence gives compositions 0.14 O2/0.56 N2/0.30 CO2 and 0.17 O2/0.63 N2/0.20 CO2"
         }
       },

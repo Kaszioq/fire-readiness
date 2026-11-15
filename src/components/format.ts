@@ -1,5 +1,14 @@
 // Role B. Display-only helpers: unit conversion happens here, at the edge (docs/CONTRACTS.md section 0).
-import type { FuelPhase, Habitat, Investigation, MaterialClass, SafetyDomain, SourceType, Zone } from '@/lib/types';
+import type {
+  FlammabilityPoint,
+  FuelPhase,
+  Habitat,
+  Investigation,
+  MaterialClass,
+  SafetyDomain,
+  SourceType,
+  Zone,
+} from '@/lib/types';
 
 const KPA_PER_PSI = 6.894757;
 
@@ -68,6 +77,16 @@ export const MATERIAL_LABEL: Record<MaterialClass, string> = {
 
 // fire_resistant (silicone, Nomex) are solid test runs too; the predictor treats them separately.
 export const SOLID_CLASSES: MaterialClass[] = ['thin_fabric', 'thin_solid', 'thick_solid', 'fire_resistant'];
+
+/** The ordinary solid classes the predictor estimates (fire_resistant has its own, material-specific limit). */
+export const ORDINARY_SOLID_CLASSES: MaterialClass[] = ['thin_fabric', 'thin_solid', 'thick_solid'];
+
+/** Limitation of the solid data, with the counts taken from the test runs (docs/STATUS.md point 13). */
+export function solidDataLimitation(points: FlammabilityPoint[]): string {
+  const solids = points.filter((p) => ORDINARY_SOLID_CLASSES.includes(p.material_class));
+  const sustained = solids.filter((p) => p.outcome === 'sustained').length;
+  return `${sustained} of ${solids.length} solid-material runs in the PSI data sustained burning, so the data say little about where solids stop burning.`;
+}
 
 export const ZONE_LABEL: Record<Zone, string> = {
   sustained: 'Sustained burning',

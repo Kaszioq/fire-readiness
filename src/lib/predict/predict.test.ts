@@ -540,3 +540,29 @@ describe('explanation and notes', () => {
     expect(iss?.note).not.toContain('times the margin');
   });
 });
+
+describe('ties at the cut-off distance', () => {
+  // Thin solid at 22% O2 without a flow: 8 runs sit at exactly the distance of the eighth neighbour and they
+  // do not all have the same outcome. Which of them fills the last places must not depend on their ids.
+  const c: Conditions = { o2_mole_fraction: 0.22, pressure_kpa: 101.3, flow_cm_s: null, material_class: 'thin_solid', gravity_g: 0 };
+
+  it('the result does not change when the ids of the test runs are renamed', () => {
+    const base = predict(c, P);
+    // Reverse the alphabetical order of the ids without touching the conditions or outcomes.
+    const renamed = P.map((p, i) => {
+      const test_id = `Z${String(P.length - i).padStart(4, '0')}`;
+      return { ...p, test_id, id: `${p.psi_id}:${test_id}` };
+    });
+    const other = predict(c, renamed);
+    expect(other.zone).toBe(base.zone);
+    // Renamed runs are not in flame_temperature.json, so their flame temperature is interpolated (within 1 K of
+    // the precomputed value): the vote and the coverage agree up to that rounding.
+    expect(Math.abs((other.p_sustained ?? NaN) - (base.p_sustained ?? NaN))).toBeLessThan(0.01);
+    expect(Math.abs(other.confidence - base.confidence)).toBeLessThan(0.01);
+    expect(other.evidence.length).toBe(base.evidence.length);
+  });
+
+  it('says so in the explanation when tied runs share the last places', () => {
+    expect(predict(c, P).explanation).toMatch(/runs tie at the cut-off distance for \d+ places/);
+  });
+});

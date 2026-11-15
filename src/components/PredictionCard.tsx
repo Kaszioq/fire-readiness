@@ -1,4 +1,4 @@
-// Role B. Shows a Prediction from predict() (role C). Never shows a result without its confidence and evidence count.
+// Role B. Shows a Prediction from predict() (role C). Never shows a result without its evidence coverage and evidence count.
 import { clamp01, formatNumber, formatPercent, ZONE_LABEL } from '@/components/format';
 import type { Prediction } from '@/lib/types';
 
@@ -25,7 +25,7 @@ export function PredictionCard({ prediction }: { prediction: Prediction }) {
           <span className="meter meter-cool">
             <i style={{ width: `${clamp01(prediction.confidence) * 100}%` }} />
           </span>
-          <small>confidence, 0 to 1</small>
+          <small>evidence coverage (0 to 1)</small>
         </div>
         <div>
           <span className="bignum pred-num">{prediction.evidence.length}</span>
