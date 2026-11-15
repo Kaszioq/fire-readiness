@@ -78,7 +78,7 @@ export const SURROGATE_WARNING =
 export const PHYSICS_NOTE_PREFIX = 'Physics estimate, not test data: ';
 
 export const CONFIDENCE_SENTENCE =
-  'Confidence is evidence coverage (how many test runs lie close to these conditions), not the probability of a fire.';
+  'Evidence coverage (0 to 1) says how many test runs lie close to these conditions; it is not the probability of a fire.';
 
 /**
  * Evidence coverage of a set of neighbour distances: (1 / k) * sum(exp(-d^2 / 2)) over the k nearest runs.

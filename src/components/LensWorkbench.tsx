@@ -15,7 +15,9 @@ import {
   HABITAT_SHORT,
   investigationName,
   MATERIAL_LABEL,
+  ORDINARY_SOLID_CLASSES,
   plural,
+  solidDataLimitation,
   SOURCE_LABEL,
   sourceHref,
 } from '@/components/format';
@@ -199,11 +201,11 @@ function ModePanel({ prediction }: { prediction: Prediction }) {
             </div>
             <div>
               <span className="num">{k(ph.limit_k)}</span>
-              <small>limit temperature</small>
+              <small>{ph.surrogate ? 'coldest tested condition that still burned' : 'limiting flame temperature'}</small>
             </div>
             <div>
               <span className="num">{k(ph.margin_k)}</span>
-              <small>margin above the limit</small>
+              <small>{ph.surrogate ? 'margin above that condition' : 'margin above the limit'}</small>
             </div>
           </div>
           {typeof ph.margin_ratio_vs_iss === 'number' && (
@@ -408,6 +410,11 @@ export function LensWorkbench({
           </p>
           <PredictionCard prediction={prediction} />
           <ModePanel prediction={prediction} />
+          {ORDINARY_SOLID_CLASSES.includes(material) && (
+            <div className="callout" role="note">
+              {solidDataLimitation(points)}
+            </div>
+          )}
 
           <div className="card card-stack">
             <h3 className="lens-h3">Evidence: nearest test runs</h3>

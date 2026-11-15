@@ -8,7 +8,21 @@ This is not an official NASA tool. Rockets and propellants are out of scope.
 
 ## Status
 
-The app runs on a curated snapshot of the NASA PSI repository taken on 2026-11-14: 24 combustion investigations, 241 individual test runs and 9 habitat atmospheres, every field with its source. See [docs/STATUS.md](docs/STATUS.md) for the current state of each module and of the data.
+The app runs on a curated snapshot of the NASA PSI repository taken on 2026-11-14: 24 combustion investigations, 243 individual test runs and 9 habitat atmospheres, every field with its source. All 576 verification rows were checked by the team (`data/verification.csv`). See [docs/STATUS.md](docs/STATUS.md) for the current state of each module and of the data.
+
+## Screenshots
+
+Habitat Lens for the Moon base, thin fabric: no test data at this atmosphere, so the predictor shows a physics estimate and says what the solid data can and cannot tell.
+
+![Habitat Lens: Moon base, physics estimate and the limitation of the solid data](docs/screenshots/moon-base-lens.jpg)
+
+Coverage and gap map: tested oxygen and pressure ranges, the individual test runs and the habitat atmospheres.
+
+![Coverage and gap map with the Moon base atmosphere selected](docs/screenshots/gap-map.jpg)
+
+Fire-readiness report for the Moon base, with citations that link to the investigations.
+
+![Fire-readiness report with citation chips](docs/screenshots/report.jpg)
 
 ## Docs
 
@@ -27,8 +41,9 @@ npm run build          # must pass before every PR
 npm run lint
 npm run typecheck
 npm test
-npm run validate:data  # validates data/curated/*.json, or the mocks while curated files do not exist
-npm run mocks          # regenerates data/mock/*.mock.json
+npm run validate:data  # validates data/curated/*.json and data/cached_reports/*.json
+npm run verify:apply   # writes the statuses of data/verification.csv into the curated data
+npm run reports        # regenerates data/cached_reports/ (needs the LLM_* variables)
 ```
 
 The report route needs no key: without `LLM_*` variables it serves cached reports. To call a model, copy `.env.example` to `.env.local` and fill it in.
@@ -48,7 +63,7 @@ Rules that keep the three roles independent:
 
 - Import data only through `@/lib/data`. ESLint rejects direct imports from `data/`.
 - `src/lib/types.ts` mirrors `docs/CONTRACTS.md`; `src/lib/schemas.ts` must match it (the build fails if they drift). Change them only with team agreement.
-- When real data lands, role A switches the imports in `src/lib/data/index.ts` from `data/mock/` to `data/curated/`. Nothing else changes.
+- The app reads only `data/curated/` and `data/cached_reports/`, through `src/lib/data/index.ts`. The data are rebuilt with the Python scripts in `scripts/` (see [docs/STATUS.md](docs/STATUS.md) section 3), never edited by hand.
 
 ## References
 
