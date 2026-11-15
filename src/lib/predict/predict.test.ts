@@ -470,6 +470,42 @@ describe('evidence is always within the distance limit', () => {
   });
 });
 
+describe('a measured limit point at the target decides the zone', () => {
+  // BASS-II extinction velocity for thin PMMA at 1 atm: 1.0 cm/s at 21% O2, 3.0 cm/s at 16% O2 (PSI-25:Vcr-21, Vcr-16).
+  const thin = (o2: number, flow: number): Conditions => ({
+    o2_mole_fraction: o2,
+    pressure_kpa: 101.3,
+    flow_cm_s: flow,
+    material_class: 'thin_solid',
+    gravity_g: 0,
+  });
+
+  it.each([
+    [0.21, 1.0, 'PSI-25:Vcr-21'],
+    [0.16, 3.0, 'PSI-25:Vcr-16'],
+  ])('thin solid at %s O2 and %s cm/s is marginal', (o2, flow, id) => {
+    const p = predict(thin(o2, flow), P);
+    expect(p.mode).toBe('data');
+    expect(p.zone).toBe('marginal');
+    expect(p.evidence[0].point_id).toBe(id);
+    expect(p.evidence[0].outcome).toBe('marginal');
+    expect(p.explanation).toContain('measured limit point');
+  });
+
+  it('well above the extinction velocity the result is sustained again', () => {
+    const p = predict(thin(0.21, 10), P);
+    expect(p.zone).toBe('sustained');
+    expect(p.explanation).not.toContain('measured limit point');
+  });
+
+  it('applies to the FLEX limiting oxygen index too, and only next to it', () => {
+    expect(predictDropletByFuel(droplet(0.15), P)['n-heptane'].zone).toBe('marginal');
+    expect(predictDropletByFuel(droplet(0.12), P).methanol.zone).toBe('marginal');
+    expect(predictDropletByFuel(droplet(0.18), P)['n-heptane'].zone).toBe('sustained');
+    expect(predictDropletByFuel(droplet(0.13), P)['n-heptane'].zone).toBe('extinguishes');
+  });
+});
+
 describe('explanation and notes', () => {
   it('a solid data result states the flow range of its evidence', () => {
     const p = predict(habitatConditions('iss', 'thin_fabric', 20), P);

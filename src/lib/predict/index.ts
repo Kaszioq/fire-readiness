@@ -47,6 +47,8 @@ export const MAX_NEAREST_DISTANCE = 2;
 /** Zones on the weighted share of runs that kept burning. */
 export const ZONE_EXTINGUISHES_BELOW = 0.25;
 export const ZONE_SUSTAINED_ABOVE = 0.6;
+/** If the nearest run is a measured limit point ('marginal') closer than this, the zone is marginal. */
+export const LIMIT_POINT_DISTANCE = 0.5;
 /** How far outside the tested T_ad and pressure range a target may be and still use data, in scale units. */
 export const ENVELOPE_MARGIN = 0.5;
 
@@ -426,6 +428,9 @@ function predictForFuel(
   const totalWeight = neighbours.reduce((s, n) => s + weightOf(n.d), 0);
   const pSustained = neighbours.reduce((s, n) => s + weightOf(n.d) * burnValue[n.point.outcome], 0) / totalWeight;
   const confidence = evidenceCoverage(neighbours.map((n) => n.d));
+  // A measured limit (a 'marginal' run: FLEX limiting oxygen index, BASS-II extinction velocity) right at the
+  // target is the answer itself; runs that burned farther from the limit must not outvote it.
+  const onLimit = neighbours[0].point.outcome === 'marginal' && neighbours[0].d < LIMIT_POINT_DISTANCE;
 
   const noFlow = neighbours.filter((n) => useFlow && !n.flowUsed).length;
   if (noFlow > 0) {
@@ -474,10 +479,15 @@ function predictForFuel(
     `${range(neighbours.map((n) => n.point.pressure_kpa), 1, ' kPa')}, ${flowText}, flame temperature ` +
     `${temperatureRange(neighbours.map((n) => n.tAd))} against a target of ${kelvin(tTarget)}` +
     `${physics.surrogate ? ' (n-heptane surrogate)' : ''}: ${countOutcomes(neighbours.map((n) => n.point.outcome))}. ` +
-    `Distance-weighted share that kept burning: ${pct(pSustained)}. ${CONFIDENCE_SENTENCE}`;
+    `Distance-weighted share that kept burning: ${pct(pSustained)}.` +
+    (onLimit
+      ? ` The nearest run (${neighbours[0].point.id}, at distance ${round(neighbours[0].d, 2)}) is a measured limit point, ` +
+        'so the zone is marginal whatever the share.'
+      : '') +
+    ` ${CONFIDENCE_SENTENCE}`;
 
   return {
-    zone: zoneFor(pSustained),
+    zone: onLimit ? 'marginal' : zoneFor(pSustained),
     p_sustained: round(pSustained, 3),
     confidence: round(confidence, 3),
     evidence,
