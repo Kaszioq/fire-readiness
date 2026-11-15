@@ -3,7 +3,7 @@ import { investigationName } from '@/components/format';
 import { GapMap, type MapInvestigation, type MapPoint } from '@/components/GapMap';
 import { PageBanner } from '@/components/PageBanner';
 import { flammabilityPoints, getHabitat, habitats, investigations } from '@/lib/data';
-import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
+import { NORMAL_GRAVITY_WARNING, PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
 export const metadata = { title: 'Coverage and gap map' };
 
@@ -57,6 +57,8 @@ export default async function MapPage({
         initialHabitat={habitat.id}
         initialMaterial={first(params.material) ?? ''}
         partialGravityNote={PARTIAL_GRAVITY_WARNING}
+        normalGravityNote={NORMAL_GRAVITY_WARNING}
+        microgravityRuns={flammabilityPoints.filter((p) => p.gravity === 'micro').length}
       />
     </>
   );
