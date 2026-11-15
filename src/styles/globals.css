@@ -5821,3 +5821,11 @@ html {
     margin-top: clamp(128px, 12vw, 236px);
   }
 }
+
+/* The page-level fade is off: if a browser delays animations (background tab, slow machine), a fade that
+   starts from zero keeps the whole page invisible. Section reveals stay; they only ever hide content below
+   the fold and are driven by script, not by an animation clock. */
+.page-enter {
+  animation: none;
+  opacity: 1;
+}

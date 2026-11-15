@@ -213,7 +213,8 @@ function ModePanel({ prediction }: { prediction: Prediction }) {
           )}
         </>
       )}
-      {ph?.note && <p className="muted small">{ph.note}</p>}
+      {/* The explanation above usually ends with the same sentences: show the note only when it adds something. */}
+      {ph?.note && !prediction.explanation.includes(ph.note.slice(-80)) && <p className="muted small">{ph.note}</p>}
     </div>
   );
 }
@@ -258,6 +259,7 @@ export function LensWorkbench({
   const pointById = useMemo(() => new Map(points.map((p) => [p.id, p])), [points]);
   const classPoints = useMemo(() => points.filter((p) => p.material_class === material), [points, material]);
   const materials = Object.keys(MATERIAL_LABEL) as MaterialClass[];
+  const partialRuns = useMemo(() => points.filter((p) => p.gravity === 'partial_emulated').length, [points]);
   const names = useMemo(
     () => Object.fromEntries(investigations.map((i) => [i.psi_id, investigationName(i)])),
     [investigations],
@@ -362,7 +364,9 @@ export function LensWorkbench({
           <span className="lens-label">
             Gravity <span className="num">{Number(habitat.gravity_g.toFixed(3))} g</span>
           </span>
-          <span className="lens-hint">Set by the habitat preset. No test run in the dataset is at partial gravity.</span>
+          <span className="lens-hint">
+            Set by the habitat preset. {partialRuns} of {points.length} test runs in the dataset are at partial gravity.
+          </span>
         </div>
         <div className="lens-slider lens-material">
           <span className="lens-label" id="lens-mat">
@@ -406,7 +410,7 @@ export function LensWorkbench({
         <section className="card-stack" aria-labelledby="predictor-h">
           <h2 id="predictor-h">Fire risk predictor</h2>
           <p className="muted small" style={{ margin: 0 }}>
-            Evidence-based estimate from the nearest test runs, not a certified model.
+            Evidence-based estimate, not a certified model. Outside the tested conditions the answer is “no evidence”.
           </p>
           <PredictionCard prediction={prediction} />
           <ModePanel prediction={prediction} />
