@@ -21,13 +21,23 @@ import {
 } from '@/components/format';
 import { PredictionCard } from '@/components/PredictionCard';
 import { RankedList } from '@/components/RankedList';
+import { ReportPanel } from '@/components/ReportPanel';
 import { predict } from '@/lib/predict';
 import { rankInvestigations } from '@/lib/rank';
-import type { Conditions, FlammabilityPoint, Habitat, Investigation, MaterialClass, Prediction } from '@/lib/types';
+import type {
+  Conditions,
+  FlammabilityPoint,
+  Habitat,
+  Investigation,
+  MaterialClass,
+  Prediction,
+  ReportResponse,
+} from '@/lib/types';
 
 const O2_RANGE = { min: 0.1, max: 1, step: 0.005 };
 const P_RANGE = { min: 20, max: 150, step: 0.1 };
 const FLOW_RANGE = { min: 0, max: 50, step: 0.5 };
+const TOP_N = 10; // the report context uses the top 10 ranked investigations (SPEC module 5)
 const DEFAULT_FLOW = 10; // only the slider's starting position when the user switches flow on; not a habitat value
 
 export interface LensInitial {
@@ -211,11 +221,14 @@ export function LensWorkbench({
   investigations,
   points,
   initial,
+  cachedReports,
 }: {
   habitats: Habitat[];
   investigations: Investigation[];
   points: FlammabilityPoint[];
   initial: LensInitial;
+  /** Pre-generated report per habitat ID, shown before any request is made. */
+  cachedReports: Partial<Record<string, ReportResponse>>;
 }) {
   const [habitatId, setHabitatId] = useState(initial.habitatId);
   const habitat = habitats.find((h) => h.id === habitatId) ?? habitats[0];
@@ -223,6 +236,7 @@ export function LensWorkbench({
   const [kpa, setKpa] = useState(initial.kpa ?? habitat.pressure_kpa);
   const [flow, setFlow] = useState<number | null>(initial.flow ?? habitat.flow_cm_s);
   const [material, setMaterial] = useState<MaterialClass>(initial.material);
+  const [showAll, setShowAll] = useState(false);
 
   const conditions: Conditions = useMemo(
     () => ({
@@ -242,6 +256,10 @@ export function LensWorkbench({
   const pointById = useMemo(() => new Map(points.map((p) => [p.id, p])), [points]);
   const classPoints = useMemo(() => points.filter((p) => p.material_class === material), [points, material]);
   const materials = Object.keys(MATERIAL_LABEL) as MaterialClass[];
+  const names = useMemo(
+    () => Object.fromEntries(investigations.map((i) => [i.psi_id, investigationName(i)])),
+    [investigations],
+  );
 
   const apply = (next: Partial<{ habitatId: string; o2: number; kpa: number; flow: number | null; material: MaterialClass }>) => {
     const h = habitats.find((x) => x.id === (next.habitatId ?? habitatId)) ?? habitat;
@@ -460,9 +478,24 @@ export function LensWorkbench({
 
         <section className="card-stack" aria-labelledby="ranked-h">
           <h2 id="ranked-h">Most relevant investigations</h2>
-          <RankedList ranked={ranked} lookup={(id) => byId.get(id)} />
+          <RankedList ranked={showAll ? ranked : ranked.slice(0, TOP_N)} lookup={(id) => byId.get(id)} />
+          {ranked.length > TOP_N && (
+            <button type="button" className="btn" onClick={() => setShowAll((v) => !v)} aria-expanded={showAll}>
+              {showAll ? `Show the top ${TOP_N} only` : `Show all ${ranked.length} investigations`}
+            </button>
+          )}
         </section>
       </div>
+
+      <ReportPanel
+        // A different habitat has its own pre-generated report: start the panel again.
+        key={habitat.id}
+        conditions={conditions}
+        habitatId={habitat.id}
+        presetConditions={!custom && flow === habitat.flow_cm_s}
+        cached={cachedReports[habitat.id]}
+        names={names}
+      />
     </>
   );
 }

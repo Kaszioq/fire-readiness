@@ -2093,3 +2093,88 @@ select.input {
   min-width: 180px;
   white-space: normal;
 }
+
+/* ---------- Report panel ---------- */
+
+.report-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.report-head h2 {
+  margin: 0 0 8px;
+}
+
+.report-body {
+  max-width: 76ch;
+}
+
+.report-body h3 {
+  margin: 20px 0 6px;
+  font-size: 15px;
+}
+
+.report-body h3:first-child {
+  margin-top: 0;
+}
+
+.report-body p,
+.report-body ul {
+  margin: 0 0 10px;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.report-body ul {
+  padding-left: 20px;
+}
+
+.cite {
+  display: inline-block;
+  margin: 0 1px;
+  padding: 0 7px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  line-height: 1.6;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.cite:hover {
+    border-color: var(--accent);
+  }
+}
+
+.cite-unknown {
+  color: var(--text-faint);
+  text-decoration: line-through;
+}
+
+.report-foot {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12.5px;
+}
+
+.report-cites {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.report[aria-busy='true'] .report-body {
+  opacity: 0.45;
+  transition: opacity 200ms ease;
+}

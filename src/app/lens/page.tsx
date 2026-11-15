@@ -1,9 +1,8 @@
 // Role B. Habitat Lens (docs/SPEC.md modules 2 and 4). The page reads the URL and hands the curated data to the
 // client workbench, which runs rankInvestigations() and predict() (role C) on every change.
-// Still to build: the cited report panel (module 5).
 import { MATERIAL_LABEL } from '@/components/format';
 import { LensWorkbench } from '@/components/LensWorkbench';
-import { flammabilityPoints, getHabitat, habitats, investigations } from '@/lib/data';
+import { flammabilityPoints, getCachedReport, getHabitat, habitats, investigations } from '@/lib/data';
 import type { MaterialClass } from '@/lib/types';
 
 export const metadata = { title: 'Habitat Lens' };
@@ -42,6 +41,7 @@ export default async function LensPage({
         habitats={habitats}
         investigations={investigations}
         points={flammabilityPoints}
+        cachedReports={Object.fromEntries(habitats.map((h) => [h.id, getCachedReport(h.id)]))}
         initial={{
           habitatId: habitat.id,
           material,
