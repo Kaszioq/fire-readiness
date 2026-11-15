@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14",
+ "generated_at": "2026-11-15",
  "method": "Cantera 3.2.0 equilibrium (HP), NASA Glenn thermo (nasa_gas.yaml), gaseous fuel at 298.15 K, stoichiometric with the ambient atmosphere",
  "units": {
   "t_ad": "K",
@@ -28,7 +28,7 @@
    "atmosphere": "O2/N2/CO2",
    "o2": 0.14,
    "co2": 0.3,
-   "quote": "The LOI increases to approximately 0.14",
+   "quote": "The LOI increases to approximately 0.14 (0.14 O2/0.56 N2/0.30 CO2) and 0.17 (0.17 O2/0.63 N2/0.20 CO2) for methanol and heptane, respectively, for ambient environments that simulated dispersing an inert-gas suppressant (carbon dioxide) into a nominally air (1.0 atm) ambient environment.",
    "t_ad_k": 1656.8,
    "source": "https://doi.org/10.1007/s12217-014-9372-2",
    "pressure_kpa": 101.325
@@ -48,7 +48,7 @@
    "atmosphere": "O2/N2/CO2",
    "o2": 0.17,
    "co2": 0.2,
-   "quote": "The LOI increases to approximately 0.14",
+   "quote": "The LOI increases to approximately 0.14 (0.14 O2/0.56 N2/0.30 CO2) and 0.17 (0.17 O2/0.63 N2/0.20 CO2) for methanol and heptane, respectively, for ambient environments that simulated dispersing an inert-gas suppressant (carbon dioxide) into a nominally air (1.0 atm) ambient environment.",
    "t_ad_k": 1908.4,
    "source": "https://doi.org/10.1007/s12217-014-9372-2",
    "pressure_kpa": 101.325

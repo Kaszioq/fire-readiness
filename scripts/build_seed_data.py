@@ -726,7 +726,7 @@ EXTRA = {
            "For oxygen/nitrogen mixtures, the LOI is 0.12 and 0.15 for methanol and heptane, respectively.",
            "Dietrich et al. (2014) Microgravity Sci. Technol., abstract"),
         P_("With CO2 added to simulate a dispersed suppressant, the LOI rises to about 0.14 (methanol, 30% CO2) and 0.17 (heptane, 20% CO2).", "PSI-69",
-           "https://doi.org/10.1007/s12217-014-9372-2", "The LOI increases to approximately 0.14",
+           "https://doi.org/10.1007/s12217-014-9372-2", "The LOI increases to approximately 0.14 (0.14 O2/0.56 N2/0.30 CO2) and 0.17 (0.17 O2/0.63 N2/0.20 CO2) for methanol and heptane, respectively, for ambient environments that simulated dispersing an inert-gas suppressant (carbon dioxide) into a nominally air (1.0 atm) ambient environment.",
            "Dietrich et al. (2014) Microgravity Sci. Technol., abstract", note="full sentence gives compositions 0.14 O2/0.56 N2/0.30 CO2 and 0.17 O2/0.63 N2/0.20 CO2"),
         P_("Methanol LOI is about 12 to 13% O2 in CO2- and He-diluted atmospheres at 0.7 and 1 atm.", "PSI-69", "https://ntrs.nasa.gov/citations/20130014061",
            "the limiting oxygen index for methanol in these diluent gases is around 12% to 13% oxygen by volume.",
@@ -981,7 +981,7 @@ def main():
                        "psi_search": "https://psi.nasa.gov/geode-py/ws/repo/search?term=combustion&source=psi&type=investigation (26 hits, 2 excluded)",
                        "n_investigations": len(INV), "n_fields_total": tot, "n_fields_verified": ver,
                        "n_flammability_points": len(POINTS), "n_points_unverified": pts_unver,
-                       "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) as verified; all llm_extracted and manual fields await human review in data/verification.csv"})
+                       "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) as verified; all llm_extracted and manual fields await human review in data/verification.csv. psi_snapshot_hash is the sha256 of the extracts (flex_tests.txt, bass2_tests.txt) and of the investigation records, not of the whole PSI snapshot."})
     with open(os.path.join(ROOT, "data", "verification.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["priority", "psi_id", "field_path", "value", "quote", "source_url", "file", "locator", "method", "note", "status", "verifier", "comment"])
