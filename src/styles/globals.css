@@ -2234,3 +2234,143 @@ select.input {
   gap: 4px 16px;
   font-size: 13.5px;
 }
+
+/* ---------- Investigation card ---------- */
+
+.inv-hint {
+  margin: 0 0 16px;
+}
+
+.inv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .inv-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.inv-grid h2,
+.pubs h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+.inv-grid .field {
+  grid-template-columns: 130px minmax(0, 1fr);
+}
+
+@media (max-width: 520px) {
+  .inv-grid .field {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.source {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.source summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+}
+
+.source summary::-webkit-details-marker {
+  display: none;
+}
+
+.source-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-style: italic;
+}
+
+.source[open] .source-icon {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .source summary:hover {
+    color: var(--text);
+  }
+}
+
+.source-body {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.source-body blockquote {
+  margin: 0 0 8px;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent);
+  color: var(--text);
+  font-style: italic;
+}
+
+.source-body ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.findings {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lineage {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pubs {
+  margin-top: 20px;
+}
+
+.pubs summary {
+  cursor: pointer;
+}
+
+.pubs summary h2 {
+  display: inline;
+  margin: 0;
+}
+
+.pubs ol {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-left: 24px;
+  font-size: 13.5px;
+  overflow-wrap: anywhere;
+}
