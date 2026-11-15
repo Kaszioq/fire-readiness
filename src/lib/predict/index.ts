@@ -47,6 +47,8 @@ export const MAX_NEAREST_DISTANCE = 2;
 /** Zones on the weighted share of runs that kept burning. */
 export const ZONE_EXTINGUISHES_BELOW = 0.25;
 export const ZONE_SUSTAINED_ABOVE = 0.6;
+/** Two distances closer than this are a tie. */
+const TIE_EPS = 1e-9;
 /** If the nearest run is a measured limit point ('marginal') closer than this, the zone is marginal. */
 export const LIMIT_POINT_DISTANCE = 0.5;
 /** How far outside the tested T_ad and pressure range a target may be and still use data, in scale units. */
@@ -444,12 +446,28 @@ function predictForFuel(
 
   const weightOf = (d: number) => 1 / (d + WEIGHT_EPS);
   const burnValue: Record<Outcome, number> = { sustained: 1, marginal: 0.5, extinguished: 0, no_ignition: 0 };
-  const totalWeight = neighbours.reduce((s, n) => s + weightOf(n.d), 0);
-  const pSustained = neighbours.reduce((s, n) => s + weightOf(n.d) * burnValue[n.point.outcome], 0) / totalWeight;
+  // Ties at the cut-off: when more runs sit at exactly the distance of the last neighbour than there are places
+  // left, which of them fills the places would depend on their ids. Instead all of them vote and share the
+  // remaining places equally, so the result does not depend on an arbitrary order. Without such a tie this is
+  // the plain weighted vote of the neighbours.
+  const cutoff = neighbours[neighbours.length - 1].d;
+  const inside = neighbours.filter((n) => n.d < cutoff - TIE_EPS);
+  const tied = scored.filter((n) => Math.abs(n.d - cutoff) <= TIE_EPS);
+  const placesLeft = neighbours.length - inside.length;
+  const voters = [
+    ...inside.map((n) => ({ n, w: weightOf(n.d) })),
+    ...tied.map((n) => ({ n, w: (weightOf(n.d) * placesLeft) / tied.length })),
+  ];
+  const totalWeight = voters.reduce((s, v) => s + v.w, 0);
+  const pSustained = voters.reduce((s, v) => s + v.w * burnValue[v.n.point.outcome], 0) / totalWeight;
+  const tiedExtra = tied.length - placesLeft;
   const confidence = evidenceCoverage(neighbours.map((n) => n.d));
   // A measured limit (a 'marginal' run: FLEX limiting oxygen index, BASS-II extinction velocity) right at the
-  // target is the answer itself; runs that burned farther from the limit must not outvote it.
-  const onLimit = neighbours[0].point.outcome === 'marginal' && neighbours[0].d < LIMIT_POINT_DISTANCE;
+  // target is the answer itself; runs that burned farther from the limit must not outvote it. A limit point
+  // that ties with the nearest run counts as nearest.
+  const onLimit =
+    neighbours[0].d < LIMIT_POINT_DISTANCE &&
+    scored.some((n) => n.d <= neighbours[0].d + TIE_EPS && n.point.outcome === 'marginal');
 
   const noFlow = neighbours.filter((n) => useFlow && !n.flowUsed).length;
   if (noFlow > 0) {
@@ -499,6 +517,9 @@ function predictForFuel(
     `${temperatureRange(neighbours.map((n) => n.tAd))} against a target of ${kelvin(tTarget)}` +
     `${physics.surrogate ? ' (n-heptane surrogate)' : ''}: ${countOutcomes(neighbours.map((n) => n.point.outcome))}. ` +
     `Distance-weighted share that kept burning: ${pct(pSustained)}.` +
+    (tiedExtra > 0
+      ? ` ${tied.length} runs tie at the cut-off distance for ${placesLeft} places; they all vote and share those places equally.`
+      : '') +
     (onLimit
       ? ` The nearest run (${neighbours[0].point.id}, at distance ${round(neighbours[0].d, 2)}) is a measured limit point, ` +
         'so the zone is marginal whatever the share.'
