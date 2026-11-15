@@ -140,9 +140,8 @@ export default function HomePage() {
     <>
       <section className="hero hero-intro">
         <div className="hero-backdrop" aria-hidden="true" />
-        {/* Real flame from BASS-II (PSI-25), one of the investigations in the dataset. Decorative here; credited below. */}
-        {/* eslint-disable-next-line @next/next/no-img-element -- static decorative photo, no layout shift (absolutely positioned) */}
-        <img className="hero-photo" src="/media/bass-ii-iss040e088023.jpg" alt="" aria-hidden="true" />
+        {/* eslint-disable-next-line @next/next/no-img-element -- decorative backdrop, absolutely positioned */}
+        <img className="hero-bg" src="/media/earth-limb-iss028e007274.jpg" alt="" aria-hidden="true" />
         <div className="hero-grid">
           <div className="hero-copy">
             <span className="eyebrow rise">NASA PSI microgravity combustion data</span>
@@ -164,17 +163,31 @@ export default function HomePage() {
           </div>
           <ExplainerReel data={reel} />
         </div>
-        <div className="scroll-cue rise rise-3" aria-hidden="true">
-          <span>Scroll</span>
-          <i />
+        <div className="hero-figs">
+          <div>
+            <b className="bignum">{investigations.length}</b>
+            <span>NASA investigations</span>
+          </div>
+          <div>
+            <b className="bignum">{flammabilityPoints.length}</b>
+            <span>individual test runs</span>
+          </div>
+          <div>
+            <b className="bignum">
+              {reel.solidsAtFocus}
+              <small>of {reel.solids}</small>
+            </b>
+            <span>
+              solid-material runs at or above {formatPercent(focus.o2_mole_fraction)} oxygen
+            </span>
+          </div>
+          <p className="hero-credit">
+            The Sun over Earth&apos;s limb, from the International Space Station.{' '}
+            <a href="https://images.nasa.gov/details/iss028e007274" target="_blank" rel="noreferrer">
+              Photo: NASA
+            </a>
+          </p>
         </div>
-        <p className="hero-credit">
-          Flame over a solid fuel sample in microgravity,{' '}
-          <Link href="/investigations/PSI-25">BASS-II</Link> on the ISS.{' '}
-          <a href="https://images.nasa.gov/details/iss040e088023" target="_blank" rel="noreferrer">
-            Photo: NASA
-          </a>
-        </p>
       </section>
 
       <IntroStory
