@@ -7,7 +7,8 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-const TARGETS = '.card, .figure, .stats, .callout, .section-head, .filters, .row-list > li, .placeholder';
+const TARGETS =
+  '.card, .figure, .stats, .callout, .section-head, .filters, .row-list > li, .placeholder, .tile, .strip, .entry, .shot';
 const SKIP = '.story, .hero-intro, .reel, [data-fx-skip]';
 
 function countUp(el: HTMLElement) {

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { BackdropVideo } from '@/components/BackdropVideo';
 import { ExplainerReel, type ReelData } from '@/components/ExplainerReel';
-import { HabitatCard } from '@/components/HabitatCard';
 import { HabitatConsole, type ConsoleData } from '@/components/HabitatConsole';
+import { ExploreTiles, HabitatStrips, NumbersBand } from '@/components/HomeSections';
 import { IntroStory } from '@/components/IntroStory';
 import {
   formatKpa,
@@ -11,30 +11,12 @@ import {
   HABITAT_SHORT,
   investigationName,
   MATERIAL_LABEL,
-  plural,
   SOLID_CLASSES,
   SOURCE_LABEL,
 } from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
 import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
-const FEATURES = [
-  {
-    href: '/lens',
-    title: 'Habitat Lens',
-    text: 'Pick an atmosphere and see which investigations matter most for it, with every score explained.',
-  },
-  {
-    href: '/map',
-    title: 'Coverage and gap map',
-    text: 'Oxygen against pressure: what has been tested, where the habitats sit, and where the data runs out.',
-  },
-  {
-    href: '/investigations',
-    title: 'Investigation database',
-    text: 'Every in-scope PSI combustion investigation, each field traceable to its NASA source.',
-  },
-];
 
 // Context photos (NASA Image and Video Library). Captions restate NASA's own descriptions.
 const GALLERY = [
@@ -90,7 +72,6 @@ const GALLERY = [
 
 export default function HomePage() {
   const focus = getHabitat('moon_base') ?? habitats[0];
-  const pointInvestigations = new Set(flammabilityPoints.map((p) => p.psi_id)).size;
 
   // Everything the hero walkthrough shows, computed here from the curated data.
   const solids = flammabilityPoints.filter((p) => SOLID_CLASSES.includes(p.material_class));
@@ -258,29 +239,11 @@ export default function HomePage() {
       </section>
 
       <section className="band tex-carbon" aria-label="Dataset summary" id="check">
-        <div className="stats">
-          <div className="stat">
-            <span className="stat-value"><span data-count>{investigations.length}</span></span>
-            <span className="stat-label">PSI combustion investigations</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value"><span data-count>{flammabilityPoints.length}</span></span>
-            <span className="stat-label">
-              {flammabilityPoints.length === 1 ? 'test run' : 'test runs'} from{' '}
-              {plural(pointInvestigations, 'investigation')}
-            </span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">
-              <span data-count>{meta.n_fields_verified}</span> <small>of {meta.n_fields_total}</small>
-            </span>
-            <span className="stat-label">extracted fields verified against NASA source</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value"><span data-count>{habitats.length}</span></span>
-            <span className="stat-label">habitat atmospheres to check</span>
-          </div>
+        <div className="section-head">
+          <h2>The dataset in numbers</h2>
+          <span className="muted">Snapshot of the NASA PSI repository, {meta.fetched_at}.</span>
         </div>
+        <NumbersBand investigations={investigations} points={flammabilityPoints} habitats={habitats} meta={meta} />
       </section>
 
       <section className="band tex-hex">
@@ -288,26 +251,14 @@ export default function HomePage() {
           <h2>Check a habitat</h2>
           <span className="muted">Each preset opens the Habitat Lens with its atmosphere.</span>
         </div>
-        <div className="grid grid-3">
-          {habitats.map((h) => (
-            <HabitatCard key={h.id} habitat={h} />
-          ))}
-        </div>
+        <HabitatStrips habitats={habitats} />
       </section>
 
       <section className="band tex-brushed">
         <div className="section-head">
           <h2>Explore</h2>
         </div>
-        <div className="grid grid-3">
-          {FEATURES.map((f) => (
-            <Link key={f.href} href={f.href} className="card feature-card">
-              <h3>{f.title}</h3>
-              <p className="muted">{f.text}</p>
-              <span className="arrow">Open →</span>
-            </Link>
-          ))}
-        </div>
+        <ExploreTiles focus={focus} points={flammabilityPoints} investigations={investigations} />
       </section>
     </>
   );
