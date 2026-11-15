@@ -22,6 +22,12 @@
 
 The checks are string checks. They catch the claims listed above, not every possible error, so read a regenerated cached report before committing it.
 
+## Providers and fallback
+
+`LLM_MODEL` may list several models, separated by commas, and `LLM_FALLBACK_BASE_URL` / `LLM_FALLBACK_API_KEY` / `LLM_FALLBACK_MODEL` add a second OpenAI-compatible provider. They are tried in that order within one 25 s budget; the first answer wins and its model is recorded in the report. If all fail, the cached report is served.
+
+List only models you have read reports from. On 2026-11-15 `openai/gpt-oss-20b` passed every automatic check and still misread counts and attached droplet citations to solid-fuel statements, so it is not in the default list.
+
 ## Token budget
 
 The free tier counts prompt plus `max_tokens` against 8000 tokens per minute. The context is about 4400 tokens and `max_tokens` is 1800, so one report per minute; a second request inside the minute gets HTTP 429 and the route serves the cached report. gpt-oss models get `reasoning_effort: low` (see `.env.example`), otherwise they spend the budget on reasoning and return an empty or cut-off text.

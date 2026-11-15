@@ -215,6 +215,9 @@ describe('POST /api/report without an LLM: the cached report', () => {
     delete process.env.LLM_BASE_URL;
     delete process.env.LLM_API_KEY;
     delete process.env.LLM_MODEL;
+    delete process.env.LLM_FALLBACK_BASE_URL;
+    delete process.env.LLM_FALLBACK_API_KEY;
+    delete process.env.LLM_FALLBACK_MODEL;
     const { POST } = await import('./route');
     return POST(new Request('http://localhost/api/report', { method: 'POST', body: JSON.stringify(body) }));
   };
@@ -243,5 +246,99 @@ describe('POST /api/report without an LLM: the cached report', () => {
 
   it('rejects a malformed request', async () => {
     expect((await post({ conditions: { o2_mole_fraction: 3 } })).status).toBe(400);
+  });
+});
+
+describe('LLM client: endpoints are tried in order', () => {
+  const ENV = ['LLM_BASE_URL', 'LLM_API_KEY', 'LLM_MODEL', 'LLM_FALLBACK_BASE_URL', 'LLM_FALLBACK_API_KEY', 'LLM_FALLBACK_MODEL', 'LLM_REASONING_EFFORT'];
+  const withEnv = async (values: Record<string, string>, run: () => Promise<void>) => {
+    const saved = Object.fromEntries(ENV.map((k) => [k, process.env[k]]));
+    for (const k of ENV) delete process.env[k];
+    Object.assign(process.env, values);
+    const realFetch = globalThis.fetch;
+    try {
+      await run();
+    } finally {
+      globalThis.fetch = realFetch;
+      for (const k of ENV) {
+        if (saved[k] === undefined) delete process.env[k];
+        else process.env[k] = saved[k];
+      }
+    }
+  };
+
+  it('no variables: no config, so the route serves the cached report', async () => {
+    await withEnv({}, async () => {
+      const { getLlmConfig } = await import('./llm');
+      expect(getLlmConfig()).toBeNull();
+    });
+  });
+
+  it('a rate-limited model falls through to the next model, then to the fallback provider', async () => {
+    await withEnv(
+      {
+        LLM_BASE_URL: 'https://main.example/v1/',
+        LLM_API_KEY: 'main-key',
+        LLM_MODEL: 'model-a, model-b',
+        LLM_FALLBACK_BASE_URL: 'https://second.example/v1',
+        LLM_FALLBACK_API_KEY: 'second-key',
+        LLM_FALLBACK_MODEL: 'model-c',
+      },
+      async () => {
+        const { chatCompletion, getLlmConfig } = await import('./llm');
+        const cfg = getLlmConfig();
+        expect(cfg?.endpoints.map((e) => `${e.baseUrl}|${e.model}`)).toEqual([
+          'https://main.example/v1|model-a',
+          'https://main.example/v1|model-b',
+          'https://second.example/v1|model-c',
+        ]);
+        const calls: string[] = [];
+        globalThis.fetch = (async (url: string | URL | Request, init?: RequestInit) => {
+          const model = JSON.parse(String(init?.body)).model as string;
+          const auth = (init?.headers as Record<string, string>).Authorization;
+          calls.push(`${String(url)}|${model}|${auth}`);
+          if (model === 'model-a') return new Response('{}', { status: 429, headers: { 'retry-after': '120' } });
+          if (model === 'model-b') return new Response(JSON.stringify({ choices: [{ message: { content: '' } }] }), { status: 200 });
+          return new Response(JSON.stringify({ choices: [{ message: { content: 'report text' } }] }), { status: 200 });
+        }) as typeof fetch;
+        if (!cfg) throw new Error('config expected');
+        const result = await chatCompletion(cfg, [{ role: 'user', content: 'x' }]);
+        expect(result).toEqual({ text: 'report text', model: 'model-c' });
+        expect(calls).toEqual([
+          'https://main.example/v1/chat/completions|model-a|Bearer main-key',
+          'https://main.example/v1/chat/completions|model-b|Bearer main-key',
+          'https://second.example/v1/chat/completions|model-c|Bearer second-key',
+        ]);
+      },
+    );
+  });
+
+  it('when every endpoint fails, the error reaches the caller (which serves the cached report)', async () => {
+    await withEnv({ LLM_BASE_URL: 'https://main.example/v1', LLM_API_KEY: 'k', LLM_MODEL: 'model-a' }, async () => {
+      const { chatCompletion, getLlmConfig, LlmHttpError } = await import('./llm');
+      globalThis.fetch = (async () => new Response('{}', { status: 429, headers: { 'retry-after': '30' } })) as typeof fetch;
+      const cfg = getLlmConfig();
+      if (!cfg) throw new Error('config expected');
+      await expect(chatCompletion(cfg, [{ role: 'user', content: 'x' }])).rejects.toBeInstanceOf(LlmHttpError);
+    });
+  });
+
+  it('sends reasoning_effort "low" to gpt-oss models only, unless overridden', async () => {
+    await withEnv({ LLM_BASE_URL: 'https://main.example/v1', LLM_API_KEY: 'k', LLM_MODEL: 'openai/gpt-oss-120b,other-model' }, async () => {
+      const { chatCompletion, getLlmConfig } = await import('./llm');
+      const bodies: Record<string, unknown>[] = [];
+      globalThis.fetch = (async (_url: string | URL | Request, init?: RequestInit) => {
+        const body = JSON.parse(String(init?.body));
+        bodies.push(body);
+        return body.model === 'other-model'
+          ? new Response(JSON.stringify({ choices: [{ message: { content: 'ok' } }] }), { status: 200 })
+          : new Response('{}', { status: 500 });
+      }) as typeof fetch;
+      const cfg = getLlmConfig();
+      if (!cfg) throw new Error('config expected');
+      await chatCompletion(cfg, [{ role: 'user', content: 'x' }]);
+      expect(bodies[0].reasoning_effort).toBe('low');
+      expect('reasoning_effort' in bodies[1]).toBe(false);
+    });
   });
 });
