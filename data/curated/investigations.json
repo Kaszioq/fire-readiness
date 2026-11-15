@@ -89,7 +89,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Assess the effectiveness of an inert, gaseous extinguishing agent (similar to that used on ISS) in putting out flames over different materials, geometries, preheating, and flow."
       }
     },
@@ -102,7 +104,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s."
       }
     },
@@ -116,7 +120,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Current NASA spacecraft materials selection is based on a standard test method (NASA–STD–6001 Test 1) that segregates material based on 1-g behavior without consideration of low gravity effects."
         }
       },
@@ -129,7 +135,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques."
         }
       },
@@ -142,7 +150,9 @@
             "locator": "Ferkul et al., ASGSR 2013 presentation (NTRS 20140011099)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Ultem and Nomex HT90-40 samples did not burn on ISS atmosphere"
         }
       },
@@ -155,7 +165,9 @@
             "locator": "Ferkul et al., ASGSR 2013 presentation (NTRS 20140011099)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Quenching extinction was observed (around 1 cm/s)"
         }
       }
@@ -190,7 +202,9 @@
             "locator": "PSI record field: approach + experimental table"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem.",
           "note": "PMMA appears in the experimental table column 'Fuel Sample Material' (e.g. 'PMMA sphere 2 cm')"
         }
@@ -204,7 +218,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Other sample shapes were utilized as well including spheres and cylinders."
         }
       },
@@ -232,7 +248,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "O2 not listed in the BASS experimental table; see final report"
         },
         "unit": "mole fraction"
@@ -245,7 +263,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -262,7 +282,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "with airflow speeds reaching as high as 40 cm/s"
         },
         "unit": "cm/s"
@@ -278,7 +300,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Using nitrogen as a flame suppressant in microgravity"
         }
       },
@@ -324,7 +348,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "The airflow was directed along the fuel surface in either the opposed or concurrent direction."
       }
     },
@@ -336,7 +362,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -356,7 +384,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "data was collected on flame size, shape, color, spread rate, and potential flame quenching."
       }
     },
@@ -372,7 +402,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "objective: material flammability (prevention) and inert-gas extinguishment (suppression)",
         "quote": "Assess the effectiveness of an inert, gaseous extinguishing agent (similar to that used on ISS) in putting out flames over different materials, geometries, preheating, and flow."
       }
@@ -386,7 +418,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct spacecraft fire safety: solid materials, ISS, suppression",
         "quote": "Assess the effectiveness of an inert, gaseous extinguishing agent (similar to that used on ISS) in putting out flames over different materials, geometries, preheating, and flow."
       }
@@ -570,7 +604,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity."
       }
     },
@@ -583,7 +619,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Main variables are airflow speed and oxygen concentration (oxygen varied below 21% by adding nitrogen)."
       }
     },
@@ -597,7 +635,9 @@
             "locator": "PSI record field: hypothesis"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "it may not be conservative for flammability in space."
         }
       },
@@ -610,7 +650,9 @@
             "locator": "PSI record field: hypothesis"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "We are interested in finding the fundamental limit for a given material."
         }
       },
@@ -623,7 +665,9 @@
             "locator": "Olson et al., ICES-2019 (Flammability Limits from BASS-II Testing in Microgravity Compared to Normal Gravity Limits), abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Flame extinctions occurred under conditions indicating that materials can burn at a lower oxygen concentration in microgravity compared to normal gravity."
         }
       },
@@ -636,7 +680,9 @@
             "locator": "Scientific Reports (2018), BASS-II opposed flow on PMMA cylinders, abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "flame spread in microgravity could be faster and sustained at lower oxygen concentration (17%) than in normal gravity (18%)."
         }
       },
@@ -650,7 +696,9 @@
             "locator": "NASA/TM-20210011385 Summary (pdf p. 10)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The results showed that most of the tests had heat release rates well below 100 W."
         }
       },
@@ -664,7 +712,9 @@
             "locator": "NASA/TM-20210011385 (pdf p. 108)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "between 1 and 5 cm/s with higher velocity at lower O2 percentage"
         }
       }
@@ -715,7 +765,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Sample geometry (rods, spherical section, slabs, films, and fabric sheets"
         }
       },
@@ -766,7 +818,9 @@
             "locator": "NASA/TM-20210011385 (pdf p. 102); also 'varied from 99.2 to 99.5 kPa' (pdf p. 46)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Ambient pressure was 1 atm."
         },
         "unit": "kPa"
@@ -784,7 +838,9 @@
             "locator": "NASA/TM-20210011385 p. 4 (pdf p. 12)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "With no restrictors, the maximum flow velocity was ~55 cm/s",
           "note": "PSI record text says up to 40 cm/s"
         },
@@ -801,7 +857,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "oxygen varied below 21% by adding nitrogen"
         }
       },
@@ -846,7 +904,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Forced flow velocity (speed and direction)"
       }
     },
@@ -858,7 +918,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -893,7 +955,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "extinction limits via N2 vitiation and flow",
         "quote": "Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity."
       }
@@ -907,7 +971,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct spacecraft fire safety: solid material flammability limits",
         "quote": "Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity."
       }
@@ -922,7 +988,9 @@
             "locator": "PSI record field: experimental table, approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "oxygen varied below 21% by adding nitrogen"
         }
       }
@@ -1081,7 +1149,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS",
         "note": "PSI flightProgram field says 'International Space Station (ISS)'"
       }
@@ -1145,7 +1215,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "determine how rapidly a large scale fire grows in low-gravity"
       }
     },
@@ -1158,7 +1230,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Saffire-I was conducted at an air flow velocity of 20 cm/s."
       }
     },
@@ -1172,7 +1246,9 @@
             "locator": "PSI record field: hypothesis"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "proposed to conduct large-scale fire safety experiments in an expendable spacecraft without risk to a crew."
         }
       },
@@ -1185,7 +1261,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria"
         }
       },
@@ -1198,7 +1276,9 @@
             "locator": "Urban et al. (2019) Combustion and Flame 199:168-182, abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "a concurrent (downstream) spreading flame over thin fabrics in microgravity reaches a steady spread rate and a limiting length."
         }
       },
@@ -1211,7 +1291,9 @@
             "locator": "Ferkul et al., Results of Large-Scale Spacecraft Flammability Tests (NTRS 20170008805), abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Compared to previous microgravity work in smaller tunnels, the flame in the larger tunnel spread more slowly, even for a wider sample."
         }
       }
@@ -1256,7 +1338,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "simulating a large piece of flammable fabric"
         }
       },
@@ -1302,7 +1386,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -1337,7 +1423,9 @@
             "locator": "experimental table"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Percent O2",
           "note": "ambient was cabin air"
         }
@@ -1419,7 +1507,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity"
       }
     },
@@ -1434,7 +1524,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "large-scale fire growth and flammability limits",
         "quote": "determine how rapidly a large scale fire grows in low-gravity"
       }
@@ -1448,7 +1540,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct spacecraft fire safety at realistic scale",
         "quote": "determine how rapidly a large scale fire grows in low-gravity"
       }
@@ -1610,7 +1704,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test."
       }
     },
@@ -1623,7 +1719,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Saffire-II has a sample card that contains 9 samples, each 5 cm x 29 cm."
       }
     },
@@ -1693,7 +1791,9 @@
             "locator": "Urban et al. (2019) Combustion and Flame 199:168-182, abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The flame over the thick PMMA sample approaches a non-growing, steady state in the 15 min burning duration and has a limiting pyrolysis length."
         }
       }
@@ -1741,7 +1841,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "each 5 cm x 29 cm"
         }
       },
@@ -1787,7 +1889,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -1822,7 +1926,9 @@
             "locator": "experimental table"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Percent O2 (Note 1)"
         }
       },
@@ -1880,7 +1986,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -1913,7 +2021,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "material flammability at scale",
         "quote": "investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test."
       }
@@ -1927,7 +2037,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct spacecraft fire safety, multiple real materials",
         "quote": "investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test."
       }
@@ -2029,7 +2141,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS"
       }
     },
@@ -2053,7 +2167,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -2090,7 +2206,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I."
       }
     },
@@ -2103,7 +2221,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "the Saffire III investigation also used SIBAL as the sample material."
       }
     },
@@ -2117,7 +2237,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria"
         }
       }
@@ -2161,7 +2283,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -2189,7 +2313,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -2202,7 +2328,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -2233,7 +2361,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -2289,7 +2419,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -2308,7 +2440,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "solid state sensors were used to measure pressure, CO2 and O2 mole faction"
       }
     },
@@ -2323,7 +2457,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "large-scale fire growth",
         "quote": "the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I."
       }
@@ -2337,7 +2473,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct spacecraft fire safety at realistic scale",
         "quote": "the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I."
       }
@@ -2486,7 +2624,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6"
       }
     },
@@ -2499,7 +2639,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "A primary objective of the experiments is to determine the Limiting Oxygen Index (LOI) as a function of ambient pressure and determine how the presence of a suppressant influences the LOI ."
       }
     },
@@ -2513,9 +2655,10 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
-          "quote": "Continue steps 4 and 5 until flame exists for only a short time after ignition (radiative extinc",
-          "note": "quote truncated at the end of the snapshot excerpt"
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
+          "quote": "Continue steps 4 and 5 until flame exists for only a short time after ignition (radiative extinction)."
         }
       },
       {
@@ -2541,7 +2684,9 @@
             "locator": "Dietrich et al. (2014) Microgravity Sci. Technol., abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "For oxygen/nitrogen mixtures, the LOI is 0.12 and 0.15 for methanol and heptane, respectively."
         }
       },
@@ -2554,7 +2699,9 @@
             "locator": "Dietrich et al. (2014) Microgravity Sci. Technol., abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The LOI increases to approximately 0.14",
           "note": "full sentence gives compositions 0.14 O2/0.56 N2/0.30 CO2 and 0.17 O2/0.63 N2/0.20 CO2"
         }
@@ -2568,7 +2715,9 @@
             "locator": "Nayagam et al. (2013), NTRS 20130014061, abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "the limiting oxygen index for methanol in these diluent gases is around 12% to 13% oxygen by volume."
         }
       }
@@ -2614,7 +2763,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "igniting and observing the burning behavior of relatively large droplets"
         }
       },
@@ -2682,7 +2833,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "relatively large droplets",
           "note": "quiescent chamber (no imposed flow) assumed for droplet tests; verify"
         },
@@ -2763,7 +2916,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -2798,7 +2953,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flammability limits and gaseous suppressants",
         "quote": "aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6"
       }
@@ -2812,7 +2969,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct: flammability limits and suppressant effectiveness",
         "quote": "aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6"
       }
@@ -3210,7 +3369,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Study flame extinction mechanisms and their boundaries."
       }
     },
@@ -3223,7 +3384,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "varied in pressure between 0.5 atm to 3.0 atm and O2 concentration between 0.1 to 0.4 mole fraction with the diluent gas making up the balance."
       }
     },
@@ -3289,7 +3452,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Determine the influence of droplet interactions on the flammability limits and extinction behavior of droplet arrays."
         }
       },
@@ -3401,7 +3566,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "the PSI table is a test matrix, not a per-test log"
         }
       }
@@ -3414,7 +3581,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -3447,7 +3616,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Analyze the soot formation process, including soot volume fraction soot-shell dynamics."
       }
     },
@@ -3463,7 +3634,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "extinction boundaries of liquid fuels",
         "quote": "Study flame extinction mechanisms and their boundaries."
       }
@@ -3477,7 +3650,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flammability and extinction of liquid fuels at habitat-like O2 and pressure",
         "quote": "Study flame extinction mechanisms and their boundaries."
       }
@@ -3859,7 +4034,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "quantify the sizes that the liquid smoke particulate achieves in low gravity"
       }
     },
@@ -3872,7 +4049,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "turned on the igniter for a predefined period of time (15 to 60 seconds), and initiated the thermophoretic soot samplers to sample the smoke."
       }
     },
@@ -3886,7 +4065,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated."
         }
       },
@@ -3895,11 +4076,13 @@
         "prov": {
           "source_type": "publication",
           "source_ref": {
-            "url": "https://bvbvf1.bib-bvb.de/vufind/PrimoRecord/cdi_nasa_ntrs_20140006585",
+            "url": "https://ntrs.nasa.gov/citations/20140006585",
             "locator": "Urban et al., Evaluation of Low-Gravity Smoke Particulate for Spacecraft Fire Detection (NTRS 20140006585), abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "the smoke particles produced in low gravity were typically twice the size of particles produced in normal gravity.",
           "note": "conflicts with the later SAME-R analysis (Yang et al. 2018), see PSI-101; show both"
         }
@@ -3949,7 +4132,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -3961,7 +4146,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -3975,7 +4162,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -3988,7 +4177,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -4019,7 +4210,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -4077,7 +4270,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -4095,7 +4290,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "analyzed using a Transmission Electron microscope (TEM) to determine primary and aggregate particle dimensions."
       }
     },
@@ -4110,7 +4307,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "smoke detection",
         "quote": "quantify the sizes that the liquid smoke particulate achieves in low gravity"
       }
@@ -4124,7 +4323,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct: spacecraft smoke detection",
         "quote": "quantify the sizes that the liquid smoke particulate achieves in low gravity"
       }
@@ -4342,7 +4543,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "the SAME-R investigation employed several modification covering new materials, extended operating conditions, and diagnostic equipments."
       }
     },
@@ -4355,7 +4558,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points."
       }
     },
@@ -4369,7 +4574,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R."
         }
       },
@@ -4382,7 +4589,9 @@
             "locator": "Yang et al. (2018) Fire Safety Journal 98, abstract (NIST)"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The two spacecraft smoke detectors did not successfully detect every type of smoke",
           "note": "contrasts with Urban et al. (PSI-102): particle size differences are contested"
         }
@@ -4396,7 +4605,9 @@
             "locator": "NTRS 20130000422 (AIAA 2013), abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "the majority of the average smoke particle sizes were found to be in the 200 nm to 400 nm range"
         }
       }
@@ -4444,7 +4655,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -4456,7 +4669,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -4470,7 +4685,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -4483,7 +4700,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -4514,7 +4733,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -4572,7 +4793,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -4590,7 +4813,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME."
       }
     },
@@ -4605,7 +4830,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "smoke detection",
         "quote": "the SAME-R investigation employed several modification covering new materials, extended operating conditions, and diagnostic equipments."
       }
@@ -4619,7 +4846,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "direct: spacecraft smoke detection",
         "quote": "the SAME-R investigation employed several modification covering new materials, extended operating conditions, and diagnostic equipments."
       }
@@ -4789,7 +5018,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen."
       }
     },
@@ -4802,7 +5033,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "As the surface temperature of the burner increases, and the flame remains steady, a continuous set of data is produced for the flammability map."
       }
     },
@@ -4816,7 +5049,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The ongoing combustion without air flow was notably seen in elevated-oxygen atmospheres which are being considered for use in future spacecraft, whereas such flames in a normal atmosphere of 21% oxygen self-extinguished in a short time."
         }
       },
@@ -4829,7 +5064,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "While BRE’s results are still preliminary, they suggest that NASA may want to increase use of its alternative flammability Test 2"
         }
       },
@@ -4842,7 +5079,9 @@
             "locator": "Dehghani, P., PhD dissertation, University of Maryland, abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "All flames burning in 21% by volume oxygen self-extinguished within 40 s."
         }
       },
@@ -4855,7 +5094,9 @@
             "locator": "ACME overview, JASMAC-33 (2021), NTRS 20210022542"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "they were found to self-extinguish in concentrations below ~25% (by volume)."
         }
       }
@@ -4902,7 +5143,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "on porous circular burners of 25 and 50 mm diameter"
         }
       },
@@ -4952,7 +5195,9 @@
             "locator": "Wright, A. E. (2021) MS thesis, University of Maryland, abstract"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "oxygen mole fractions (XO2) ranging from 0.21-0.4, and pressures ranging from 0.57-1 bar.",
           "note": "PSI table does not list pressures; planned atmospheres in the PSI objective were 14.7, 10.2 and 8.2 psia"
         },
@@ -4970,7 +5215,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "establish the burning conditions in a quiescent microgravity ambient"
         },
         "unit": "cm/s"
@@ -5047,7 +5294,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5064,7 +5313,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "the temperature limit of the heat flux sensor"
       }
     },
@@ -5079,7 +5330,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "material flammability in still air and exploration atmospheres",
         "quote": "NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen."
       }
@@ -5093,7 +5346,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "the only PSI data at NASA's candidate exploration atmospheres (10.2 psia / 26.5% and 8.2 psia / 34%)",
         "quote": "NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen."
       }
@@ -5108,7 +5363,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen."
         }
       }
@@ -5316,7 +5573,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "DAFT / DAFT-2 tests that a modified P-Trak particulate counter would be accurate in microgravity."
       }
     },
@@ -5329,7 +5588,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "The ARD was aerosolized with GN2 to create particle samples."
       }
     },
@@ -5343,7 +5604,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Extended duration space flight missions with larger vessels will require fire detection systems with increased reliability and sensitivity."
         }
       }
@@ -5386,7 +5649,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -5398,7 +5663,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -5412,7 +5679,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -5425,7 +5694,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -5438,7 +5709,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -5451,7 +5724,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -5491,7 +5766,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5503,7 +5780,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5535,7 +5814,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "instrument validation for smoke detection",
         "quote": "DAFT / DAFT-2 tests that a modified P-Trak particulate counter would be accurate in microgravity."
       }
@@ -5549,7 +5830,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "detection instrument, no fire",
         "quote": "DAFT / DAFT-2 tests that a modified P-Trak particulate counter would be accurate in microgravity."
       }
@@ -5646,7 +5929,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5658,7 +5943,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5695,7 +5982,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Determine the conditions for which cool diffusion flames occur for propane, n-butane, and n-pentane"
       }
     },
@@ -5708,7 +5997,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Perform spherical diffusion flame tests aboard the International Space Station."
       }
     },
@@ -5771,7 +6062,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Perform spherical diffusion flame tests"
         }
       },
@@ -5783,7 +6076,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -5833,7 +6128,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -5890,7 +6187,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5902,7 +6201,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -5920,7 +6221,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Observe the flames with a broad suite of cameras, radiometers, photomultiplier tubes, and thermocouples."
       }
     },
@@ -5935,7 +6238,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "cool flame chemistry",
         "quote": "Determine the conditions for which cool diffusion flames occur for propane, n-butane, and n-pentane"
       }
@@ -5949,7 +6254,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "highest-O2 microgravity flames in PSI; mainly fundamental",
         "quote": "Determine the conditions for which cool diffusion flames occur for propane, n-butane, and n-pentane"
       }
@@ -6098,7 +6405,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "better understand the relationship between electric field voltage and chemi-ion current"
       }
     },
@@ -6111,7 +6420,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "The experiment is conducted with gas-fueled flames, both with and without a coflow of air."
       }
     },
@@ -6125,7 +6436,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "The E-FIELD Flames research is not being conducted to serve any space applications"
         }
       }
@@ -6172,7 +6485,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "the same coflow burner used by the Coflow Laminar Diffusion (CLD) Flame experiment"
         }
       },
@@ -6184,7 +6499,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -6198,7 +6515,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -6211,7 +6530,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -6224,7 +6545,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -6299,7 +6622,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -6316,7 +6641,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "evaluate soot formation"
       }
     },
@@ -6331,7 +6658,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "electric-field flame physics",
         "quote": "better understand the relationship between electric field voltage and chemi-ion current"
       }
@@ -6345,7 +6674,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "only PSI proxy for partial gravity (per challenge statement)",
         "quote": "better understand the relationship between electric field voltage and chemi-ion current"
       }
@@ -6548,7 +6879,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -6560,7 +6893,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -6597,7 +6932,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Identify the laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity."
       }
     },
@@ -6610,7 +6947,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "co-flow velocities ranging from 5.4 cm/s to 65 cm/s."
       }
     },
@@ -6624,7 +6963,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Will improve our understanding of soot formation mechanisms and help design safer spacecraft environments."
         }
       }
@@ -6673,7 +7014,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "with burner diameters of 0.41 mm, 0.76 mm, and 1.6 mm"
         }
       },
@@ -6701,7 +7044,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -6714,7 +7059,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -6731,7 +7078,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "co-flow velocities ranging from 5.4 cm/s to 65 cm/s"
         },
         "unit": "cm/s"
@@ -6744,7 +7093,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -6803,7 +7154,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -6838,7 +7191,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "soot / smoke generation",
         "quote": "Identify the laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity."
       }
@@ -6852,7 +7207,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "smoke and soot from flames",
         "quote": "Identify the laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity."
       }
@@ -6987,7 +7344,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -6999,7 +7358,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -7036,7 +7397,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "better understand the structure and stability of laminar diffusion flames in microgravity."
       }
     },
@@ -7049,7 +7412,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "The SLICE apparatus consisted of a fan-driven flow duct, exchangeable burner tubes, and integrated sensors to measure flow rates and temperature."
       }
     },
@@ -7097,7 +7462,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "exchangeable burner tubes"
         }
       },
@@ -7109,7 +7476,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -7123,7 +7492,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -7136,7 +7507,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -7149,7 +7522,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -7206,7 +7581,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -7218,7 +7595,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -7230,7 +7609,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -7245,7 +7626,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flame stability",
         "quote": "better understand the structure and stability of laminar diffusion flames in microgravity."
       }
@@ -7259,7 +7642,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flame structure, same MSG flow duct as BASS",
         "quote": "better understand the structure and stability of laminar diffusion flames in microgravity."
       }
@@ -7414,7 +7799,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Examine the combustion behavior of n-dodecane and mixtures of n-dodecane/iso-dodecane at pressures ranging from 0.25 atm to 5 atm."
       }
     },
@@ -7427,7 +7814,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Droplets of fuel are dispensed and suspended between hypodermic needles or tethered using silicon-carbide fibers."
       }
     },
@@ -7473,7 +7862,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Droplets of fuel are dispensed"
         }
       },
@@ -7485,7 +7876,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -7535,7 +7928,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -7613,7 +8008,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -7625,7 +8022,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -7640,7 +8039,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "cool flame droplet combustion",
         "quote": "Examine the combustion behavior of n-dodecane and mixtures of n-dodecane/iso-dodecane at pressures ranging from 0.25 atm to 5 atm."
       }
@@ -7654,7 +8055,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "droplet extinction over a wide pressure range",
         "quote": "Examine the combustion behavior of n-dodecane and mixtures of n-dodecane/iso-dodecane at pressures ranging from 0.25 atm to 5 atm."
       }
@@ -7830,7 +8233,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames"
       }
     },
@@ -7843,7 +8248,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Consider a broad range of reactant dilutions, flow rates and pressures for normal and inverse convection directions."
       }
     },
@@ -7889,7 +8296,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Perform spherical diffusion flame tests"
         }
       },
@@ -7901,7 +8310,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -7951,7 +8362,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -7968,7 +8381,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "amount of inert (N2 or CO2)"
         }
       },
@@ -8008,7 +8423,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8020,7 +8437,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8032,7 +8451,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8047,7 +8468,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "soot and flame structure",
         "quote": "Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames"
       }
@@ -8061,7 +8484,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "fundamental gas flames",
         "quote": "Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames"
       }
@@ -8365,7 +8790,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Characterize the behavior of weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution"
       }
     },
@@ -8378,7 +8805,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "we plan to study methane and ethylene diffusion flames over a wide range of test conditions."
       }
     },
@@ -8424,7 +8853,9 @@
             "locator": "PSI record field: objective"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "weak coflow diffusion flames"
         }
       },
@@ -8436,7 +8867,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -8450,7 +8883,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -8463,7 +8898,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -8476,7 +8913,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -8533,7 +8972,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8545,7 +8986,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8557,7 +9000,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8572,7 +9017,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "soot modelling",
         "quote": "Characterize the behavior of weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution"
       }
@@ -8586,7 +9033,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "fundamental gas flames",
         "quote": "Characterize the behavior of weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution"
       }
@@ -8806,7 +9255,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Measure and characterize the transient structure (such as temperature and species distribution) of diffusion flames"
       }
     },
@@ -8819,7 +9270,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "issued into an oxidizing environment through a spherical porous burner and ignited"
       }
     },
@@ -8867,7 +9320,9 @@
             "locator": "PSI record field: approach"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "spherical porous burner"
         }
       },
@@ -8879,7 +9334,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -8929,7 +9386,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -8987,7 +9446,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -8999,7 +9460,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9011,7 +9474,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9026,7 +9491,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flame structure",
         "quote": "Measure and characterize the transient structure (such as temperature and species distribution) of diffusion flames"
       }
@@ -9040,7 +9507,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "fundamental gas flames; includes ~30% O2 atmospheres",
         "quote": "Measure and characterize the transient structure (such as temperature and species distribution) of diffusion flames"
       }
@@ -9396,7 +9865,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "to use flight data obtained from PSI through NASA’s Flame Extinguishment Experiment (FLEX)"
       }
     },
@@ -9409,7 +9880,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Model fidelity was established against ISS FLEX measurements"
       }
     },
@@ -9423,7 +9896,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "Potential to improve spacecraft fire-safety modeling by resolving cool-flame/extinction behavior in microgravity"
         }
       }
@@ -9437,7 +9912,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9449,7 +9926,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9461,7 +9940,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9473,7 +9954,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -9487,7 +9970,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -9500,7 +9985,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -9513,7 +10000,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -9526,7 +10015,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9551,7 +10042,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -9564,7 +10057,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9576,7 +10071,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9588,7 +10085,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-117"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9604,7 +10103,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "modelling built on FLEX data",
         "quote": "to use flight data obtained from PSI through NASA’s Flame Extinguishment Experiment (FLEX)"
       }
@@ -9618,7 +10119,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "modelling built on FLEX data",
         "quote": "to use flight data obtained from PSI through NASA’s Flame Extinguishment Experiment (FLEX)"
       }
@@ -9635,7 +10138,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "use flight data obtained from PSI through NASA’s Flame Extinguishment Experiment (FLEX)"
       }
     },
@@ -9796,7 +10301,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "develop and validate new flamelet generated manifold (FGM) modeling techniques for concurrent flame spread in microgravity."
       }
     },
@@ -9809,7 +10316,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "the unsteady FGM method was implemented and tested"
       }
     },
@@ -9823,7 +10332,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "This research provides predictive tools for screening new materials’ flammability limits"
         }
       }
@@ -9837,7 +10348,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9849,7 +10362,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9861,7 +10376,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9873,7 +10390,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -9887,7 +10406,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -9900,7 +10421,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -9913,7 +10436,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -9926,7 +10451,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -9951,7 +10478,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -9964,7 +10493,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9976,7 +10507,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -9988,7 +10521,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-62"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10004,7 +10539,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flame spread modelling built on BASS data",
         "quote": "develop and validate new flamelet generated manifold (FGM) modeling techniques for concurrent flame spread in microgravity."
       }
@@ -10018,7 +10555,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flame spread modelling built on BASS data",
         "quote": "develop and validate new flamelet generated manifold (FGM) modeling techniques for concurrent flame spread in microgravity."
       }
@@ -10036,7 +10575,9 @@
           "locator": "PSI record field: PSI search result highlight text (approach / impacts); verify on the record page"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Experimental imagery found in PSI from the BASS and BASS-II investigations was post-processed"
       }
     },
@@ -10167,7 +10708,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "to derive temperature distributions and soot volume fractions from the Smoke Point in Coflow Experiment (SPICE) data available in PSI."
       }
     },
@@ -10180,7 +10723,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Raw Nikon NEF images were decoded into three color channels and analyzed using color-ratio pyrometry"
       }
     },
@@ -10194,7 +10739,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10206,7 +10753,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10218,7 +10767,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10230,7 +10781,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -10244,7 +10797,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -10257,7 +10812,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -10270,7 +10827,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -10283,7 +10842,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10308,7 +10869,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -10321,7 +10884,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10333,7 +10898,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10345,7 +10912,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10360,7 +10929,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "soot modelling built on SPICE data",
         "quote": "to derive temperature distributions and soot volume fractions from the Smoke Point in Coflow Experiment (SPICE) data available in PSI."
       }
@@ -10374,7 +10945,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "soot modelling built on SPICE data",
         "quote": "to derive temperature distributions and soot volume fractions from the Smoke Point in Coflow Experiment (SPICE) data available in PSI."
       }
@@ -10391,7 +10964,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "from the Smoke Point in Coflow Experiment (SPICE) data available in PSI"
       }
     },
@@ -10507,7 +11082,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "By using the Flame Extinguishment (FLEX) experimental data from the Physical Sciences Informatics (PSI) system"
       }
     },
@@ -10520,7 +11097,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Using the experimental conditions of FLEX flight, a comparative studies of the oxygen concentration effects on the extinction limits of cool flames"
       }
     },
@@ -10534,7 +11113,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10546,7 +11127,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10558,7 +11141,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10570,7 +11155,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -10584,7 +11171,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -10597,7 +11186,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -10610,7 +11201,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -10623,7 +11216,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10648,7 +11243,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -10661,7 +11258,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10673,7 +11272,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10685,7 +11286,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -10701,7 +11304,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flammability-limit modelling built on FLEX data",
         "quote": "By using the Flame Extinguishment (FLEX) experimental data from the Physical Sciences Informatics (PSI) system"
       }
@@ -10715,7 +11320,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "flammability-limit modelling built on FLEX data",
         "quote": "By using the Flame Extinguishment (FLEX) experimental data from the Physical Sciences Informatics (PSI) system"
       }
@@ -10732,7 +11339,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "By using the Flame Extinguishment (FLEX) experimental data from the Physical Sciences Informatics (PSI) system"
       }
     },
@@ -10903,7 +11512,9 @@
           "locator": "PSI record field: objective"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "to quantify the differences between microgravity and Earth gravity smoke"
       }
     },
@@ -10916,7 +11527,9 @@
           "locator": "PSI record field: approach"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "The smoke originates from pyrolysis vapor expelled from a heated sample in a geometry similar to that considered in the SAME experiments."
       }
     },
@@ -10930,7 +11543,9 @@
             "locator": "PSI record field: researchImpacts"
           },
           "method": "llm_extracted",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "quote": "This would directly lead to better smoke detection devices"
         }
       }
@@ -10944,7 +11559,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10956,7 +11573,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10968,7 +11587,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -10980,7 +11601,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -10994,7 +11617,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "mole fraction"
@@ -11007,7 +11632,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "kPa"
@@ -11020,7 +11647,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         },
         "unit": "cm/s"
@@ -11033,7 +11662,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       },
@@ -11058,7 +11689,9 @@
             "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
           },
           "method": "manual",
-          "verified": false,
+          "verified": true,
+          "verified_by": "K",
+          "verified_at": "2026-11-15T05:02:32Z",
           "note": "not reported in the PSI record or experimental table"
         }
       }
@@ -11071,7 +11704,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -11083,7 +11718,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -11095,7 +11732,9 @@
           "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-115"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "not reported in the PSI record or experimental table"
       }
     },
@@ -11110,7 +11749,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "smoke modelling built on SAME data",
         "quote": "to quantify the differences between microgravity and Earth gravity smoke"
       }
@@ -11124,7 +11765,9 @@
           "locator": "PSI record field: objective (curator judgement based on it)"
         },
         "method": "manual",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "note": "smoke modelling built on SAME data",
         "quote": "to quantify the differences between microgravity and Earth gravity smoke"
       }
@@ -11141,7 +11784,9 @@
           "locator": "PSI record field: title"
         },
         "method": "llm_extracted",
-        "verified": false,
+        "verified": true,
+        "verified_by": "K",
+        "verified_at": "2026-11-15T05:02:32Z",
         "quote": "Utilization of the Smoke Aerosol Measurement Experiment Data"
       }
     },

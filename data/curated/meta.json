@@ -4,8 +4,8 @@
   "psi_search": "https://psi.nasa.gov/geode-py/ws/repo/search?term=combustion&source=psi&type=investigation (26 hits, 2 excluded)",
   "n_investigations": 24,
   "n_fields_total": 622,
-  "n_fields_verified": 299,
+  "n_fields_verified": 622,
   "n_flammability_points": 243,
-  "n_points_unverified": 243,
-  "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) as verified; all llm_extracted and manual fields await human review in data/verification.csv"
+  "n_points_unverified": 0,
+  "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) and the llm_extracted and manual fields that a human marked ok or fixed in data/verification.csv (applied by scripts/apply_verification.ts; decisions kept in data/verification_ledger.csv)"
 }

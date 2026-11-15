@@ -85,7 +85,7 @@ The app never calls PSI at runtime. It only reads `data/curated/`.
 
 - Extraction produces `data/curated/*.json` plus `data/verification.csv` with one row per non-`api_direct` field: `psi_id, field_path, value, quote, source_url, locator, status (todo/ok/fixed/rejected), verifier, comment`.
 - The verifier opens `source_url`, finds `quote` at `locator`, checks that `value` matches. Marks `ok`, or corrects the value and marks `fixed`, or marks `rejected` (value becomes `null`).
-- `scripts/apply_verification.py` writes statuses back into the JSON (`verified`, `verified_by`, `verified_at`) and updates `meta.json` counters.
+- `scripts/apply_verification.ts` (`npm run verify:apply`) writes statuses back into the JSON (`verified`, `verified_by`, `verified_at`), recounts `meta.json`, and keeps the decisions in `data/verification_ledger.csv` so that they survive a rebuild of the data.
 - Priority order for verification: tier 1 conditions and flammability points, then tier 1 findings, then tier 2, then the rest.
 - The app shows "N of M extracted fields human-verified" and visually marks unverified fields.
 

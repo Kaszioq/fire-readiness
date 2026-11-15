@@ -356,7 +356,7 @@ inv(psi_id=i, acronym="FLEX", title="Flame Extinguishment Experiment", doi="10.6
                        "A primary objective of the experiments is to determine the Limiting Oxygen Index (LOI) as a function of ambient pressure and determine how the presence of a suppressant influences the LOI ."),
     key_findings=[
         L("The FLEX procedure defines the flammability limit as the condition where a flame exists only briefly after ignition (radiative extinction).", i, "approach",
-          "Continue steps 4 and 5 until flame exists for only a short time after ignition (radiative extinc", note="quote truncated at the end of the snapshot excerpt"),
+          "Continue steps 4 and 5 until flame exists for only a short time after ignition (radiative extinction)."),
         T("274 droplet tests span 12% to 34% O2, about 0.69 to 3.1 atm, CO2 up to 70% and He up to 45% of the ambient.", i, f,
           "Ambient pressure; mmHg / O initial ambient composition / CO initial ambient composition / He initial ambient composition"),
     ],
@@ -730,7 +730,7 @@ EXTRA = {
     ],
     "PSI-102": [
         P_("Smoke particles produced in low gravity were typically about twice the size of those produced in normal gravity.", "PSI-102",
-           "https://bvbvf1.bib-bvb.de/vufind/PrimoRecord/cdi_nasa_ntrs_20140006585",
+           "https://ntrs.nasa.gov/citations/20140006585",
            "the smoke particles produced in low gravity were typically twice the size of particles produced in normal gravity.",
            "Urban et al., Evaluation of Low-Gravity Smoke Particulate for Spacecraft Fire Detection (NTRS 20140006585), abstract",
            note="conflicts with the later SAME-R analysis (Yang et al. 2018), see PSI-101; show both"),
