@@ -1,4 +1,4 @@
-# STATUS.md: where the project stands (updated Sat 2026-11-14, 19:00 CET)
+# STATUS.md: where the project stands (updated Sun 2026-11-15, 01:00 CET)
 
 Read this after `CLAUDE.md` and before starting work. It records what changed since the app skeleton commit (`cb172c7`) so no session works from stale assumptions.
 
@@ -13,7 +13,7 @@ Read this after `CLAUDE.md` and before starting work. It records what changed si
 | File | Content |
 |---|---|
 | `investigations.json` | 24 PSI combustion investigations (tier 1: 10, tier 2: 6, tier 3: 8), every field with provenance. 352 publications (full lists from PSI). |
-| `flammability_points.json` | 241 test runs: FLEX (PSI-69) 101 (O2/N2 only), BASS-II (PSI-25) 128, Saffire-I (PSI-98) 2, Saffire-II (PSI-99) 10 |
+| `flammability_points.json` | 243 test runs: FLEX (PSI-69) 101 (O2/N2 only), BASS-II (PSI-25) 128 + 2 extinction-velocity limit points (Table 2.1 of the BASS-II report), Saffire-I (PSI-98) 2, Saffire-II (PSI-99) 10. 8 silicone/Nomex runs are class `fire_resistant` |
 | `habitats.json` | 9 presets: earth, iss, orion, moon_base, pressurized_rover, mars_habitat, spacesuit, exploration_10_2, exploration_8_2 |
 | `meta.json` | counters for the header (622 fields, 299 verified against NASA source) |
 | `excluded.json` | PSI-181 (solder) and PSI-108 (thermocapillary flow): returned by the PSI "combustion" search but not combustion |
@@ -23,7 +23,7 @@ Other data files:
 - `data/raw/psi_combustion_snapshot.json`: snapshot of all 26 PSI records (text fields) and their 25 experimental-table CSVs, taken 2026-11-14 via the PSI web API.
 - `data/extracts/flex_tests.txt`, `bass2_tests.txt`: per-test extracts used by the builder. `psi_publications.json`: full PSI publication lists.
 - `data/raw/docs/` (gitignored): large PSI documents read during curation (BASS-II Summary Report PDF, Saffire-I workbook).
-- `data/verification.csv`: 573 rows with a `priority` column (P1 to P4), see section 6.
+- `data/verification.csv`: 575 rows with a `priority` column (P1 to P4), see section 6.
 
 ## 3. How to regenerate and check
 
@@ -39,7 +39,8 @@ Edit data only through `scripts/build_seed_data.py`, then rerun all three. Never
 ## 4. Contract changes (team-approved, 2026-11-14)
 
 Applied in `src/lib/types.ts`, `src/lib/schemas.ts`, `docs/CONTRACTS.md`, `docs/SPEC.md`:
-- `MaterialClass` gained `'thin_solid'` (thin PMMA films, thin silicone). BASS-II films use it.
+- `MaterialClass` gained `'thin_solid'` (thin PMMA films). BASS-II films use it.
+- 2026-11-15 00:50: `MaterialClass` gained `'fire_resistant'` (silicone, Nomex), approved by Kuba. Reason and rule: `data/curated/mappings.md`. The predictor gives no estimate for it; `SOLID_CLASSES` in `src/components/format.ts` includes it (they are solid test runs).
 - `HabitatId` gained `'exploration_10_2'` (10.2 psia, 26.5% O2) and `'exploration_8_2'` (8.2 psia, 34% O2), NASA-considered exploration atmospheres quoted in the ACME BRE (PSI-20) objective.
 
 Code that maps over `MaterialClass` or `HabitatId` (ranking fuel weights, UI labels, selectors) must handle the new values.
@@ -57,6 +58,8 @@ Code that maps over `MaterialClass` or `HabitatId` (ranking fuel weights, UI lab
 9. Header counter text is "verified against NASA source": `api_direct` fields count as verified by contract; they were not checked by a human.
 10. **Partial gravity is NOT bounded by 0g and 1g.** The challenge text suggests it might be, but NASA's FM2 team (the planned lunar flammability experiment) reports that the oxygen concentration needed for flammability may reach a minimum near lunar gravity, so a lunar-habitat fire can be worse than in 0g and possibly worse than in 1g. Sources: Ferkul et al., LPSC 2026 (https://ntrs.nasa.gov/citations/20260000646); NASA "Fire on the Moon" overview (https://ntrs.nasa.gov/api/citations/20210020516/downloads/Fire%20on%20the%20Moon-Overview%20charts-v1.pdf); NASA FM2 page (https://www.nasa.gov/flammability-of-materials-on-the-moon-fm2/). The predictor warning text (`PARTIAL_GRAVITY_WARNING` in `src/lib/predict/index.ts`, SPEC module 4) was updated accordingly. Use this as a key demo message, never the opposite.
 11. **Scope the main gap precisely:** "no solid-material test in the PSI microgravity data at the Moon base atmosphere". Ground (1 g) tests at elevated O2 exist outside PSI, so never say "nobody has tested this".
+12. **Fire-resistant materials (2026-11-15)**: silicone and Nomex are class `fire_resistant`, not pooled with cotton/PMMA, because each has its own oxygen limit. Never present them as "safe": Nomex failed NASA-STD-6001 Test 1 at 30% O2 and 70.1 kPa in 1 g (NTRS 20070018178), and no fire-resistant material was tested in PSI microgravity data above about 22% O2.
+13. **Solid data are almost all "sustained" (131 of 134 ordinary solid runs; the rest are 2 extinction-velocity limit points and 1 no-ignition run)**: PSI records few extinctions with a stated flow. The two BASS-II extinction-velocity points are the only measured low-flow limits for thin solids. State this as a limitation in the UI and README; do not hide it.
 
 ## 5b. Plan change at 19:00: physics layer (role C)
 

@@ -143,7 +143,7 @@ export const InvestigationSchema = z.object({
 
 // ---------- Flammability points ----------
 
-export const MaterialClassSchema = z.enum(['thin_fabric', 'thin_solid', 'thick_solid', 'liquid_droplet', 'gas_jet']);
+export const MaterialClassSchema = z.enum(['thin_fabric', 'thin_solid', 'thick_solid', 'liquid_droplet', 'gas_jet', 'fire_resistant']);
 export const OutcomeSchema = z.enum(['sustained', 'marginal', 'extinguished', 'no_ignition']);
 
 export const FlammabilityPointSchema = z

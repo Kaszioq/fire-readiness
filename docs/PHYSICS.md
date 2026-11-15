@@ -57,12 +57,15 @@ The ratios in this table are for liquid fuel only (droplet limits calibrated on 
 
 | Class | Tests | Hottest tested condition | Coldest condition that still burned | Non-burning cases |
 |---|---|---|---|---|
-| thick_solid (PMMA) | 81 | 2326 K | 1848 K (14.2% O2) | no ignition at 1799 K (13.6% O2); silicone at 2322 K |
-| thin_solid | 24 | 2326 K | 1911 K (15% O2) | thin silicone at 2296 and 2322 K |
-| thin_fabric | 35 | 2326 K | 2012 K (16.4% O2) | Nomex at 2322 K |
+| thick_solid (PMMA) | 79 | 2326 K | 1848 K (14.2% O2) | no ignition at 1799 K (13.6% O2) |
+| thin_solid (PMMA film) | 24 | 2326 K | 1911 K (15% O2) | 2 extinction-velocity limit points (1.0 cm/s at 21% O2, 3.0 cm/s at 16% O2) |
+| thin_fabric (SIBAL) | 31 | 2322 K | 2012 K (16.4% O2) | none |
+| fire_resistant (silicone, Nomex) | 8 | not used | not used | silicone did not sustain burning (Saffire-II); Nomex did not ignite in Saffire-II; Nomex III did burn in BASS-II |
+
+Updated 2026-11-15: silicone and Nomex moved to `fire_resistant` (no T_ad, no physics estimate), see `data/curated/mappings.md`. Coldest-burning limits and all habitat margins are unchanged.
 
 - PMMA in microgravity has a limit between 1799 and 1848 K on this axis.
-- Silicone and Nomex do not burn even in air: **material chemistry matters beyond T_ad**. The physics layer never overrides a material-specific test result.
+- Silicone and Nomex behave differently from cotton and PMMA in the same air: **material chemistry matters beyond T_ad**, so they form their own class and get no physics estimate. They are not "safe": Nomex failed NASA-STD-6001 Test 1 at 30% O2, 70.1 kPa in 1 g (Hirsch et al., NTRS 20070018178).
 - Moon base (about 2550 K) lies about 220 K above every solid test (exact value 220.5 K): outside the data envelope, so the answer for solids is "no test data; physics margin only".
 
 ### Solids: margin relative to the coldest tested condition that still burned
@@ -126,6 +129,7 @@ Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 
 - Calibrated on droplets; solids use a surrogate and data-derived thresholds.
 - No gravity, no flow, no heat losses in the physics; those come from the test points.
 - Invalid for helium.
+- Not applicable to fire-resistant materials (silicone, Nomex): their limits are material-specific.
 
 ## 9. Sources for README References
 
@@ -133,3 +137,7 @@ Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 
 - NASA Glenn thermodynamic data (McBride, Zehe, Gordon, NASA/TP-2002-211556), via Cantera `nasa_gas.yaml`
 - Dietrich et al. 2014, Microgravity Sci. Technol., doi 10.1007/s12217-014-9372-2 (FLEX LOI)
 - NASA PSI FLEX (PSI-69), BASS-II (PSI-25), Saffire (PSI-98, PSI-99) data
+- BASS-II Summary Report, NASA/TM-20210011385 (Table 2.1, extinction velocity): https://ntrs.nasa.gov/citations/20210011385
+- Bhattacharjee, Simsek, Olson, Ferkul 2016, "The critical flow velocity for radiative extinction in opposed-flow flame spread in a microgravity environment", Combustion and Flame
+- Hirsch et al. 2007, oxygen concentration flammability thresholds of aerospace materials (Nomex at 30% O2, 70.1 kPa): https://ntrs.nasa.gov/citations/20070018178
+- Olson, Ferkul et al., BASS material flammability (Nomex HT90-40, Nomex III, Ultem on ISS): https://ntrs.nasa.gov/citations/20140011099

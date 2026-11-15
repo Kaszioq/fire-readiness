@@ -125,8 +125,11 @@ export interface Investigation {
 One row = one test run from an experimental table or a value reported in a document.
 
 ```ts
-export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet';
-// thin_solid = thin films and sheets that are not fabric (PMMA film, thin silicone); added 2026-11-14 with team OK
+export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet' | 'fire_resistant';
+// thin_solid = thin films and sheets that are not fabric (PMMA film); added 2026-11-14 with team OK
+// fire_resistant = inherently flame-resistant materials (silicone, Nomex). Their burning depends on a material-specific
+// oxygen limit, not on the cellulose/PMMA flammability map, so they are not pooled with the other solid classes and the
+// predictor gives no estimate for them (mode 'none'). Added 2026-11-15 00:50 by the tech lead (Kuba).
 export type Outcome = 'sustained' | 'marginal' | 'extinguished' | 'no_ignition';
 
 export interface FlammabilityPoint {

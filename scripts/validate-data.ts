@@ -79,7 +79,8 @@ if (investigations) {
 }
 
 if (flame && points) {
-  const missing = points.filter((p) => !(p.id in flame.points)).map((p) => p.id);
+  // fire_resistant points have no fuel model by design (material-specific limit, see data/curated/mappings.md).
+  const missing = points.filter((p) => p.material_class !== 'fire_resistant' && !(p.id in flame.points)).map((p) => p.id);
   if (missing.length) {
     fail('flame_temperature', `no T_ad for ${missing.length} flammability points, e.g. ${missing.slice(0, 5).join(', ')}`);
   }

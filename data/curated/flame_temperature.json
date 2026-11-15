@@ -4061,21 +4061,6 @@
    "fuel_model": "n-heptane",
    "surrogate": true
   },
-  "PSI-25:F1": {
-   "t_ad_k": 2326.0,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-25:F2": {
-   "t_ad_k": 2273.5,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-25:F3": {
-   "t_ad_k": 2304.8,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
   "PSI-25:M1": {
    "t_ad_k": 2326.0,
    "fuel_model": "n-heptane",
@@ -4591,6 +4576,16 @@
    "fuel_model": "n-heptane",
    "surrogate": true
   },
+  "PSI-25:Vcr-21": {
+   "t_ad_k": 2273.5,
+   "fuel_model": "n-heptane",
+   "surrogate": true
+  },
+  "PSI-25:Vcr-16": {
+   "t_ad_k": 1984.1,
+   "fuel_model": "n-heptane",
+   "surrogate": true
+  },
   "PSI-98:S1": {
    "t_ad_k": 2300.4,
    "fuel_model": "n-heptane",
@@ -4598,26 +4593,6 @@
   },
   "PSI-98:S2": {
    "t_ad_k": 2296.0,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-99:2-1": {
-   "t_ad_k": 2296.0,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-99:2-2": {
-   "t_ad_k": 2321.8,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-99:2-3": {
-   "t_ad_k": 2321.8,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-99:2-4": {
-   "t_ad_k": 2321.8,
    "fuel_model": "n-heptane",
    "surrogate": true
   },
@@ -4632,11 +4607,6 @@
    "surrogate": true
   },
   "PSI-99:2-7a": {
-   "t_ad_k": 2321.8,
-   "fuel_model": "n-heptane",
-   "surrogate": true
-  },
-  "PSI-99:2-7b": {
    "t_ad_k": 2321.8,
    "fuel_model": "n-heptane",
    "surrogate": true

@@ -800,7 +800,7 @@ for row in open(os.path.join(EX, "bass2_tests.txt")).read().strip().split(";"):
     if "sibal" in m:
         mc, name = "thin_fabric", "SIBAL cotton-fiberglass fabric"
     elif "nomex" in m:
-        mc, name = "thin_fabric", "Nomex III fabric"
+        mc, name = "fire_resistant", "Nomex III fabric"  # inherently flame-resistant aramid: own flammability limit, kept out of the cellulose/PMMA classes (mappings.md)
     elif "micron" in m or "film" in m or re.search(r"0\.\d mm", m):
         mc, name = "thin_solid", "PMMA film"
     else:
@@ -813,6 +813,20 @@ for row in open(os.path.join(EX, "bass2_tests.txt")).read().strip().split(";"):
                  "flow = first number in 'Air display' = air velocity transducer reading in cm/s (BASS-II Summary Report NASA/TM-20210011385, pdf p. 12). "
                  "pressure about 1 atm per the same report ('Ambient pressure was 1 atm.', pdf p. 102; 99.2 to 99.5 kPa, pdf p. 46). Outcome parsing still needs a human check."))
 
+# Radiative (quenching) extinction velocity of thin PMMA in opposed flow, measured on the ISS in BASS-II.
+# One boundary point per O2 level: at this flow the flame is at its limit (below it extinguished, above it spread steadily).
+BASS_REPORT_URL = "https://ntrs.nasa.gov/citations/20210011385"
+BASS_T21_QUOTE = "COMPARISON OF EXTINCTION VELOCITY Vg,cr FOR THIN POLYMETHYLMETHACRYLATE AT 1 atm"
+for o2pct, vcr_mm_s in [(21, 10), (16, 30)]:
+    pt("PSI-25", f"Vcr-{o2pct}", f"PMMA film 0.1 to 0.4 mm (extinction velocity, {o2pct}% O2)", "thin_solid", o2pct / 100, 101.3, vcr_mm_s / 10, "N2", "marginal", None,
+       prov("publication", "PSI-25", f"BASS-II Summary Report NASA/TM-20210011385, section 2.2.5, Table 2.1, row O2 = {o2pct} percent, column Experiment ({vcr_mm_s}±5 mm/s)",
+            BASS_T21_QUOTE, "manual", url=BASS_REPORT_URL, verified=False,
+            note=f"Experimental critical (extinction) opposed-flow velocity Vg,cr = {vcr_mm_s}±5 mm/s = {vcr_mm_s / 10} cm/s at {o2pct}% O2, 1 atm, from BASS-II tests on the ISS (section 2.2.3: thin PMMA sheets 100 to 400 µm, O2/N2). "
+                 "Outcome 'marginal' = limit point: below this flow the flame went out by radiative extinction, above it spread steadily; spread rate at the limit not reported. "
+                 "The report states the extinction velocity does not depend on fuel thickness (Figure 2.11). Cross-checks: computation 15 and 35 mm/s, theory 7.5 and 10 mm/s in the same table; "
+                 "Bhattacharjee et al., 'The critical flow velocity for radiative extinction in opposed-flow flame spread in a microgravity environment', Combust. Flame 2016; "
+                 "BASS-II overview NTRS 20160000593 ('radiative quenching when flow velocity goes below 2 cm/s' for a 0.1 mm sample). Uncertainty ±0.5 cm/s."))
+
 SF1 = "PSI-98_Experimental table_SAFFIRE-1.csv"
 SF2 = "PSI-99_Experimental table_SAFFIRE-2.csv"
 PNOTE = "pressure 101.3 kPa ASSUMED (Cygnus cabin nominal; table has no pressure column, sensors measured it, see Saffire documents)."
@@ -821,14 +835,14 @@ pt("PSI-98", "S1", "SIBAL fabric, 0.37 cm, concurrent flow", "thin_fabric", 0.21
 pt("PSI-98", "S2", "SIBAL fabric, 0.37 cm, opposed flow", "thin_fabric", 0.215, 101.3, 20, "N2", "sustained", None,
    prov("experimental_table", "PSI-98", "row S2", "S2,SIBAL Fabric,0.37,40.6,94,20,~ 21.5,182,8,70,Opposed", "manual", file=SF1, verified=False, note="burned 70 s; whether the flame consumed the full sample is not stated in the table. " + PNOTE))
 for tid, mat, mc, o2, oc, spread, q in [
-    ("2-1", "silicone 0.27 mm", "thin_solid", 0.215, "extinguished", None, "2-1,Silicone,0.27 mm,29 cm,5 cm,20 cm/s,~ 21.5,80 W,9.2 s,Insignificant,Concurrent"),
-    ("2-2", "silicone 0.61 mm", "thick_solid", 0.221, "extinguished", None, "2-2,Silicone,0.61 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,Insignificant,Concurrent"),
-    ("2-3", "silicone 1.03 mm", "thick_solid", 0.221, "extinguished", None, "2-3,Silicone,1.03 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,Insignificant,Concurrent"),
-    ("2-4", "silicone 0.37 mm, opposed flow", "thin_solid", 0.221, "extinguished", None, "2-4,Silicone,037 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,Insignificant,Opposed"),
+    ("2-1", "silicone 0.27 mm", "fire_resistant", 0.215, "extinguished", None, "2-1,Silicone,0.27 mm,29 cm,5 cm,20 cm/s,~ 21.5,80 W,9.2 s,Insignificant,Concurrent"),
+    ("2-2", "silicone 0.61 mm", "fire_resistant", 0.221, "extinguished", None, "2-2,Silicone,0.61 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,Insignificant,Concurrent"),
+    ("2-3", "silicone 1.03 mm", "fire_resistant", 0.221, "extinguished", None, "2-3,Silicone,1.03 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,Insignificant,Concurrent"),
+    ("2-4", "silicone 0.37 mm, opposed flow", "fire_resistant", 0.221, "extinguished", None, "2-4,Silicone,037 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,Insignificant,Opposed"),
     ("2-5", "SIBAL 0.37 mm", "thin_fabric", 0.221, "sustained", 2.1, "2-5,Cotton-Fiberglass (SIBAL),037 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,145 s,Concurrent,29 cm,2.1 mm/s"),
     ("2-6", "SIBAL 0.37 mm", "thin_fabric", 0.221, "sustained", 2.6, "2-6,,037 mm,29 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,115 s,Concurrent,29 cm,2.6 mm/s"),
     ("2-7a", "PMMA 0.85 mm (PMMA+Nomex sample)", "thick_solid", 0.221, "sustained", None, "2-7,PMMA & Nomex,0.85 and 0.37 mm,5 and 24 cm,5 cm,20 cm/s,~ 22.1,80 W,9.2 s,140 s,Concurrent"),
-    ("2-7b", "Nomex 0.37 mm (PMMA+Nomex sample)", "thin_fabric", 0.221, "no_ignition", None, "Note 2 The PMMA portion was completely consumed but the Nomex was not ignited."),
+    ("2-7b", "Nomex 0.37 mm (PMMA+Nomex sample)", "fire_resistant", 0.221, "no_ignition", None, "Note 2 The PMMA portion was completely consumed but the Nomex was not ignited."),
     ("2-8", "PMMA thick (see Fig. 5)", "thick_solid", 0.2205, "sustained", None, "2-8,PMMA,See Fig. 5,29 cm,5 cm,20 cm/s,22.1 to 22.0,97 W,30 s,600 s,Concurrent"),
     ("2-9", "PMMA 1 cm", "thick_solid", 0.2195, "sustained", None, "2-9,,1 cm,29 cm,5 cm,20 cm/s,22.0 to 21.9,97 W,30 s,900 s,Concurrent"),
 ]:

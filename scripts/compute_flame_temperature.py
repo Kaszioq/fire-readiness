@@ -115,6 +115,8 @@ def main():
     pts = json.load(open(os.path.join(CUR, "flammability_points.json"), encoding="utf-8"))
     per = {}
     for p in pts:
+        if p["material_class"] == "fire_resistant":
+            continue  # material-specific limit, no fuel model (see data/curated/mappings.md)
         if p["psi_id"] == "PSI-69":
             f = "methanol" if p["material"].startswith("methanol") else "n-heptane"
             sur = False

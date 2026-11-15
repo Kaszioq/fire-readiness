@@ -118,7 +118,7 @@ export interface Investigation {
 
 // ---------- 3. Flammability points (predictor input) ----------
 
-export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet'; // thin_solid = thin films and sheets that are not fabric (e.g. PMMA film)
+export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet' | 'fire_resistant'; // thin_solid = thin films and sheets that are not fabric (e.g. PMMA film); fire_resistant = inherently flame-resistant materials (silicone, Nomex) with their own flammability limit
 export type Outcome = 'sustained' | 'marginal' | 'extinguished' | 'no_ignition';
 
 export interface FlammabilityPoint {
