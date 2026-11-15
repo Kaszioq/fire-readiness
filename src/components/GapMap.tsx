@@ -126,6 +126,8 @@ export function GapMap({
   initialHabitat,
   initialMaterial,
   partialGravityNote,
+  normalGravityNote,
+  microgravityRuns,
 }: {
   investigations: MapInvestigation[];
   points: MapPoint[];
@@ -134,6 +136,10 @@ export function GapMap({
   initialMaterial: string;
   /** Sourced wording for the partial-gravity gap (role C constant). */
   partialGravityNote: string;
+  /** Sourced wording for habitats at 1 g (role C constant). */
+  normalGravityNote: string;
+  /** How many of the test runs are microgravity runs. */
+  microgravityRuns: number;
 }) {
   const [habitatId, setHabitatId] = useState(initialHabitat);
   const [material, setMaterial] = useState(initialMaterial);
@@ -203,6 +209,7 @@ export function GapMap({
   // Axes of the coverage bars: wide enough for every class and for the selected atmosphere.
   const o2Axis = Math.max(focus.o2_mole_fraction, ...classRows.map((r) => r.o2Max)) * 1.1;
   const kpaAxis = Math.max(focus.pressure_kpa, ...classRows.map((r) => r.kpaMax)) * 1.1;
+  const inRange = (v: number, min: number, max: number) => v >= min && v <= max;
   const pct = (share: number) => Math.round(Math.min(1, Math.max(0, share)) * 1000) / 10;
 
   const sameAtmosphere = habitats.filter(
@@ -495,9 +502,22 @@ export function GapMap({
       </div>
 
       <section className="gapmap-below">
-        <div className="callout">
-          <strong>Gravity gap.</strong> {partialGravityNote}
-        </div>
+        {/* The gravity note follows the selected habitat: a warning only where the data really do not match it. */}
+        {focus.gravity_g > 0 && focus.gravity_g < 1 ? (
+          <div className="callout">
+            <strong>Gravity gap for {HABITAT_SHORT[focus.id] ?? focus.name} ({focus.gravity_g} g).</strong> {partialGravityNote}
+          </div>
+        ) : focus.gravity_g >= 1 ? (
+          <div className="callout">
+            <strong>Gravity gap for {HABITAT_SHORT[focus.id] ?? focus.name} ({focus.gravity_g} g).</strong> {normalGravityNote}
+          </div>
+        ) : (
+          <div className="note-ok">
+            <strong>Gravity matches.</strong> {HABITAT_SHORT[focus.id] ?? focus.name} is in microgravity, and{' '}
+            {microgravityRuns} of {points.length} test runs in this dataset are microgravity runs. None is at partial
+            gravity, so the lunar and Martian presets carry a gravity gap that this one does not.
+          </div>
+        )}
 
         <div className="card">
           <h3>Test runs by material class, against {HABITAT_SHORT[focus.id] ?? focus.name}</h3>
@@ -511,6 +531,10 @@ export function GapMap({
                 <div className="cover-axis">
                   <span className="cover-cap">
                     Oxygen {formatRange({ min: row.o2Min, max: row.o2Max }, formatPercent)}
+                    <em data-in={inRange(focus.o2_mole_fraction, row.o2Min, row.o2Max)}>
+                      {formatPercent(focus.o2_mole_fraction)}{' '}
+                      {inRange(focus.o2_mole_fraction, row.o2Min, row.o2Max) ? 'inside tested range' : 'not tested'}
+                    </em>
                   </span>
                   <span className="rangebar">
                     <i style={{ left: `${pct(row.o2Min / o2Axis)}%`, width: `${Math.max(1.5, pct((row.o2Max - row.o2Min) / o2Axis))}%` }} />
@@ -520,6 +544,10 @@ export function GapMap({
                 <div className="cover-axis">
                   <span className="cover-cap">
                     Pressure {formatRange({ min: row.kpaMin, max: row.kpaMax }, formatKpa)}
+                    <em data-in={inRange(focus.pressure_kpa, row.kpaMin, row.kpaMax)}>
+                      {formatKpa(focus.pressure_kpa)}{' '}
+                      {inRange(focus.pressure_kpa, row.kpaMin, row.kpaMax) ? 'inside tested range' : 'not tested'}
+                    </em>
                   </span>
                   <span className="rangebar rangebar-cool">
                     <i style={{ left: `${pct(row.kpaMin / kpaAxis)}%`, width: `${Math.max(1.5, pct((row.kpaMax - row.kpaMin) / kpaAxis))}%` }} />
@@ -538,7 +566,9 @@ export function GapMap({
             ))}
           </div>
           <p className="muted small">
-            Bars show the range tested per material class; the white tick is the selected atmosphere. Counts are of
+            Bars show the range tested per material class; the white tick is the selected atmosphere. A tick on the bar
+            means that value lies inside the tested range; a tick off the bar means no test run of that class reached
+            it, which is the gap this page is about. Inside a range does not mean that exact value was tested. Counts are of
             individual test runs in the PSI microgravity data, and the two counts are separate: a run in one is not
             necessarily in the other.
           </p>
