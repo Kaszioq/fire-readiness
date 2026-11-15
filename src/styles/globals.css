@@ -5424,3 +5424,188 @@ main {
     justify-self: start;
   }
 }
+
+/* =====================================================================================================
+   Full width for real. The page always spans the viewport; on very wide monitors the gutter grows so the
+   content column stays readable, and every band, banner and backdrop reaches the screen edges, because
+   they are all sized from the same gutter.
+   ===================================================================================================== */
+
+@media (min-width: 861px) {
+  :root {
+    --gutter: max(clamp(24px, 5vw, 96px), calc((100vw - 2200px) / 2));
+  }
+}
+
+main,
+.site-footer-inner {
+  max-width: none;
+}
+
+html {
+  overflow-x: clip;
+}
+
+/* a little more size on large monitors, so it does not read as a small page on a big screen */
+@media (min-width: 1900px) {
+  body {
+    font-size: 17px;
+  }
+
+  .card,
+  .tile,
+  .entry {
+    padding: 26px;
+  }
+
+  .strip-name {
+    font-size: 19px;
+  }
+
+  .strip-meter b,
+  .strip-g b {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Pinned sideways section (photo gallery) ---------- */
+
+.pin {
+  margin: clamp(40px, 6vw, 88px) calc(-1 * var(--gutter)) 0;
+}
+
+.pin-view {
+  display: grid;
+  gap: 20px;
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+.pin-head {
+  display: grid;
+  gap: 12px;
+  padding-inline: var(--gutter);
+}
+
+.pin-head .section-head {
+  margin: 0;
+}
+
+.pin-bar {
+  display: none;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pin-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.pin-track {
+  display: flex;
+  gap: 16px;
+  padding-inline: var(--gutter);
+  will-change: transform;
+}
+
+.pin-track .shot {
+  flex: none;
+  width: clamp(280px, 36vw, 760px);
+  height: clamp(240px, 52svh, 640px);
+  border-radius: 24px;
+}
+
+/* pinned: the view sticks under the header while the row travels */
+.pin[data-pinned='true'] .pin-view {
+  position: sticky;
+  top: var(--header-h);
+  align-content: center;
+  height: calc(100svh - var(--header-h));
+}
+
+.pin[data-pinned='true'] .pin-bar {
+  display: block;
+}
+
+/* not pinned: an ordinary swipeable strip */
+.pin[data-pinned='false'] .pin-track {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.pin[data-pinned='false'] .pin-track .shot {
+  width: min(82vw, 420px);
+  height: 300px;
+  scroll-snap-align: center;
+}
+
+/* ---------- Scroll-linked details (progress and depth only; content never depends on them) ---------- */
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* hero: the horizon drifts down and dims as the page leaves */
+    @keyframes hero-drift {
+      to {
+        opacity: 0.25;
+        transform: translateY(12%) scale(1.06);
+      }
+    }
+
+    .hero-bg {
+      animation: hero-drift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+
+    /* the gap: the zero grows towards you while its band crosses the screen */
+    @keyframes zero-in {
+      from {
+        transform: scale(0.72);
+      }
+    }
+
+    .story[data-reveal] .story-step[data-visible] .ch-zero {
+      animation: zero-in linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 45%;
+    }
+
+    /* pipeline: the line draws itself as the section scrolls through */
+    @keyframes track-draw {
+      from {
+        transform: scaleX(0);
+      }
+    }
+
+    .track::before {
+      transform-origin: left;
+      animation: track-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 35% cover 55%;
+    }
+
+    /* candle photo: slow depth inside its frame */
+    @keyframes photo-depth {
+      from {
+        transform: scale(1.2) translateY(-4%);
+      }
+
+      to {
+        transform: scale(1.2) translateY(4%);
+      }
+    }
+
+    .ch-photo img {
+      animation: photo-depth linear both;
+      animation-timeline: view();
+    }
+  }
+}

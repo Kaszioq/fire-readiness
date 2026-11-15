@@ -4,6 +4,7 @@ import { ExplainerReel, type ReelData } from '@/components/ExplainerReel';
 import { HabitatConsole, type ConsoleData } from '@/components/HabitatConsole';
 import { ExploreTiles, HabitatStrips, NumbersBand } from '@/components/HomeSections';
 import { IntroStory } from '@/components/IntroStory';
+import { PinScroll } from '@/components/PinScroll';
 import {
   formatKpa,
   formatPercent,
@@ -230,14 +231,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="gallery-h">
-        <div className="section-head">
-          <h2 id="gallery-h">From a candle flame to the Moon</h2>
-          <span className="muted">Context photos from NASA. They are not part of the dataset.</span>
-        </div>
-        <div className="gallery">
+      <section aria-labelledby="gallery-h">
+        <PinScroll
+          head={
+            <div className="section-head">
+              <h2 id="gallery-h">From a candle flame to the Moon</h2>
+              <span className="muted">Context photos from NASA. They are not part of the dataset.</span>
+            </div>
+          }
+        >
           {GALLERY.map((g) => (
-            <figure key={g.id} className={`shot ${g.size}`}>
+            <figure key={g.id} className={`shot ${g.size.includes('shot-zoom') ? 'shot-zoom' : ''}`}>
               {/* eslint-disable-next-line @next/next/no-img-element -- static local photo with fixed aspect box */}
               <img src={`/media/${g.file}`} alt={g.alt} loading="lazy" style={{ objectPosition: g.position }} />
               <figcaption>
@@ -248,7 +252,7 @@ export default function HomePage() {
               </figcaption>
             </figure>
           ))}
-        </div>
+        </PinScroll>
       </section>
 
       <section className="band tex-carbon" aria-label="Dataset summary" id="check">
