@@ -1,5 +1,7 @@
 # Moon Base Fire Readiness
 
+<img src="public/brand/logo.png" alt="Moon Base Fire Readiness logo" width="360">
+
 NASA Space Apps Challenge 2026 entry (working name).
 
 > Of the NASA PSI microgravity combustion investigations, which ones tell us whether a habitat atmosphere (e.g. the Artemis Moon base at 30%+ O2 and 10.2 psi) is fire-safe, how confident can we be, and what must future experiments (LUCI, FM2) still measure?
@@ -178,6 +180,8 @@ All photos and video on the site are NASA material from the [NASA Image and Vide
 | `apollo17-site-as17-134-20435.jpg` | Apollo 17 landing site, Taurus-Littrow, 1972 | [as17-134-20435](https://images.nasa.gov/details/as17-134-20435) |
 | `apollo17-rover-as17-137-20979.jpg` | Lunar roving vehicle, Apollo 17, 1972 | [as17-137-20979](https://images.nasa.gov/details/as17-137-20979) |
 | `moon-gsfc-e001862.jpg` | The Moon, waxing gibbous, rendered from Lunar Reconnaissance Orbiter data | [GSFC_20171208_Archive_e001862](https://images.nasa.gov/details/GSFC_20171208_Archive_e001862) |
+
+The logo and the site icon (`public/brand/logo.png`, `public/brand/logo-mark.png`, `src/app/icon.png`, `src/app/apple-icon.png`) are the team's own artwork, released with the code under Apache 2.0. They are not NASA insignia.
 
 The flame drawing in the intro and the site icon are original SVG. Background textures are CSS only. The site uses system fonts only.
 
