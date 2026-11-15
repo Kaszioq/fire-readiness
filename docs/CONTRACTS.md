@@ -125,8 +125,11 @@ export interface Investigation {
 One row = one test run from an experimental table or a value reported in a document.
 
 ```ts
-export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet';
-// thin_solid = thin films and sheets that are not fabric (PMMA film, thin silicone); added 2026-11-14 with team OK
+export type MaterialClass = 'thin_fabric' | 'thin_solid' | 'thick_solid' | 'liquid_droplet' | 'gas_jet' | 'fire_resistant';
+// thin_solid = thin films and sheets that are not fabric (PMMA film); added 2026-11-14 with team OK
+// fire_resistant = inherently flame-resistant materials (silicone, Nomex). Their burning depends on a material-specific
+// oxygen limit, not on the cellulose/PMMA flammability map, so they are not pooled with the other solid classes and the
+// predictor gives no estimate for them (mode 'none'). Added 2026-11-15 00:50 by the tech lead (Kuba).
 export type Outcome = 'sustained' | 'marginal' | 'extinguished' | 'no_ignition';
 
 export interface FlammabilityPoint {
@@ -188,18 +191,48 @@ export interface SuppressionNote {
   prov: Provenance;
 }
 
+// Added 2026-11-14 (physics layer, docs/PHYSICS.md section 7)
+export type FuelModel = 'n-heptane' | 'methanol';
+export type PredictionMode = 'data' | 'physics_only' | 'none';
+
+export interface PhysicsEstimate {
+  t_ad_k: number;                 // adiabatic flame temperature of the target atmosphere (fuel model below)
+  fuel_model: FuelModel;
+  surrogate: boolean;             // true for solids
+  limit_k: number | null;         // fuel limit (droplets) or coldest tested condition of the class that still burned (solids)
+  margin_k: number | null;        // t_ad_k - limit_k
+  margin_ratio_vs_iss: number | null; // margin_k / margin in ISS air (21% O2, 101.3 kPa), same limit_k; null at or below the limit
+  valid: boolean;                 // false for helium-diluted atmospheres
+  note: string;                   // always starts with "Physics estimate, not test data:"
+}
+
+// Added 2026-11-14: Conditions has no diluent, so it is an option of predict().
+export type Diluent = 'N2' | 'CO2' | 'He';
+export interface PredictOptions {
+  diluent?: Diluent;             // default 'N2'. 'He' and 'CO2' give mode 'none' (no estimate).
+}
+
 export interface Prediction {
   zone: Zone;
   p_sustained: number | null;    // null when zone = no_evidence
-  confidence: number;            // 0..1
+  confidence: number;            // 0..1, evidence coverage (how close and how many test runs), not a probability
   evidence: EvidenceRef[];       // nearest supporting test runs, max 8
   suppression_notes: SuppressionNote[];
   explanation: string;           // short, deterministic text built from evidence (no LLM)
-  warnings: string[];            // e.g. "partial gravity: no direct data, result bounded by 0g and 1g tests"
+  warnings: string[];            // e.g. the partial-gravity warning
+  mode: PredictionMode;          // added 2026-11-14; data | physics_only | none
+  physics?: PhysicsEstimate;     // added 2026-11-14; a physics estimate, never test data; absent when mode = none
 }
 
-export function predict(c: Conditions, points: FlammabilityPoint[]): Prediction;
+export function predict(c: Conditions, points: FlammabilityPoint[], options?: PredictOptions): Prediction;
 ```
+
+`mode` semantics (the UI shows it as a badge):
+- `data`: the result comes from the nearest test runs. `physics` is usually present as extra context.
+- `physics_only`: the target is outside the tested envelope of the material class. `zone` is `no_evidence`, `p_sustained` is `null`, and `physics` carries the flame-temperature margin. Label it "physics estimate, no test data at these conditions".
+- `none`: neither data nor physics applies (helium-diluted atmosphere, or a class with no test runs and no fuel model). `physics` is absent.
+
+`Conditions` has no diluent, so the target atmosphere is O2/N2 unless `options.diluent` says otherwise. For `liquid_droplet`, `predict()` evaluates methanol and n-heptane separately and returns the more flammable one, naming both in `explanation`; `predictDropletByFuel(c, points, options)` returns both. `confidence` is evidence coverage: `(1/8) * sum(exp(-d^2 / 2))` over the 8 nearest test runs, where `d` is the normalized distance. Text fields (`explanation`, `physics.note`) round temperatures to the nearest 10 K ("about 220 K"); numeric fields keep the exact values.
 
 ## 6. Ranking (role C), used by UI (role B)
 
@@ -258,5 +291,6 @@ Self-contained component. B only places it on a page. All state lives inside it.
 | `data/curated/flammability_points.json` | `FlammabilityPoint[]` |
 | `data/curated/habitats.json` | `Habitat[]` |
 | `data/curated/meta.json` | `{ fetched_at, psi_snapshot_hash, n_investigations, n_fields_total, n_fields_verified }` |
+| `data/curated/flame_temperature.json` | `FlameTemperature` (types.ts section 9): limiting T_ad per fuel, T_ad per habitat, per FLEX test and per flammability point, and the O2 x pressure grid for interpolation. Built by `scripts/compute_flame_temperature.py`. |
 | `data/cached_reports/<habitat_id>.json` | report API response objects |
 | `data/mock/*.mock.json` | same schemas, fake but plausible values, used only before real data lands |

@@ -143,7 +143,7 @@ export const InvestigationSchema = z.object({
 
 // ---------- Flammability points ----------
 
-export const MaterialClassSchema = z.enum(['thin_fabric', 'thin_solid', 'thick_solid', 'liquid_droplet', 'gas_jet']);
+export const MaterialClassSchema = z.enum(['thin_fabric', 'thin_solid', 'thick_solid', 'liquid_droplet', 'gas_jet', 'fire_resistant']);
 export const OutcomeSchema = z.enum(['sustained', 'marginal', 'extinguished', 'no_ignition']);
 
 export const FlammabilityPointSchema = z
@@ -194,6 +194,22 @@ export const ConditionsSchema = z.object({
   gravity_g: z.number().min(0),
 });
 
+export const FuelModelSchema = z.enum(['n-heptane', 'methanol']);
+export const PredictionModeSchema = z.enum(['data', 'physics_only', 'none']);
+export const DiluentSchema = z.enum(['N2', 'CO2', 'He']);
+export const PredictOptionsSchema = z.object({ diluent: DiluentSchema.optional() });
+
+export const PhysicsEstimateSchema = z.object({
+  t_ad_k: z.number(),
+  fuel_model: FuelModelSchema,
+  surrogate: z.boolean(),
+  limit_k: z.number().nullable(),
+  margin_k: z.number().nullable(),
+  margin_ratio_vs_iss: z.number().nullable(),
+  valid: z.boolean(),
+  note: z.string(),
+});
+
 export const ReportRequestSchema = z.object({
   conditions: ConditionsSchema,
   habitat_id: HabitatIdSchema.optional(),
@@ -219,6 +235,73 @@ export const MetaSchema = z.object({
   n_fields_verified: z.number().int().min(0),
 });
 
+const kelvin = z.number().positive();
+
+export const FlameTemperatureSchema = z
+  .object({
+    generated_at: z.string(),
+    method: z.string(),
+    units: z.object({ t_ad: z.string(), pressure: z.string(), o2: z.string() }),
+    caveats: z.array(z.string()),
+    calibration: z.array(
+      z.object({
+        fuel: FuelModelSchema,
+        atmosphere: z.string(),
+        o2: mole,
+        co2: mole,
+        quote: z.string().min(1),
+        t_ad_k: kelvin,
+        source: z.string().min(1),
+        pressure_kpa: z.number().positive(),
+      }),
+    ),
+    limiting_t_ad: z.record(
+      FuelModelSchema,
+      z.object({ t_limit_k: kelvin, spread_k: z.number().min(0), n: z.number().int().positive() }),
+    ),
+    habitats: z.array(
+      z.object({
+        habitat_id: HabitatIdSchema,
+        o2: mole,
+        pressure_kpa: z.number().positive(),
+        t_ad_methanol_k: kelvin,
+        margin_methanol_k: z.number(),
+        't_ad_n-heptane_k': kelvin,
+        'margin_n-heptane_k': z.number(),
+        margin_ratio_vs_iss_methanol: z.number(),
+        'margin_ratio_vs_iss_n-heptane': z.number(),
+      }),
+    ),
+    flex_tests: z.array(
+      z.object({
+        point_id: z.string(),
+        fuel: FuelModelSchema,
+        o2: mole,
+        co2: mole,
+        he: mole,
+        pressure_kpa: z.number().positive(),
+        t_ad_k: kelvin,
+        margin_k: z.number(),
+        burn_time_s: z.string().nullable(),
+        test_end: z.string(),
+      }),
+    ),
+    points: z.record(z.string(), z.object({ t_ad_k: kelvin, fuel_model: FuelModelSchema, surrogate: z.boolean() })),
+    grid: z.object({
+      o2: z.array(mole).min(2),
+      pressure_kpa: z.array(z.number().positive()).min(2),
+      t_ad_k: z.record(FuelModelSchema, z.array(z.array(kelvin))),
+      note: z.string(),
+    }),
+  })
+  .refine(
+    (f) =>
+      Object.values(f.grid.t_ad_k).every(
+        (rows) => rows.length === f.grid.o2.length && rows.every((r) => r.length === f.grid.pressure_kpa.length),
+      ),
+    { message: 'grid.t_ad_k[fuel] must be o2.length x pressure_kpa.length', path: ['grid', 't_ad_k'] },
+  );
+
 // ---------- Compile-time check: schemas and types.ts must agree in both directions ----------
 
 type Same<A extends B, B extends C, C = A> = true;
@@ -231,4 +314,8 @@ export type SchemaTypeChecks = [
   Same<z.infer<typeof ReportRequestSchema>, T.ReportRequest>,
   Same<z.infer<typeof ReportResponseSchema>, T.ReportResponse>,
   Same<z.infer<typeof MetaSchema>, T.Meta>,
+  Same<z.infer<typeof PredictionModeSchema>, T.PredictionMode>,
+  Same<z.infer<typeof PhysicsEstimateSchema>, T.PhysicsEstimate>,
+  Same<z.infer<typeof PredictOptionsSchema>, T.PredictOptions>,
+  Same<z.infer<typeof FlameTemperatureSchema>, T.FlameTemperature>,
 ];

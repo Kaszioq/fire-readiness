@@ -49,19 +49,36 @@ Burn time shorter than 2 s is used only as a rough sign of a near-limit flame (s
 | exploration 8.2 psia / 34% | 2610 K | 701 K | 1.93 | 849 K | 1.53 |
 | spacesuit 4.3 psi / 100% | | 1040 K | 2.86 | 1126 K | 2.03 |
 
-Demo line: "In the Moon base atmosphere, a liquid fuel flame has 43 to 75% more thermal margin above extinction than in ISS air (physics, calibrated on NASA FLEX). For solids, the Moon base condition is 220 K hotter than any solid test in PSI."
+Demo line: "In the Moon base atmosphere, a liquid fuel flame has 43 to 75% more thermal margin above extinction than in ISS air (physics, calibrated on NASA FLEX). For solids, the Moon base condition is about 220 K hotter than any solid test in PSI."
+
+The ratios in this table are for liquid fuel only (droplet limits calibrated on FLEX). Solids have their own table in section 6.
 
 ## 6. Solids: what the data say on the T_ad axis (n-heptane surrogate)
 
 | Class | Tests | Hottest tested condition | Coldest condition that still burned | Non-burning cases |
 |---|---|---|---|---|
-| thick_solid (PMMA) | 81 | 2326 K | 1848 K (14.2% O2) | no ignition at 1799 K (13.6% O2); silicone at 2322 K |
-| thin_solid | 24 | 2326 K | 1911 K (15% O2) | thin silicone at 2296 and 2322 K |
-| thin_fabric | 35 | 2326 K | 2012 K (16.4% O2) | Nomex at 2322 K |
+| thick_solid (PMMA) | 79 | 2326 K | 1848 K (14.2% O2) | no ignition at 1799 K (13.6% O2) |
+| thin_solid (PMMA film) | 24 | 2326 K | 1911 K (15% O2) | 2 extinction-velocity limit points (1.0 cm/s at 21% O2, 3.0 cm/s at 16% O2) |
+| thin_fabric (SIBAL) | 31 | 2322 K | 2012 K (16.4% O2) | none |
+| fire_resistant (silicone, Nomex) | 8 | not used | not used | silicone did not sustain burning (Saffire-II); Nomex did not ignite in Saffire-II; Nomex III did burn in BASS-II |
+
+Updated 2026-11-15: silicone and Nomex moved to `fire_resistant` (no T_ad, no physics estimate), see `data/curated/mappings.md`. Coldest-burning limits and all habitat margins are unchanged.
 
 - PMMA in microgravity has a limit between 1799 and 1848 K on this axis.
-- Silicone and Nomex do not burn even in air: **material chemistry matters beyond T_ad**. The physics layer never overrides a material-specific test result.
-- Moon base (2547 K) lies 220 K above every solid test: outside the data envelope, so the answer for solids is "no test data; physics margin only".
+- Silicone and Nomex behave differently from cotton and PMMA in the same air: **material chemistry matters beyond T_ad**, so they form their own class and get no physics estimate. They are not "safe": Nomex failed NASA-STD-6001 Test 1 at 30% O2, 70.1 kPa in 1 g (Hirsch et al., NTRS 20070018178).
+- Moon base (about 2550 K) lies about 220 K above every solid test (exact value 220.5 K): outside the data envelope, so the answer for solids is "no test data; physics margin only".
+
+### Solids: margin relative to the coldest tested condition that still burned
+
+For solids, `limit_k` is the coldest tested condition of the class that still burned, and `margin_ratio_vs_iss` uses that same limit.
+
+| Class | Coldest tested condition that still burned (`limit_k`) | Margin in ISS air | Margin at Moon base | Moon base vs ISS |
+|---|---|---|---|---|
+| thick_solid | 1847.8 K | 425.7 K | 698.7 K | 1.64 |
+| thin_solid | 1910.5 K | 363.0 K | 636.0 K | 1.75 |
+| thin_fabric | 2012.1 K | 261.4 K | 534.4 K | 2.04 |
+
+These ratios are relative to the coldest tested condition that still burned, not to a measured flammability limit: the true limit of a material lies at or below that condition. The 1.75 in section 5 is the liquid-fuel value (n-heptane droplet limit); it equals the thin_solid value only because the coldest burning thin_solid test and the n-heptane limiting oxygen index are both at 15% O2.
 
 ## 7. Hybrid predictor (to implement, role C)
 
@@ -82,21 +99,29 @@ export interface PhysicsEstimate {
   t_ad_k: number;                 // target T_ad (fuel model below)
   fuel_model: 'n-heptane' | 'methanol';
   surrogate: boolean;             // true for solids
-  limit_k: number | null;         // fuel limit (droplets) or coldest burning solid test (solids)
+  limit_k: number | null;         // fuel limit (droplets) or coldest tested condition of the class that still burned (solids)
   margin_k: number | null;        // t_ad_k - limit_k
-  margin_ratio_vs_iss: number | null;
+  margin_ratio_vs_iss: number | null; // margin_k / margin in ISS air, same limit_k; null at or below the limit
   valid: boolean;                 // false for helium-diluted atmospheres
   note: string;
 }
 // Prediction gains:
 //   mode: PredictionMode;
 //   physics?: PhysicsEstimate;
+// predict(c, points, options?) with options = { diluent?: 'N2' | 'CO2' | 'He' }, default 'N2'
 ```
 `flame_temperature.json` stays outside the zod data validation until these types exist; then add a `FlameTemperatureSchema` and load it in `src/lib/data/index.ts` (role A).
 
 ### Client-side T_ad for slider values
 
-Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 320 kPa step 20, N2 diluent). Do not run Cantera in the app.
+Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 320 kPa step 20, N2 diluent), linear in O2 and in log(pressure): linear-in-pressure is 7 K off at 29.6 kPa, log-pressure is within 1 K of the precomputed habitat values. Do not run Cantera in the app.
+
+### As implemented (2026-11-14, `src/lib/predict`)
+
+- **Numbers in text.** Code, JSON and the tables in this file keep exact values; tests compare with a tolerance of 5 K. Text shown to users (`explanation`, `physics.note`) rounds temperatures to the nearest 10 K, for example "about 220 K".
+- **Evidence coverage** (`Prediction.confidence`): `(1/k) * sum(exp(-d_i^2 / 2))` over the `k = 8` nearest test runs, `d_i` in the normalized feature space. It measures how well the target is covered by tests; it is not a probability of fire.
+- **Diluent.** `Conditions` has no diluent, so it is an option: `predict(c, points, { diluent })`. Helium gives mode `none`. CO2 also gives `none`, because `Conditions` carries no CO2 fraction and the grid is O2/N2 only.
+- Parameters and their reasons: `src/lib/predict/README.md`.
 
 ## 8. Limits to state openly
 
@@ -104,6 +129,7 @@ Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 
 - Calibrated on droplets; solids use a surrogate and data-derived thresholds.
 - No gravity, no flow, no heat losses in the physics; those come from the test points.
 - Invalid for helium.
+- Not applicable to fire-resistant materials (silicone, Nomex): their limits are material-specific.
 
 ## 9. Sources for README References
 
@@ -111,3 +137,7 @@ Use bilinear interpolation on `grid` (O2 0.10 to 1.00 step 0.01, pressure 20 to 
 - NASA Glenn thermodynamic data (McBride, Zehe, Gordon, NASA/TP-2002-211556), via Cantera `nasa_gas.yaml`
 - Dietrich et al. 2014, Microgravity Sci. Technol., doi 10.1007/s12217-014-9372-2 (FLEX LOI)
 - NASA PSI FLEX (PSI-69), BASS-II (PSI-25), Saffire (PSI-98, PSI-99) data
+- BASS-II Summary Report, NASA/TM-20210011385 (Table 2.1, extinction velocity): https://ntrs.nasa.gov/citations/20210011385
+- Bhattacharjee, Simsek, Olson, Ferkul 2016, "The critical flow velocity for radiative extinction in opposed-flow flame spread in a microgravity environment", Combustion and Flame
+- Hirsch et al. 2007, oxygen concentration flammability thresholds of aerospace materials (Nomex at 30% O2, 70.1 kPa): https://ntrs.nasa.gov/citations/20070018178
+- Olson, Ferkul et al., BASS material flammability (Nomex HT90-40, Nomex III, Ultem on ISS): https://ntrs.nasa.gov/citations/20140011099

@@ -1,11 +1,11 @@
 {
   "fetched_at": "2026-11-14",
-  "psi_snapshot_hash": "sha256:e8970c3e2714f5847aa9c16cb325b402fa366400e66ef3af933b5ee079460b04",
+  "psi_snapshot_hash": "sha256:3b71088567edb4273363ccfa80409381ba8213bb97bc70e992a24dccea7fdb46",
   "psi_search": "https://psi.nasa.gov/geode-py/ws/repo/search?term=combustion&source=psi&type=investigation (26 hits, 2 excluded)",
   "n_investigations": 24,
   "n_fields_total": 622,
-  "n_fields_verified": 299,
-  "n_flammability_points": 241,
-  "n_points_unverified": 241,
-  "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) as verified; all llm_extracted and manual fields await human review in data/verification.csv"
+  "n_fields_verified": 622,
+  "n_flammability_points": 243,
+  "n_points_unverified": 0,
+  "note": "n_fields_verified counts api_direct fields (copied or computed from PSI) and the llm_extracted and manual fields that a human marked ok or fixed in data/verification.csv (applied by scripts/apply_verification.ts; decisions kept in data/verification_ledger.csv)"
 }

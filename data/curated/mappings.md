@@ -32,7 +32,7 @@ Source: `PSI-69_Experimental table_FLEX.csv`. Only O2/N2 tests (no CO2, no He). 
 ### BASS-II (PSI-25), 128 points, solids
 Source: `PSI-25_Experimental table_BASS-II.csv`. Wax candle row (F4) dropped.
 - `o2_mole_fraction` = "Calibrated initial O2 % by vol" / 100
-- `material_class`: SIBAL and Nomex = `thin_fabric`; PMMA films (0.4 mm or less) = `thin_solid`; PMMA slabs 1 mm or more, rods, spherical sections = `thick_solid`
+- `material_class`: SIBAL = `thin_fabric`; Nomex = `fire_resistant` (since 2026-11-15, see below); PMMA films (0.4 mm or less) = `thin_solid`; PMMA slabs 1 mm or more, rods, spherical sections = `thick_solid`
 - `outcome` = result at the **initial** O2 and flow (revised 16:10): "no ign" = `no_ignition`, every other test = `sustained`. Extinctions that happened later, when the crew changed the flow (quenching or blowoff), are noted in `prov.note` and not attached to the initial flow.
 - `flow_cm_s` = first number in "Air display". **Confirmed:** the video overlay showed the "air velocity transducer reading (cm/s)" (BASS-II Summary Report, NASA/TM-20210011385, pdf p. 12).
 - `pressure_kpa` = 101.3. **Confirmed approximately:** "Ambient pressure was 1 atm." (pdf p. 102) and total pressure "varied from 99.2 to 99.5 kPa" (pdf p. 46).
@@ -46,9 +46,23 @@ Rows typed from the CSV (quotes are the raw CSV rows).
 - `pressure_kpa` = 101.3, **assumed** (Cygnus cabin; pressure was measured but is not in the table). The Saffire-I workbook in PSI (`SAFFIRE-1_MergeResult-jpeg_Update_Final_v2.xlsx`) is only an image-file index and does not contain pressure.
 - Saffire-III (PSI-100) has no outcome columns, so no points.
 
+### Change of 2026-11-15 00:50: fire-resistant materials get their own class (approved by Kuba)
+**What:** the 8 silicone and Nomex runs (Saffire-II 2-1 to 2-4 and 2-7b, BASS-II F1 to F3) moved from `thin_solid`/`thick_solid`/`thin_fabric` to the new class `fire_resistant`. No run was deleted and no outcome changed.
+**Why (physics, not the result):** the predictor assumes that within one class the outcome depends only on O2, pressure and flow. Inherently flame-resistant materials break that assumption: each has its own, much higher oxygen limit. Evidence: Nomex HT90-40 and Ultem did not burn on the ISS at 21 to 22% O2 and about 15 cm/s, while Nomex III did burn at 22% O2, 14 cm/s (BASS, NTRS 20140011099); in 1 g, Nomex HT90-40 failed NASA-STD-6001 Test 1 at 30% O2 and 70.1 kPa (Hirsch et al., NTRS 20070018178); silicone burned only partly in 1 g screening tests for Saffire (Niehaus et al., NTRS 20150022421) and did not sustain burning in Saffire-II (ICES-2017-224). Pooled with cotton and PMMA, these runs made the ISS answer for thin solids "extinguishes", which no PMMA test supports.
+**Rule (general, not per case):** any material that is inherently flame-resistant (aramids such as Nomex, silicone, and any similar material added later) goes to `fire_resistant`. The predictor gives no estimate for this class (mode `none`); the runs stay visible as data and the findings stay in `key_findings`.
+**Not a claim that these materials are safe:** Nomex failed at 30% O2 in 1 g (source above), the Moon base atmosphere is 30% O2 or more, and no fire-resistant material was tested in the PSI microgravity data above about 22% O2.
+**Trigger, stated openly:** the problem was found because the ISS result looked wrong. The fix is a class rule applied to all data, not an exception for that one target.
+
+### Change of 2026-11-15 00:50: BASS-II extinction velocity points (2 points, `thin_solid`, `marginal`)
+Source: BASS-II Summary Report NASA/TM-20210011385, section 2.2.5, Table 2.1 "Comparison of extinction velocity Vg,cr for thin polymethylmethacrylate at 1 atm", column Experiment: 10±5 mm/s at 21% O2 and 30±5 mm/s at 16% O2. These are ISS microgravity measurements (section 2.2.3: thin PMMA 100 to 400 µm, O2/N2, BASS-II duct in the MSG), not ground tests.
+- Ids `PSI-25:Vcr-21` (21% O2, 1.0 cm/s) and `PSI-25:Vcr-16` (16% O2, 3.0 cm/s), 101.3 kPa, outcome `marginal` = limit point (below this flow the flame died by radiative extinction, above it spread steadily).
+- The report says the extinction velocity does not depend on thickness (Figure 2.11). Cross-checks: the same table gives computation 15/35 mm/s and theory 7.5/10 mm/s; Bhattacharjee et al., Combust. Flame 2016 ("The critical flow velocity for radiative extinction in opposed-flow flame spread in a microgravity environment"); BASS-II overview NTRS 20160000593 reports radiative quenching below about 2 cm/s for a 0.1 mm sample.
+- Effect: the thin-solid envelope now reaches down to 1 cm/s; below 1 cm/s the predictor still answers `no_evidence`.
+- Not added: free-text extinctions from the BASS-II test log (crew notes), because the flow at extinction is not reliably stated there.
+
 ## Proposed contract changes (need team OK, not yet in CONTRACTS.md)
 
-1. `MaterialClass`: add `'thin_solid'` (thin PMMA films and thin silicone are thermally thin solids but not fabrics).
+1. `MaterialClass`: add `'thin_solid'` (thin PMMA films are thermally thin solids but not fabrics). Applied 2026-11-14. `'fire_resistant'` added 2026-11-15.
 2. `HabitatId`: add `'exploration_10_2'` and `'exploration_8_2'`, NASA-considered exploration atmospheres quoted in the ACME BRE (PSI-20) objective: 10.2 psia / 26.5% O2 and 8.2 psia / 34% O2.
 
 ## Known record anomalies (kept, flagged in prov.note)
