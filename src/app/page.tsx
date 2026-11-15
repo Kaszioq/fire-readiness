@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import { BackdropVideo } from '@/components/BackdropVideo';
 import { ExplainerReel, type ReelData } from '@/components/ExplainerReel';
 import { HabitatConsole, type ConsoleData } from '@/components/HabitatConsole';
 import { ExploreTiles, HabitatStrips, NumbersBand } from '@/components/HomeSections';
 import { IntroStory } from '@/components/IntroStory';
+import { MoonLauncher } from '@/components/MoonLauncher';
 import { PinScroll } from '@/components/PinScroll';
 import {
   formatKpa,
@@ -153,17 +153,14 @@ export default function HomePage() {
               Which NASA combustion investigations tell us whether a crewed habitat is fire-safe, how confident can we
               be, and what must future experiments still measure?
             </p>
-            <div className="btn-row rise rise-3">
-              <Link href={`/lens?habitat=${focus.id}`} className="btn btn-primary">
-                Check the {focus.name.replace(/\s*\(.*\)$/, '')}
-              </Link>
-              <a href="#check" className="btn">
-                Skip the intro
-              </a>
-            </div>
           </div>
           <ExplainerReel data={reel} />
         </div>
+        <MoonLauncher
+          href={`/lens?habitat=${focus.id}`}
+          name={HABITAT_SHORT[focus.id] ?? focus.name}
+          readout={`${formatPercent(focus.o2_mole_fraction)} O2 · ${formatKpa(focus.pressure_kpa)} · ${focus.gravity_g} g`}
+        />
         <div className="hero-figs">
           <div>
             <b className="bignum">{investigations.length}</b>
@@ -186,6 +183,10 @@ export default function HomePage() {
             The Sun over Earth&apos;s limb, from the International Space Station.{' '}
             <a href="https://images.nasa.gov/details/iss028e007274" target="_blank" rel="noreferrer">
               Photo: NASA
+            </a>{' '}
+            Moon: Lunar Reconnaissance Orbiter data.{' '}
+            <a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001862" target="_blank" rel="noreferrer">
+              Image: NASA
             </a>
           </p>
         </div>

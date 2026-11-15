@@ -162,6 +162,7 @@ All photos and video on the site are NASA material from the [NASA Image and Vide
 | `iss-over-earth-sts098-713a-004.jpg` | The International Space Station, STS-98 fly-around, 2001 | [sts098-713a-004](https://images.nasa.gov/details/sts098-713a-004) |
 | `apollo17-site-as17-134-20435.jpg` | Apollo 17 landing site, Taurus-Littrow, 1972 | [as17-134-20435](https://images.nasa.gov/details/as17-134-20435) |
 | `apollo17-rover-as17-137-20979.jpg` | Lunar roving vehicle, Apollo 17, 1972 | [as17-137-20979](https://images.nasa.gov/details/as17-137-20979) |
+| `moon-gsfc-e001862.jpg` | The Moon, waxing gibbous, rendered from Lunar Reconnaissance Orbiter data | [GSFC_20171208_Archive_e001862](https://images.nasa.gov/details/GSFC_20171208_Archive_e001862) |
 
 The flame drawing in the intro and the site icon are original SVG. Background textures are CSS only. The site uses system fonts only.
 
