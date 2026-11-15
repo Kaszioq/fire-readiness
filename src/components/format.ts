@@ -63,9 +63,11 @@ export const MATERIAL_LABEL: Record<MaterialClass, string> = {
   thick_solid: 'Thick solid',
   liquid_droplet: 'Liquid droplet',
   gas_jet: 'Gas jet',
+  fire_resistant: 'Fire-resistant material (silicone, Nomex)',
 };
 
-export const SOLID_CLASSES: MaterialClass[] = ['thin_fabric', 'thin_solid', 'thick_solid'];
+// fire_resistant (silicone, Nomex) are solid test runs too; the predictor treats them separately.
+export const SOLID_CLASSES: MaterialClass[] = ['thin_fabric', 'thin_solid', 'thick_solid', 'fire_resistant'];
 
 export const ZONE_LABEL: Record<Zone, string> = {
   sustained: 'Sustained burning',

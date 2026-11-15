@@ -65,7 +65,8 @@ describe('(a) Moon base, solid materials: no test data, physics margin only', ()
     // PHYSICS.md section 6: the Moon base condition is about 220 K above every solid test (2326 K). Exact: 220.5 K.
     expect(within((p.physics?.t_ad_k ?? NaN) - 2326, 220, 5)).toBe(true);
     // Text rounds temperatures to the nearest 10 K.
-    expect(p.explanation).toContain('about 220 K above the hottest tested condition (about 2330 K)');
+    // Hottest run per class: about 2330 K (PMMA), about 2320 K for thin fabric (SIBAL; Nomex moved to fire_resistant on 2026-11-15).
+    expect(p.explanation).toMatch(/about 2[12]0 K above the hottest tested condition \(about 23[23]0 K\)/);
     expect(p.explanation).toContain('Physics estimate, no test data at these conditions');
     expect(p.explanation).toContain('PSI microgravity data');
     expect(p.explanation).not.toMatch(/\d\d\d[1-9] K/); // no temperature printed to the kelvin
@@ -102,9 +103,12 @@ describe('(b) ISS air with 20 cm/s flow, thin fabric: inside the tested envelope
     expect(p.evidence.length).toBeGreaterThan(0);
   });
 
-  it('says that the material matters when a nearby material did not burn', () => {
-    expect(p.evidence.some((e) => e.outcome === 'no_ignition')).toBe(true);
-    expect(p.warnings.some((w) => w.includes('Nomex'))).toBe(true);
+  it('does not pool fire-resistant materials (silicone, Nomex) with ordinary fabric', () => {
+    // Since 2026-11-15 they are their own class (fire_resistant), see data/curated/mappings.md.
+    const fireResistant = new Set(P.filter((x) => x.material_class === 'fire_resistant').map((x) => x.id));
+    expect(fireResistant.size).toBeGreaterThan(0);
+    expect(p.evidence.some((e) => fireResistant.has(e.point_id))).toBe(false);
+    expect(p.warnings.some((w) => w.includes('SIBAL'))).toBe(true); // single-material evidence is still flagged
   });
 
   it('carries the physics estimate as context, labelled as such', () => {
@@ -161,8 +165,9 @@ describe('evidence coverage (Prediction.confidence)', () => {
     expect(p.confidence).toBeCloseTo(evidenceCoverage(p.evidence.map((e) => e.distance)), 2);
   });
 
-  it('ISS air, thin fabric, 20 cm/s: at least 0.5', () => {
-    expect(predict(habitatConditions('iss', 'thin_fabric', 20), P).confidence).toBeGreaterThanOrEqual(0.5);
+  it('ISS air, thin fabric, 20 cm/s: at least 0.4', () => {
+    // 4 SIBAL runs at 20 cm/s (about 0.47); was 0.65 while Nomex runs were pooled in thin_fabric.
+    expect(predict(habitatConditions('iss', 'thin_fabric', 20), P).confidence).toBeGreaterThanOrEqual(0.4);
   });
 
   it('air, thin fabric, 10 cm/s: between 0.25 and 0.7', () => {
@@ -171,7 +176,8 @@ describe('evidence coverage (Prediction.confidence)', () => {
     expect(c).toBeLessThanOrEqual(0.7);
   });
 
-  it('a target exactly on a test condition: at least 0.6', () => {
+  it('a target exactly on a test condition: at least 0.45', () => {
+    // PSI-98:S1 has 4 thin fabric runs nearby (about 0.49) since Nomex moved to fire_resistant.
     for (const id of ['PSI-69:205', 'PSI-98:S1']) {
       const source = P.find((x) => x.id === id);
       expect(source).toBeDefined();
@@ -187,7 +193,7 @@ describe('evidence coverage (Prediction.confidence)', () => {
         P,
       );
       expect(p.mode).toBe('data');
-      expect(p.confidence).toBeGreaterThanOrEqual(0.6);
+      expect(p.confidence).toBeGreaterThanOrEqual(0.45);
     }
   });
 
@@ -430,8 +436,18 @@ describe('evidence is always within the distance limit', () => {
     expect(dataResults).toBeGreaterThan(100);
   });
 
+  it('a fire-resistant material gets no estimate (material-specific limit)', () => {
+    const source = P.find((x) => x.material_class === 'fire_resistant');
+    expect(source).toBeDefined();
+    if (!source) return;
+    const p = predict({ ...habitatConditions('iss', 'fire_resistant', 20) }, P);
+    expect(p.zone).toBe('no_evidence');
+    expect(p.mode).toBe('none');
+    expect(p.evidence).toHaveLength(0);
+  });
+
   it('a target placed on any test run is a data result that includes nearby runs', () => {
-    const coverages = P.map((source) => {
+    const coverages = P.filter((x) => x.material_class !== 'fire_resistant').map((source) => {
       const c: Conditions = {
         o2_mole_fraction: source.o2_mole_fraction,
         pressure_kpa: source.pressure_kpa,

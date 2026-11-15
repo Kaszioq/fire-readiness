@@ -10,7 +10,7 @@ export const ISS_REFERENCE = { o2_mole_fraction: 0.21, pressure_kpa: 101.3 } as 
 /** Fuel models evaluated for a material class. Solids use n-heptane as a surrogate; gas jets have no model. */
 export function fuelModelsForClass(cls: MaterialClass): FuelModel[] {
   if (cls === 'liquid_droplet') return ['methanol', 'n-heptane'];
-  if (cls === 'gas_jet') return [];
+  if (cls === 'gas_jet' || cls === 'fire_resistant') return [];
   return ['n-heptane'];
 }
 

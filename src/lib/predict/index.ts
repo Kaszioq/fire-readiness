@@ -89,6 +89,7 @@ const CLASS_LABEL: Record<MaterialClass, string> = {
   thick_solid: 'thick solid',
   liquid_droplet: 'droplet',
   gas_jet: 'gas jet',
+  fire_resistant: 'fire-resistant material',
 };
 
 const round = (x: number, digits: number) => Number(x.toFixed(digits));
