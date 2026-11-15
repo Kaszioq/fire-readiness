@@ -26,6 +26,8 @@ Fire-readiness report for the Moon base, with citations that link to the investi
 
 ![Fire-readiness report with citation chips](docs/screenshots/report.jpg)
 
+Smoke detection simulator (`/simulator`): an illustrative model, not a validated one. The same fire, vents and detectors run side by side in 0 g and 1 g to show why detector placement depends on gravity and air flow. How it works and what it leaves out: [src/components/smoke-sim/README.md](src/components/smoke-sim/README.md).
+
 ## Docs
 
 - [docs/SPEC.md](docs/SPEC.md): modules, acceptance criteria, timeline
@@ -149,16 +151,27 @@ The 352 publications that PSI lists for the investigations are stored per invest
 | [Vitest](https://vitest.dev) | 5.1.0 | MIT | Tests (development) |
 | [tsx](https://github.com/privatenumber/tsx) | 4.23.15 | MIT | Running data scripts (development) |
 | @types/node, @types/react, @types/react-dom, @types/d3-scale | see `package.json` | MIT | Type definitions (development) |
+| [Cantera](https://cantera.org/) | 3.2.0 | BSD-3-Clause | Adiabatic flame temperatures in `data/curated/flame_temperature.json`, computed offline by `scripts/compute_flame_temperature.py` ([docs/PHYSICS.md](docs/PHYSICS.md)); not needed to run the app |
 
-Data scripts in `scripts/` use the Python 3 standard library only.
+Cantera's equilibrium calculations use the NASA Glenn thermodynamic data shipped with it (`nasa_gas.yaml`): McBride, Zehe and Gordon, *NASA Glenn Coefficients for Calculating Thermodynamic Properties of Individual Species*, NASA/TP-2002-211556.
+
+The other data scripts in `scripts/` use the Python 3 standard library only.
 
 ### Language model
 
 The report route (`src/app/api/report/`) talks to any OpenAI-compatible endpoint set by environment variables. The default configuration in `.env.example` is the model `openai/gpt-oss-120b` served by Groq (<https://groq.com>, free tier). The model receives only the curated data and may cite only investigations present in it. No model or provider name is shown in the app.
 
-### Development tools
+### Use of AI
 
-Parts of the code and documentation were written with the help of AI coding assistants (Claude Code by Anthropic). All data values come from the NASA sources above, never from a model's memory.
+The team used AI tools for the following. Every data value in the app comes from the NASA sources above, never from a model's memory.
+
+- **Data extraction.** Part of the curated data was extracted from NASA PSI records, PSI documents and publication abstracts by a language model (Claude, Anthropic): summaries, key findings, fuel, some condition ranges, variables, measurements, safety domains and lineage. Each of these fields is marked `method: "llm_extracted"` in `data/curated/*.json`, carries a verbatim quote from its source, and was checked by a person against that source (`data/verification.csv`). `scripts/check_quotes.py` checks that every quote attributed to PSI appears word for word in the PSI snapshot. Details: [data/curated/mappings.md](data/curated/mappings.md) and [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
+- **Finding photos and sources.** AI assistants helped search for NASA photos and for publications and web sources. Only the ones listed in this section are used, each with its link.
+- **Code.** Much of the code was written with AI coding assistants (Claude Code by Anthropic) and reviewed, tested and run by the team.
+- **Writing and editing.** Text in the app, this README and the docs was drafted and edited with AI assistance.
+- **Design and logo.** The interface was designed with AI assistance. The logo and the site icon were generated with Claude (Anthropic) (see Media).
+- **Presentation.** The demo deck (`docs/demo/`) was made with AI assistance.
+- **In the app.** The report on the Habitat Lens page is written by a language model at run time (see Language model above) and is labelled as AI-generated there.
 
 ### Media
 
@@ -181,9 +194,9 @@ All photos and video on the site are NASA material from the [NASA Image and Vide
 | `apollo17-rover-as17-137-20979.jpg` | Lunar roving vehicle, Apollo 17, 1972 | [as17-137-20979](https://images.nasa.gov/details/as17-137-20979) |
 | `moon-gsfc-e001862.jpg` | The Moon, waxing gibbous, rendered from Lunar Reconnaissance Orbiter data | [GSFC_20171208_Archive_e001862](https://images.nasa.gov/details/GSFC_20171208_Archive_e001862) |
 
-The logo and the site icon (`public/brand/logo.png`, `public/brand/logo-mark.png`, `src/app/icon.png`, `src/app/apple-icon.png`) are the team's own artwork, released with the code under Apache 2.0. They are not NASA insignia.
+The logo and the site icon (`public/brand/logo.png`, `public/brand/logo-mark.png`, `src/app/icon.png`, `src/app/apple-icon.png`) were generated with Claude (Anthropic), not drawn by the team. Each file carries a visible "AI-generated" watermark, and the site footer says "Logo: AI-generated" on every page. They are not NASA insignia.
 
-The flame drawing in the intro and the site icon are original SVG. Background textures are CSS only. The site uses system fonts only.
+The flame drawing in the intro is original SVG. Background textures are CSS only. The site uses system fonts only.
 
 ## License
 
