@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { NavLinks } from '@/components/NavLinks';
+import { ScrollFx } from '@/components/ScrollFx';
 import { DATA_IS_MOCK, meta } from '@/lib/data';
 import '@/styles/globals.css';
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <ScrollFx />
         <header className="site-header">
           <Link href="/" className="brand">
             <span className="brand-mark" aria-hidden="true" />
