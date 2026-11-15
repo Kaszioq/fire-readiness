@@ -1,0 +1,12 @@
+{
+  "markdown": "## What the data says\n- Thin fabric has **no test runs** at 100 % O₂, 29.6 kPa, or the target flame temperature (2950 K) in PSI microgravity data [PSI-25] [PSI-98][PSI-99].\n- The predictor provides a **physics estimate** only: adiabatic flame temperature ≈2950 K, which is ~630 K above the hottest thin-fabric test (≈2320 K) and ~940 K above the coldest burning thin-fabric condition (≈2010 K) [PSI-25] [PSI-98][PSI-99].\n- No thin-fabric runs exist at the low pressure (29.6 kPa) of the target atmosphere; all solid runs were at ≈101 kPa [PSI-25] [PSI-98][PSI-99].\n- Partial-gravity data are absent; microgravity and 1-g results do **not** bound lunar or Martian gravity, which may be more hazardous (NTRS 20260000646).\n\n## How confident we can be\n- Evidence coverage is limited to the few solid runs at 13.6-22.2 % O₂ and 101 kPa; none approach the target oxygen level or pressure, so confidence is low.\n- Solid-material data are dominated by sustained burns: 131 of 134 ordinary solid runs were \"sustained,\" leaving only 3 non-burning points, preventing identification of a flammability limit [PSI-25] [PSI-98][PSI-99].\n\n## Gaps\n- No microgravity test data for thin fabric at 100 % O₂, low pressure, or the high flame-temperature regime.\n- No partial-gravity experiments to assess how 0.166 g influences flame spread or extinction.\n- Lack of non-burning thin-fabric runs prevents locating a flammability limit for this material class.\n\n## What future experiments (e.g. LUCI, FM2) should measure\n- Conduct thin-fabric burns in microgravity at **100 % O₂** and **≈30 kPa** to directly observe ignition, flame spread, and extinction.\n- Include a range of **flow velocities** (including zero flow) to map quenching speeds for thin fabrics under the target conditions.\n- Perform **partial-gravity (≈0.1-0.2 g)** tests to determine whether flame spread minima occur near lunar-gravity levels, as suggested by NASA FM2 findings (NTRS 20260000646).\n- Add **non-burning reference runs** (e.g., lower O₂ or higher flow) to establish a measurable flammability limit for thin fabrics.",
+  "citations": [
+    "PSI-25",
+    "PSI-98",
+    "PSI-99"
+  ],
+  "stripped_citations": [],
+  "model": "openai/gpt-oss-120b",
+  "generated_at": "2026-11-15T04:09:18.399Z",
+  "cached": true
+}

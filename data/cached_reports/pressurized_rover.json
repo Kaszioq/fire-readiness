@@ -1,0 +1,13 @@
+{
+  "markdown": "## What the data says\n- No PSI microgravity test run covers thin fabric at 30 % O₂ and 70.3 kPa; the predictor reports \"NO TEST DATA\" for this material class [PSI-25] [PSI-99].\n- The nearest PSI evidence are droplet tests of methanol (8 runs) at 30-34 % O₂ and 71.2-72.1 kPa, all \"sustained\" with 100 % of runs burning [PSI-69].\n- Fire-resistant materials (silicone, Nomex) were tested only up to 22.2 % O₂; 3 of 4 Nomex runs burned and 0 of 4 silicone runs burned (total 3/8 burned) [PSI-25] [PSI-99].\n- Outside PSI, Nomex HT90-40 failed NASA-STD-6001 Test 1 at 30 % O₂ and 70.1 kPa in 1 g (NTRS 20070018178).\n- Partial-gravity combustion data are absent in PSI; NASA FM2 researchers note that flame-spread oxygen requirements may be lowest near lunar gravity, making partial gravity potentially more hazardous than both micro- and Earth-gravity (NTRS 20260000646).\n\n## How confident we can be\n- Evidence coverage for solids is weak: 131 of 134 ordinary solid runs were \"sustained\"; only 2 extinction-velocity limits and 1 no-ignition run exist, so a flammability limit cannot be located [PSI-25] [PSI-98][PSI-99].\n- Thin fabric has zero test runs at the target atmosphere, so confidence in any prediction is limited to the physics estimate (not a measurement).\n- Droplet data provide high evidence coverage (0.892) for nearby conditions, but they involve liquid fuels, not fabric.\n\n## Gaps\n- No microgravity test data for thin fabric at 30 % O₂, 70 kPa, or any pressure below 101.3 kPa.\n- No partial-gravity (lunar-gravity) combustion experiments for any material class.\n- No fire-resistant material runs at oxygen levels above 22.2 %.\n- Pressure range in PSI solid tests is confined to ~101 kPa; target pressure (70.3 kPa) is untested.\n\n## What future experiments (e.g. LUCI, FM2) should measure\n- Conduct thin-fabric ignition and flame-spread tests at 30 % O₂ and ~70 kPa in microgravity to provide direct evidence.\n- Perform partial-gravity (≈0.166 g) combustion tests for thin fabrics, fire-resistant materials, and representative solids to assess the \"more hazardous\" regime indicated by FM2.\n- Extend solid-material pressure envelope down to 70 kPa to evaluate pressure effects on flammability limits.\n- Test fire-resistant materials (silicone, Nomex) at oxygen concentrations ≥30 % to determine their behavior in the proposed rover atmosphere.",
+  "citations": [
+    "PSI-25",
+    "PSI-99",
+    "PSI-69",
+    "PSI-98"
+  ],
+  "stripped_citations": [],
+  "model": "openai/gpt-oss-120b",
+  "generated_at": "2026-11-15T05:05:26.609Z",
+  "cached": true
+}

@@ -100,14 +100,50 @@ if (meta && meta.n_fields_verified > meta.n_fields_total) {
   fail('meta', 'n_fields_verified is greater than n_fields_total');
 }
 
+// The header counter comes from meta.json: it must match the provenance flags in investigations.json.
+// It drifts when the data is rebuilt without `npm run verify:apply`, or edited without the scripts.
+if (meta && investigations) {
+  const tally = { total: 0, verified: 0 };
+  const walk = (node: unknown) => {
+    if (Array.isArray(node)) node.forEach(walk);
+    else if (node && typeof node === 'object') {
+      const o = node as { prov?: { verified?: boolean }; value?: unknown };
+      if (o.prov && 'value' in o) {
+        tally.total += 1;
+        if (o.prov.verified) tally.verified += 1;
+        return;
+      }
+      for (const [k, v] of Object.entries(node)) if (k !== 'prov') walk(v);
+    }
+  };
+  walk(investigations);
+  if (tally.total !== meta.n_fields_total || tally.verified !== meta.n_fields_verified) {
+    fail(
+      'meta',
+      `counters say ${meta.n_fields_verified} of ${meta.n_fields_total} fields verified, the data has ${tally.verified} of ${tally.total}. Run \`npm run verify:apply\`.`,
+    );
+  }
+}
+
 // Cached reports are optional until role C generates them.
 if (habitats) {
   for (const h of habitats) {
     const path = join(root, 'data', 'cached_reports', `${h.id}.json`);
     if (!existsSync(path)) continue;
+    const label = `data/cached_reports/${h.id}.json`;
     const result = ReportResponseSchema.safeParse(JSON.parse(readFileSync(path, 'utf8')));
-    if (!result.success) fail(`data/cached_reports/${h.id}.json`, z.prettifyError(result.error));
-    else console.log(`ok   data/cached_reports/${h.id}.json`);
+    if (!result.success) {
+      fail(label, z.prettifyError(result.error));
+      continue;
+    }
+    // A cached report may cite only investigations that exist in the curated data, in the text as well as in the list.
+    const known = new Set((investigations ?? []).map((i) => i.psi_id));
+    const inText = [...new Set(result.data.markdown.match(/PSI-\d+/g) ?? [])];
+    const unknown = [...new Set([...result.data.citations, ...inText])].filter((id) => !known.has(id));
+    if (investigations && unknown.length) fail(label, `cites investigations that are not in the curated data: ${unknown.join(', ')}`);
+    else if (!result.data.cached) fail(label, 'cached must be true in a cached report');
+    else if (result.data.citations.length === 0) fail(label, 'no citations');
+    else console.log(`ok   ${label}`);
   }
 }
 

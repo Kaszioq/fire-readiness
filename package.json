@@ -11,7 +11,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "validate:data": "tsx scripts/validate-data.ts",
-    "mocks": "tsx scripts/make-mocks.ts"
+    "mocks": "tsx scripts/make-mocks.ts",
+    "reports": "tsx --env-file=.env.local scripts/generate_cached_reports.ts",
+    "verify:apply": "tsx scripts/apply_verification.ts"
   },
   "dependencies": {
     "d3-scale": "^4.0.3",
