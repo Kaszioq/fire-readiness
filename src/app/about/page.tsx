@@ -1,13 +1,24 @@
 // Role B (content agreed with role A). Method, provenance, verification stats, limits, sources, license, team.
 // Every number on this page is computed from '@/lib/data'; the prose states only what docs/STATUS.md records.
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { formatKpa, formatPercent, HABITAT_SHORT, investigationName, plural, SOLID_CLASSES } from '@/components/format';
 import { flammabilityPoints, getHabitat, habitats, investigations, meta } from '@/lib/data';
+import { REPO_URL, repoFile } from '@/components/site';
 import { PARTIAL_GRAVITY_WARNING } from '@/lib/predict';
 
 export const metadata = { title: 'About' };
 
-const REPO = 'https://github.com/Kaszioq/fire-readiness';
+/** A link when the repository URL is configured, plain text otherwise. */
+function RepoLink({ href, children }: { href: string | null; children: ReactNode }) {
+  return href ? (
+    <a href={href} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ) : (
+    <>{children}</>
+  );
+}
 
 const SOURCES = [
   {
@@ -60,11 +71,11 @@ export default function AboutPage() {
       <section className="section" aria-label="Dataset in numbers">
         <div className="stats">
           <div className="stat">
-            <span className="stat-value">{investigations.length}</span>
+            <span className="stat-value"><span data-count>{investigations.length}</span></span>
             <span className="stat-label">PSI combustion investigations</span>
           </div>
           <div className="stat">
-            <span className="stat-value">{flammabilityPoints.length}</span>
+            <span className="stat-value"><span data-count>{flammabilityPoints.length}</span></span>
             <span className="stat-label">test runs from {plural(pointInvestigations, 'investigation')}</span>
           </div>
           <div className="stat">
@@ -94,9 +105,7 @@ export default function AboutPage() {
             <li>
               <strong>Source.</strong> Combustion investigations are taken from a dated snapshot of the NASA PSI
               repository. Search results that are not combustion studies are excluded and listed, with the reason, in{' '}
-              <a href={`${REPO}/blob/main/data/curated/excluded.json`} target="_blank" rel="noreferrer">
-                the repository
-              </a>
+              <RepoLink href={repoFile('data/curated/excluded.json')}>the repository</RepoLink>
               .
             </li>
             <li>
@@ -174,13 +183,9 @@ export default function AboutPage() {
           <p className="muted small">
             The full reference list (publications, libraries, the language model and its provider, media credits) is in
             the{' '}
-            <a href={`${REPO}#references`} target="_blank" rel="noreferrer">
-              README
-            </a>
+            <RepoLink href={REPO_URL ? `${REPO_URL}#references` : null}>README</RepoLink>
             . How each table was mapped, with every assumption, is in{' '}
-            <a href={`${REPO}/blob/main/data/curated/mappings.md`} target="_blank" rel="noreferrer">
-              mappings.md
-            </a>
+            <RepoLink href={repoFile('data/curated/mappings.md')}>mappings.md</RepoLink>
             .
           </p>
           <h2>Investigations in the dataset</h2>
@@ -200,9 +205,7 @@ export default function AboutPage() {
           <h2>License and media</h2>
           <p>
             The code is open source under the{' '}
-            <a href={`${REPO}/blob/main/LICENSE`} target="_blank" rel="noreferrer">
-              Apache 2.0 license
-            </a>
+            <RepoLink href={repoFile('LICENSE')}>Apache 2.0 license</RepoLink>
             . Photos and video are NASA material from the NASA Image and Video Library; no NASA insignia is used and no
             endorsement is implied. The illustrations and the site icon are original. The site uses system fonts only.
           </p>
@@ -212,12 +215,14 @@ export default function AboutPage() {
             <li>Johny: frontend and demo</li>
             <li>Kuba: models and AI</li>
           </ul>
-          <p className="muted small">
-            Source code:{' '}
-            <a href={REPO} target="_blank" rel="noreferrer">
-              github.com/Kaszioq/fire-readiness
-            </a>
-          </p>
+          {REPO_URL && (
+            <p className="muted small">
+              Source code:{' '}
+              <a href={REPO_URL} target="_blank" rel="noreferrer">
+                {REPO_URL.replace(/^https:\/\//, '')}
+              </a>
+            </p>
+          )}
         </section>
       </div>
     </>
