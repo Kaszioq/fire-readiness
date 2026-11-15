@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>{children}</main>
         <footer className="site-footer">
           <div className="site-footer-inner">
-            <span>Not an official NASA tool. Rockets and propellants are out of scope.</span>
+            <span>Not an official NASA tool. Rockets and propellants are out of scope. Logo: AI-generated.</span>
             <span>
               Data: NASA PSI snapshot of {meta.fetched_at}. Open source, Apache 2.0. <Link href="/about">About</Link>
             </span>
