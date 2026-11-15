@@ -80,7 +80,7 @@ Priority: **P0** = must ship, **P1** = should ship, **P2** = stretch.
 - UI (B): rendered markdown, citations as chips linking to investigation cards, a "Regenerate" button, and a small "AI-generated from cited NASA data" label.
 - **Done when:** report for every preset renders, all citations are valid, and the fallback works with the API key removed.
 
-### Module 6: Smoke detection simulator (CUT on 2026-11-14 19:00, replaced by module 4b; keep only if everything else is done)
+### Module 6: Smoke detection simulator (cut on 2026-11-14 19:00, then built on 2026-11-15 as an illustrative model: `/simulator`, details in `src/components/smoke-sim/README.md`)
 - `<SmokeSim />`: 2D top-down or side view of a generic module (dimensions user-adjustable, not a real vehicle layout), grid ~80 x 40.
 - Ventilation: user places one inlet and one outlet; velocity field from a simple potential-flow / precomputed channel solution.
 - Smoke: advection-diffusion of concentration from a user-placed source. Toggle "microgravity" (no buoyancy) vs "1g" (adds upward drift) to show why detector placement differs.

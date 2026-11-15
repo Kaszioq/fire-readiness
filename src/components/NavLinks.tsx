@@ -8,6 +8,7 @@ const NAV = [
   { href: '/lens', label: 'Habitat Lens' },
   { href: '/map', label: 'Gap map' },
   { href: '/investigations', label: 'Investigations' },
+  { href: '/simulator', label: 'Smoke simulator' },
   { href: '/about', label: 'About' },
 ];
 

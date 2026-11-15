@@ -69,7 +69,7 @@ Code that maps over `MaterialClass` or `HabitatId` (ranking fuel weights, UI lab
 
 - New: `docs/PHYSICS.md`, `scripts/compute_flame_temperature.py`, `data/curated/flame_temperature.json` (adiabatic flame temperature for every test, habitat and a slider grid).
 - Key result: FLEX LOI in N2 and with CO2 give the same flame temperature per fuel (1674/1657 K methanol, 1910/1908 K heptane), so a calibrated limiting flame temperature is used as the physics axis. It fails for helium (documented).
-- The predictor becomes hybrid (modes `data`, `physics_only`, `none`). The smoke simulator (module 6) is cut.
+- The predictor becomes hybrid (modes `data`, `physics_only`, `none`). The smoke simulator (module 6) was cut here; it was built later on 2026-11-15 as an illustrative model (`/simulator`, `src/components/smoke-sim/README.md`).
 - `flame_temperature.json` is not validated by zod yet; role C adds the types (PHYSICS.md section 7), role A then loads it in `src/lib/data/index.ts`.
 - Requires `pip install cantera` only to regenerate the file, not to run the app.
 
